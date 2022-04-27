@@ -171,6 +171,17 @@ ul {
 
   #registerForm {
 border-style: solid;
-border-radius: 10px;
-border-width: 2px;
+  }
+
+  .submitBtn {
+    display: flex;
+    height: 71px;
+    width: 197px;
+    margin-top: 1em;
+    background-color: #CD3838;
+    color: #FFFFFF;
+    font-family: 'Doppio One', sans-serif;
+    border-radius: 10px;
+    font-size: 48px;
+    justify-content: center;
   }
