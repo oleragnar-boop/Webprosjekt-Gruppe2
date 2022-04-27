@@ -1,9 +1,119 @@
-body{
-  overflow-x: hidden;
+@import url('https://fonts.googleapis.com/css2?family=Doppio+One&display=swap');
+
+html, body{
+  margin: 0;
+  height: 100%;
 }
 
+body{
+  overflow-x: hidden;
+  font-family: 'Doppio One', sans-serif;
+  background-color: #FDDEDE;
+}
 
-nav ul {
+footer{
+  background-color: #FF9D9D;
+  text-align: center;
+  font-size: 15px;
+  width:100%;
+  height: 20%;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 25%;
+  font-size: 30px;
+}
+
+.logoDiv{
+float: left;
+width: 56%;
+height: 100%;
+margin-top: 2%;
+}
+
+.logoDiv img{
+  float: right;
+  width: 20%;
+}
+
+.navDiv{
+  width:44%;
+  float: right;
+  margin-top: 1%;
+}
+
+.navDiv span{
+  float: right;
+  margin-right: 5%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #FF9D9D;
+}
+
+.navButton{
+  float: right;
+  padding: 20px;
+  justify-content: flex-end;
+}
+
+.main{
+  display: flex;
+  justify-content: space-evenly;
+  height: 40%;
+  width: 100%;
+}
+
+.box{
+  width: 50%;
+  max-height: 40%;
+}
+
+.box h2{
+  background-color: #FF9D9D;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  padding: 10px;
+  margin: 20px;
+}
+
+.box div{
+  background-color: #FF9D9D;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  padding: 10px;
+  margin: 20px;
+}
+
+#requestBox {
+  background-color: #D15C5C;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  text-align: center;
+  max-width: 40%;
+  float: right;
+  margin-right: 200px;
+}
+
+#decoBox {
+  width: 50%;
+}
+
+#decoBox img {
+  position: absolute;
+  margin-top: 53px;
+  margin-left: 200px;
+  max-height: 50%;
+}
+
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -11,55 +121,22 @@ nav ul {
     background-color: #333;
   }
   
-  nav li {
+  li {
     float: left;
-    display: block;
-    color: grey;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
   }
   
-  nav li a {
+  li a {
+    display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
   
-  nav li a:hover:not(.active) {
+  li a:hover:not(.active) {
     background-color: #111;
   }
   
   .active {
     background-color: #04AA6D;
-  }
-
-  .teacherBtn {
-    display: inline-block;
-    margin-bottom: 5%;
-    padding: 15px 25px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: black;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px grey;
-  }
-  
-  .teacherBtn:active {
-    background-color: black;
-    box-shadow: 0 5px grey;
-    transform: translateY(4px);
-  }
-
-  #buttonHolder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 5%;
   }
