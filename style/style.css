@@ -147,10 +147,14 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items:center ;
-    
   }
 
   #examlogo {
     padding-bottom: 3em;
     width: 20%;
+    margin-top: 2%;
+  }
+
+  #registerForm {
+border-style: solid;
   }
