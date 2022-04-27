@@ -141,15 +141,15 @@ ul {
     background-color: #04AA6D;
   }
 
-  .registerform{
+  .content_center {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding-top: 20em;
-    margin: auto;
-    align-items: center;
+    align-items:center ;
+    
   }
 
-  .registerform_center {
-    display: flex;
-    justify-content: center;
+  #examlogo {
+    padding-bottom: 3em;
+    width: 20%;
   }
