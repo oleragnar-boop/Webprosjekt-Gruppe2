@@ -170,7 +170,7 @@ ul {
   }
 
   #registerForm {
-border-style: solid;
+   border-style: solid;
   }
 
   .submitBtn {
@@ -184,4 +184,5 @@ border-style: solid;
     border-radius: 10px;
     font-size: 48px;
     justify-content: center;
+    border-width: 1px;
   }
