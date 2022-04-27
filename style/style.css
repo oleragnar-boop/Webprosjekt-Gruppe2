@@ -148,3 +148,8 @@ ul {
     margin: auto;
     align-items: center;
   }
+
+  .registerform_center {
+    display: flex;
+    justify-content: center;
+  }
