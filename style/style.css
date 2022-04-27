@@ -12,6 +12,7 @@ body{
 }
 
 footer{
+  overflow: hidden;
   background-color: #FF9D9D;
   text-align: center;
   font-size: 15px;
