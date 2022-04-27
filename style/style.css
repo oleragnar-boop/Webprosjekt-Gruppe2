@@ -155,6 +155,15 @@ ul {
     margin-top: 2%;
   }
 
+  #registerBox{
+    background-color: #D15C5C;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    padding: 10px;
+    margin: 20px;
+  }
+
   #registerForm {
 border-style: solid;
   }
