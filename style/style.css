@@ -140,3 +140,11 @@ ul {
   .active {
     background-color: #04AA6D;
   }
+
+  .registerform{
+    display: flex;
+    justify-content: center;
+    padding-top: 20em;
+    margin: auto;
+    align-items: center;
+  }
