@@ -53,15 +53,6 @@ MongoClient.connect('mongodb+srv://admin:adminpassword@cluster0.0nuub.mongodb.ne
       })
     })
 
-    app.get('/', async (req, res) => {
-      db.collection('requests').count({open: "true"})
-      .then(results => {
-        console.log(results);
-        let openCount = results; 
-        res.render('landing.ejs', {openCount: openCount})
-      })
-    })
-
 
     /*endre denna for å legge te ny side
     app.get('/', (req, res) => {
