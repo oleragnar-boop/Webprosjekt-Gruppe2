@@ -104,6 +104,10 @@ margin-top: 2%;
   margin-right: 200px;
 }
 
+.requestText {
+  font-size: 25px;
+}
+
 #decoBox {
   width: 50%;
 }
