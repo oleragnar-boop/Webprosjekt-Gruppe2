@@ -26,11 +26,6 @@ MongoClient.connect('mongodb+srv://admin:adminpassword@cluster0.0nuub.mongodb.ne
       console.log('listening on 3000')
     })
 
-    //GET to serve the index.ejs page
-    /* app.get('/', (req, res) => {
-      res.render('landing.ejs')
-    }) */
-
     app.get('/login', (req, res) => {
       res.render('loginpage.ejs')
     })
