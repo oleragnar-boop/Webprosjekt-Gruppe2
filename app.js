@@ -27,9 +27,9 @@ MongoClient.connect('mongodb+srv://admin:adminpassword@cluster0.0nuub.mongodb.ne
     })
 
     //GET to serve the index.ejs page
-    app.get('/', (req, res) => {
+    /* app.get('/', (req, res) => {
       res.render('landing.ejs')
-    })
+    }) */
 
     app.get('/login', (req, res) => {
       res.render('loginpage.ejs')
@@ -38,6 +38,30 @@ MongoClient.connect('mongodb+srv://admin:adminpassword@cluster0.0nuub.mongodb.ne
     app.get('/register', (req, res) => {
       res.render('registerpage.ejs')
     })
+
+    app.get('/', async (req, res) => {
+      db.collection('requests').count({open: "false"})
+      .then(results => {
+        console.log(results);
+        let closedCount = results; 
+        db.collection('requests').count({open: "true"})
+        .then(results => {
+          console.log(results);
+          let openCount = results; 
+          res.render('landing.ejs', {openCount: openCount, closedCount: closedCount})
+        })
+      })
+    })
+
+    app.get('/', async (req, res) => {
+      db.collection('requests').count({open: "true"})
+      .then(results => {
+        console.log(results);
+        let openCount = results; 
+        res.render('landing.ejs', {openCount: openCount})
+      })
+    })
+
 
     /*endre denna for å legge te ny side
     app.get('/', (req, res) => {
