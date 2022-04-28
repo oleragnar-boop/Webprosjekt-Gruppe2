@@ -161,7 +161,7 @@ ul {
 
   #examlogo {
     padding-bottom: 3em;
-    width: 100%;
+    max-width: 260px;
     margin-top: 2%;
   }
 
@@ -208,4 +208,23 @@ ul {
     font-size: 48px;
     justify-content: center;
     border-width: 1px;
+  }
+
+  .alreadyLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5px;
+    height: 200px;
+    width: 150px;
+    background-color: #D15C5C;
+    border-radius: 10px;
+    font-size: 10px;
+  }
+
+  .alreadyLogin > button {
+    background-color: #FF9D9D;
+    font-family: 'Doppio One', sans-serif;
+    height: 35px;
+    border-radius: 5px;
   }
