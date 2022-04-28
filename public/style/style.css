@@ -1,26 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Doppio+One&display=swap');
 
-html, body{
+html,
+body {
   margin: 0;
   height: 100%;
 }
 
-body{
+body {
   overflow-x: hidden;
   font-family: 'Doppio One', sans-serif;
   background-color: #FDDEDE;
 }
 
-footer{
+footer {
   overflow: hidden;
   background-color: #FF9D9D;
   text-align: center;
   font-size: 15px;
-  width:100%;
+  width: 100%;
   height: 20%;
-  position:absolute;
-  bottom:0;
-  left:0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .header {
@@ -30,25 +31,25 @@ footer{
   font-size: 30px;
 }
 
-.logoDiv{
-float: left;
-width: 56%;
-height: 100%;
-margin-top: 2%;
+.logoDiv {
+  float: left;
+  width: 56%;
+  height: 100%;
+  margin-top: 2%;
 }
 
-.logoDiv img{
+.logoDiv img {
   float: right;
   width: 20%;
 }
 
-.navDiv{
-  width:44%;
+.navDiv {
+  width: 44%;
   float: right;
   margin-top: 1%;
 }
 
-.navDiv span{
+.navDiv span {
   float: right;
   margin-right: 5%;
   padding: 10px;
@@ -57,25 +58,25 @@ margin-top: 2%;
   color: black;
 }
 
-.navButton{
+.navButton {
   float: right;
   padding: 20px;
   justify-content: flex-end;
 }
 
-.main{
+.main {
   display: flex;
   justify-content: space-evenly;
   height: 40%;
   width: 100%;
 }
 
-.box{
+.box {
   width: 50%;
   max-height: 40%;
 }
 
-.box h2{
+.box h2 {
   background-color: #FF9D9D;
   border-radius: 10px;
   border-width: 2px;
@@ -84,7 +85,7 @@ margin-top: 2%;
   margin: 20px;
 }
 
-.box div{
+.box div {
   background-color: #FF9D9D;
   border-radius: 10px;
   border-width: 2px;
@@ -120,146 +121,175 @@ margin-top: 2%;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  li a:hover:not(.active) {
-    background-color: #111;
-  }
-  
-  .active {
-    background-color: #04AA6D;
-  }
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
 
-  .content_center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center ;
-  }
+li {
+  float: left;
+}
 
-  .content_center a{
-    text-align: center;
-    width: 20%;
-  }
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
-  #examlogo {
-    padding-bottom: 3em;
-    max-width: 260px;
-    margin-top: 2%;
-  }
+li a:hover:not(.active) {
+  background-color: #111;
+}
 
-  #registerBox{
-    background-color: #D15C5C;
-    border-radius: 10px;
-    border-width: 2px;
-    border-style: solid;
-    padding: 10px;
-    margin-right: 10px;
-    height: 500px;
-    width: 1000px;
-  }
+.active {
+  background-color: #04AA6D;
+}
 
-  #registerForm {
-   border-style: solid;
-   border-radius: 10px;
-   border-width: 2px;
-   padding-left: 3%;
-   padding-bottom: 1%;
-   padding-top: 1%;
-   background-color: #FF9D9D;
-  }
-  
+.content_center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  #registerForm > input {
+.content_center a {
+  text-align: center;
+  width: 20%;
+}
+
+#examlogo {
+  padding-bottom: 3em;
+  max-width: 260px;
+  margin-top: 2%;
+}
+
+#registerBox {
+  background-color: #D15C5C;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  padding: 10px;
+  margin-right: 10px;
+  height: 500px;
+  width: 1000px;
+}
+
+#registerForm {
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 2px;
+  padding-left: 3%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  background-color: #FF9D9D;
+}
+
+
+#registerForm>input {
   border-radius: 5px;
-  }
+}
 
-  #username , #password, #school, #mail {
-    height: 30px;
-    padding: 5px;
-  }
+#username,
+#password,
+#school,
+#mail {
+  height: 30px;
+  padding: 5px;
+}
 
-  
-  .submitBtn {
-    display: flex;
-    height: 71px;
-    width: 197px;
-    margin-top: 1em;
-    background-color: #CD3838;
-    color: #FFFFFF;
-    font-family: 'Doppio One', sans-serif;
-    border-radius: 10px;
-    font-size: 48px;
-    justify-content: center;
-    border-width: 1px;
-  }
+.submitBtn {
+  display: flex;
+  height: 71px;
+  width: 197px;
+  max-width: 90%;
+  margin-top: 1em;
+  background-color: #CD3838;
+  color: #FFFFFF;
+  font-family: 'Doppio One', sans-serif;
+  border-radius: 10px;
+  font-size: 48px;
+  justify-content: center;
+  align-content: center;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #111;
+}
 
-  .alreadyLogin {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 5px;
-    height: 300px;
-    width: 15%;
-    background-color: #D15C5C;
-    border-radius: 10px;
-    font-size: 15px;
-  }
+.alreadyLogin {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+  height: 300px;
+  width: 15%;
+  background-color: #D15C5C;
+  border-radius: 10px;
+  font-size: 15px;
+}
 
-  .alreadyLogin div {
+.alreadyLogin div {
   background-color: #FF9D9D;
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
   padding: 10px;
   width: 70%;
-  }
+}
 
-  .alreadyLogin > button {
-    background-color: #FF9D9D;
-    font-family: 'Doppio One', sans-serif;
-    height: 35px;
-    width: auto;
-    border-radius: 10px;
-    font-size: 25px;
-    margin-top: 15px;
-    border-style: solid;
-    border-color: black;
-  }
+.alreadyLogin>button {
+  background-color: #FF9D9D;
+  font-family: 'Doppio One', sans-serif;
+  height: 35px;
+  width: auto;
+  border-radius: 10px;
+  font-size: 25px;
+  margin-top: 15px;
+  border-style: solid;
+  border-color: black;
+}
 
-  .alreadyLogin h2 {
-display: flex;
-justify-content: center;
-align-content: center;
-  }
+.alreadyLogin h2 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 
-  .alreadyLogin a {
-    height: 75%;
-    text-decoration: none;
-    color: black;
-    margin-bottom: 15px;
-    padding: 5px;
-  }
+.alreadyLogin a {
+  height: 75%;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 15px;
+  padding: 5px;
+}
 
-  .alreadyLogin img {
-    max-height: 75%;
-  }
+.alreadyLogin img {
+  max-height: 75%;
+}
+
+#loginBox {
+  background-color: #D15C5C;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+#loginForm {
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 2px;
+  padding-left: 3%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  background-color: #FF9D9D;
+}
+
+#loginForm input {
+  border-radius: 5px;
+}
