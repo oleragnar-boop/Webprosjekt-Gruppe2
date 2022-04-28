@@ -171,7 +171,7 @@ ul {
     border-width: 2px;
     border-style: solid;
     padding: 10px;
-    margin: 20px;
+    margin-right: 10px;
     height: 500px;
     width: 1000px;
   }
@@ -185,6 +185,7 @@ ul {
    padding-top: 1%;
    background-color: #FF9D9D;
   }
+  
 
   #registerForm > input {
   border-radius: 5px;
@@ -211,20 +212,54 @@ ul {
   }
 
   .alreadyLogin {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding-top: 5px;
-    height: 200px;
-    width: 150px;
+    height: 300px;
+    width: 15%;
     background-color: #D15C5C;
     border-radius: 10px;
-    font-size: 10px;
+    font-size: 15px;
+  }
+
+  .alreadyLogin div {
+  background-color: #FF9D9D;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  padding: 10px;
+  width: 70%;
   }
 
   .alreadyLogin > button {
     background-color: #FF9D9D;
     font-family: 'Doppio One', sans-serif;
     height: 35px;
-    border-radius: 5px;
+    width: auto;
+    border-radius: 10px;
+    font-size: 25px;
+    margin-top: 15px;
+    border-style: solid;
+    border-color: black;
+  }
+
+  .alreadyLogin h2 {
+display: flex;
+justify-content: center;
+align-content: center;
+  }
+
+  .alreadyLogin a {
+    height: 75%;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 15px;
+    padding: 5px;
+  }
+
+  .alreadyLogin img {
+    max-height: 75%;
   }

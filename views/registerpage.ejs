@@ -8,9 +8,17 @@
     <link href="/style/style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
+    <div class="header">
+      <div class="logoDiv">
+      <a href="/"><img src="exammatch.png"></a>
+  </div>
+      <div class="navDiv">
+          <span>En</span>
+      </div>
+  </div>
     <div class="content_center">
-      <a href="/"><img id="examlogo" src="exammatch.png" /></a>
 
+      <div class="main">
         <div id="registerBox">
         <form id="registerForm">
           <label for="course">Firstname:</label><br />
@@ -18,7 +26,7 @@
           <label for="course">Lastname:</label><br />
           <input type="text" id="username" name="username" /><br />
           <label for="course">Password:</label><br />
-          <input type="text" id="password" name="password" /><br />
+          <input type="text" id="password" name="password" /><br /> 
           <label for="course">Affiliated School:</label><br />
           <input type="text" id="school" name="school" /><br />
           <label for="course">School/work mail:</label><br />
@@ -28,11 +36,14 @@
       </div>
 
       <div class="alreadyLogin">
-        <h2>Already got a user?</h2>
-        <button><a href="./loginpage.ejs">Log In</a></button>
+        <div>
+        <h2>Have an<br>account<br>already?</h2>
+        <h2>Click here to login</h2>
+      </div>
+        <button><a href="login">Login</a><img id="loginIcon" src="loginIcon.png" /></button>
       </div>
       </div>
-
+    </div>
     <footer>
       <p>This website was made as a part of the subject IDG2671 Webprosjekt.</p>
       <p>Authors:</p>
