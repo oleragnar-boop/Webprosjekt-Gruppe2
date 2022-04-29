@@ -24,10 +24,10 @@
 
     <div class="main">
       <div id="loginBox">
-      <form id="loginForm">
-        <label for="course">Username:</label><br />
-        <input type="text" id="username" name="username" /><br />
-        <label for="course">Password:</label><br />
+      <form action="/loginUser" method="POST" id="loginForm">
+        <label for="email">Email:</label><br />
+        <input type="text" id="email" name="email" /><br />
+        <label for="password">Password:</label><br />
         <input type="text" id="password" name="password" /><br />
         <input class="submitBtn" type="submit" value="Login" />
       </form>

@@ -6,6 +6,7 @@ const User = require('./models/userSchema')
 const app = express();
 const MongoClient = require('mongodb').MongoClient
 const path = require('path');
+bcrypt = require('bcrypt')
 
 
 MongoClient.connect('mongodb+srv://admin:adminpassword@cluster0.0nuub.mongodb.net/ExamMatch?retryWrites=true&w=majority', { useUnifiedTopology: true })
@@ -33,6 +34,10 @@ MongoClient.connect('mongodb+srv://admin:adminpassword@cluster0.0nuub.mongodb.ne
 
     app.get('/register', (req, res) => {
       res.render('registerpage.ejs')
+    })
+
+    app.get('/index', (req, res) => {
+      res.render('index.ejs')
     })
 
     //GET for the open and closed requests on the landing page
@@ -75,6 +80,21 @@ MongoClient.connect('mongodb+srv://admin:adminpassword@cluster0.0nuub.mongodb.ne
         console.log(err)
       }
     })
+
+    //POST for login
+    app.post('/loginUser', async (req, res) => {
+      res.redirect('/login')
+      /* 
+      db.collection('users').findOne({email: req.body.email, password: req.body.password, isApproved: "yes"})
+      .then(results => {
+        if (!results){
+          console.log("User does not exist or has not yet been approved for ExamMatch")
+        }else{
+          console.log(results)
+          res.render('index.ejs', {email: req.body.email});
+        }
+      }) */
+    });
 
 
     /*endre denna for å legge te ny side
