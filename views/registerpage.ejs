@@ -12,7 +12,7 @@
 <body>
   <div class="header">
     <div class="logoDiv">
-      <a href="/"><img src="exammatch.png"></a>
+      <a href="/"><img src="exammatch.png" alt="Logo for Exam Match"></a>
     </div>
     <div class="navDiv">
       <span>En</span>
@@ -22,17 +22,17 @@
 
     <div class="main">
       <div id="registerBox">
-        <form id="registerForm">
-          <label for="course">Firstname:</label><br />
-          <input type="text" id="username" name="username" /><br />
-          <label for="course">Lastname:</label><br />
-          <input type="text" id="username" name="username" /><br />
-          <label for="course">Password:</label><br />
+        <form method="POST" action="/addUser" id="registerForm">
+          <label for="firstname">Firstname:</label><br />
+          <input type="text" id="firstname" name="firstname" /><br />
+          <label for="lastname">Lastname:</label><br />
+          <input type="text" id="lastname" name="lastname" /><br />
+          <label for="password">Password:</label><br />
           <input type="text" id="password" name="password" /><br />
-          <label for="course">Affiliated School:</label><br />
-          <input type="text" id="school" name="school" /><br />
-          <label for="course">School/work mail:</label><br />
-          <input type="text" id="mail" name="mail" /><br />
+          <label for="affSchool">Affiliated School:</label><br />
+          <input type="text" id="affSchool" name="affSchool" /><br />
+          <label for="email">School/work mail:</label><br />
+          <input type="text" id="email" name="email" /><br />
           <input class="submitBtn" type="submit" value="Register" />
         </form>
       </div>

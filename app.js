@@ -2,6 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const User = require('./models/userSchema')
 const app = express();
 const MongoClient = require('mongodb').MongoClient
 const path = require('path');
@@ -34,6 +35,7 @@ MongoClient.connect('mongodb+srv://admin:adminpassword@cluster0.0nuub.mongodb.ne
       res.render('registerpage.ejs')
     })
 
+    //GET for the open and closed requests on the landing page
     app.get('/', async (req, res) => {
       db.collection('requests').count({open: "false"})
       .then(results => {
@@ -44,6 +46,34 @@ MongoClient.connect('mongodb+srv://admin:adminpassword@cluster0.0nuub.mongodb.ne
           res.render('landing.ejs', {openCount: openCount, closedCount: closedCount})
         })
       })
+    })
+
+    //POST to register new user
+    app.post('/addUser', async (req, res) => {
+      let newUser = new User({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        password: req.body.password,
+        affSchool: req.body.affSchool,
+        email: req.body.email,
+        jobTitle: "",
+        jobLink: "",
+        languages: "",
+        empStatus: "",
+        workingHours: 0,
+        tags: "",
+        avatar: 1,
+        adminStatus: "none",
+        isApproved: "no"
+      })
+      try {
+        await mongoose.connect('mongodb+srv://admin:adminpassword@cluster0.0nuub.mongodb.net/ExamMatch?retryWrites=true&w=majority', { useUnifiedTopology: true })
+        newUser.save()
+        res.redirect('/register')
+        console.log(newUser)
+      } catch (err) {
+        console.log(err)
+      }
     })
 
 
@@ -105,7 +135,7 @@ MongoClient.connect('mongodb+srv://admin:adminpassword@cluster0.0nuub.mongodb.ne
         dateAdded: req.body.dateAdded
       })
       try {
-        await mongoose.connect('mongodb+srv://admin:adminpassword@cluster0.qmp2g.mongodb.net/user_data?retryWrites=true&w=majority', { useUnifiedTopology: true })
+        await mongoose.connect('mongodb+srv://admin:adminpassword@cluster0.0nuub.mongodb.net/ExamMatch?retryWrites=true&w=majority', { useUnifiedTopology: true })
         newUser.save()
         res.redirect('/')
         console.log(newUser)
