@@ -167,6 +167,8 @@ li a:hover:not(.active) {
 }
 
 #registerBox {
+  display: flex;
+  justify-content: center;
   background-color: #D15C5C;
   border-radius: 10px;
   border-width: 2px;
@@ -185,6 +187,7 @@ li a:hover:not(.active) {
   padding-bottom: 1%;
   padding-top: 1%;
   background-color: #FF9D9D;
+  
 }
 
 
@@ -192,10 +195,11 @@ li a:hover:not(.active) {
   border-radius: 5px;
 }
 
-#username,
+#firstname,
+#lastname,
 #password,
-#school,
-#mail {
+#affSchool,
+#email {
   height: 30px;
   padding: 5px;
 }
@@ -216,6 +220,11 @@ li a:hover:not(.active) {
   border-width: 2px;
   border-style: solid;
   border-color: #111;
+}
+
+.submitBtn:hover {
+  cursor: pointer;
+  
 }
 
 .alreadyLogin {
@@ -293,3 +302,6 @@ li a:hover:not(.active) {
 #loginForm input {
   border-radius: 5px;
 }
+
+
+
