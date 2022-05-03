@@ -452,8 +452,12 @@ li a:hover:not(.active) {
   background-color: #680000;
 }
 
-
-
+.centerDiv {
+  display: flex;
+  margin-top: 1%;
+  margin-left: auto;
+  margin-right: 1%;
+}
 
 
 
