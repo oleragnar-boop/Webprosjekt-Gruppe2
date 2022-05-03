@@ -311,6 +311,12 @@ li a:hover:not(.active) {
 /* Large devices (laptops/desktops, 992px and up) */
 /* @media only screen and (min-width: 992px) {...} */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1800px) {
+
+}
+
+
 @media only screen and (max-width: 1200px) {
   footer{
     height: 16.5%;
