@@ -8,6 +8,7 @@ body {
 
 body {
   overflow-x: hidden;
+  overflow-y: hidden;
   font-family: 'Doppio One', sans-serif;
   background-color: #FDDEDE;
 }
@@ -358,10 +359,15 @@ li a:hover:not(.active) {
 }
 
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 1200px) {
+  .header{
+    height: 10%;
+  }
+
   footer{
     height: 16.5%;
     font-size: 8px;
+    margin-top: 100px;
   }
 
   #requestBox {
@@ -370,10 +376,26 @@ li a:hover:not(.active) {
     border-width: 2px;
     border-style: solid;
     text-align: center;
-    max-width: 30%;
-    height: 400px;
-    float: right;
-    margin-right: 200px;
+    max-width: none;
+    float: none;
+    margin-left: 200px;
+  }
+
+  #decoBox{
+    margin-top: 100px;
+  }
+
+  .box div{
+    padding: none;
+  }
+
+  .requestText{
+    margin: 0;
+    font-size: 20px;
+  }
+
+  h2{
+    font-size: 25px;
   }
 }
 
