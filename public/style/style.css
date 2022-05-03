@@ -187,6 +187,7 @@ li a:hover:not(.active) {
   padding-bottom: 1%;
   padding-top: 1%;
   background-color: #FF9D9D;
+  width: 700px;
 }
 
 
@@ -239,6 +240,7 @@ li a:hover:not(.active) {
   background-color: #D15C5C;
   border-radius: 10px;
   font-size: 15px;
+  border-style: solid;
 }
 
 .alreadyLogin div {
@@ -331,3 +333,6 @@ li a:hover:not(.active) {
   }
 }
 
+@media only screen and (max-width: 800px) {
+ 
+}
