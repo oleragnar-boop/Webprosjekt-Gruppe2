@@ -363,7 +363,6 @@ li a:hover:not(.active) {
 
 }
 
-<<<<<<< Updated upstream
 #mainindex{
   margin: 0 auto;
   width: 98%;
@@ -412,17 +411,9 @@ li a:hover:not(.active) {
   padding: 5px 10px;
   margin-left: 20px;
   border-radius: 10px;
-=======
-#deleteBtn::after {
-content: ;
+
 }
-#verifyBtn::after{
-content: ;
-}
-#editBtn::after{
-content:;
->>>>>>> Stashed changes
-}
+
 
 
 
