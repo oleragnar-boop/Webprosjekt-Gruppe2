@@ -56,6 +56,10 @@ mongoose.connect(mongoDB, {
       res.render('index.ejs')
     })
 
+    app.get('/profile', (req, res) => {
+      res.render('profile.ejs')
+    })
+
     //GET for the open and closed requests on the landing page
     app.get('/', async (req, res) => {
       db.collection('requests').count({
