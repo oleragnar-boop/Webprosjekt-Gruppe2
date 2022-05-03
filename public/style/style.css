@@ -175,6 +175,7 @@ li a:hover:not(.active) {
   border-style: solid;
   padding: 10px;
   margin-right: 10px;
+  text-align:center;
   
   
 }
@@ -187,6 +188,7 @@ li a:hover:not(.active) {
   padding-bottom: 1%;
   padding-top: 1%;
   background-color: #FF9D9D;
+  width: 700px;
 }
 
 
@@ -204,7 +206,6 @@ li a:hover:not(.active) {
 }
 
 .submitBtn {
-  display: flex;
   height: 60px;
   width: 195px;
   margin-top : 0.2em;
@@ -213,10 +214,7 @@ li a:hover:not(.active) {
   background-color: #CD3838;
   color: #FFFFFF;
   font-family: 'Doppio One', sans-serif;
-  border-radius: 10px;
   font-size: 2.5em;
-  justify-content: center;
-  align-content: center;
   border-width: 2px;
   border-style: solid;
   border-color: #111;
@@ -239,6 +237,7 @@ li a:hover:not(.active) {
   background-color: #D15C5C;
   border-radius: 10px;
   font-size: 15px;
+  border-style: solid;
 }
 
 .alreadyLogin div {
@@ -312,6 +311,12 @@ li a:hover:not(.active) {
 /* Large devices (laptops/desktops, 992px and up) */
 /* @media only screen and (min-width: 992px) {...} */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1800px) {
+
+}
+
+
 @media only screen and (max-width: 1200px) {
   footer{
     height: 16.5%;
@@ -331,3 +336,6 @@ li a:hover:not(.active) {
   }
 }
 
+@media only screen and (max-width: 800px) {
+ 
+}
