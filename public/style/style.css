@@ -175,8 +175,8 @@ li a:hover:not(.active) {
   border-style: solid;
   padding: 10px;
   margin-right: 10px;
-  height: 500px;
-  width: 1000px;
+  
+  
 }
 
 #registerForm {
@@ -187,7 +187,6 @@ li a:hover:not(.active) {
   padding-bottom: 1%;
   padding-top: 1%;
   background-color: #FF9D9D;
-  
 }
 
 
@@ -208,13 +207,14 @@ li a:hover:not(.active) {
   display: flex;
   height: 71px;
   width: 197px;
-  max-width: 90%;
-  margin-top: 1em;
+  margin-top : 0.2em;
+  margin-bottom : 0.2em;
+  margin-right: 0.2em;
   background-color: #CD3838;
   color: #FFFFFF;
   font-family: 'Doppio One', sans-serif;
   border-radius: 10px;
-  font-size: 48px;
+  font-size: 2.5em;
   justify-content: center;
   align-content: center;
   border-width: 2px;
@@ -303,5 +303,31 @@ li a:hover:not(.active) {
   border-radius: 5px;
 }
 
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) {...} */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  footer{
+    height: 16.5%;
+    font-size: 8px;
+  }
 
+  #requestBox {
+    background-color: #D15C5C;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    text-align: center;
+    max-width: 30%;
+    height: 400px;
+    float: right;
+    margin-right: 200px;
+  }
+}
 
