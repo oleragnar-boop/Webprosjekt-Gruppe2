@@ -126,7 +126,8 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  display: flex;
+  align-items: center;
 }
 
 li {
@@ -362,20 +363,22 @@ li a:hover:not(.active) {
 #mainindex{
   margin: 0 auto;
   width: 98%;
-  height: 550px;
+  height: 755px;
   display: flex;
   background-color: #D15C5C;
+  border-radius: 10px;
 }
 
 #headerindex {
   display: flex;
   width: 100%;
-  height: 18%;
+  height: 9%;
   font-size: 30px;
 }
 
 #blackindexEM{
-  width: 100px;
+  margin-top: 5px;
+  max-height: 45.33px;
 }
 
 .logicon{
@@ -387,6 +390,24 @@ li a:hover:not(.active) {
   width: 56%;
   float: left;
   margin-top: 1%;
+}
+
+#navbar a{
+  background-color: #FF9D9D;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+  padding: 4px;
+  margin-left: 10px;
+}
+
+#innernavbar{
+  background-color: #D15C5C;
+  max-height: 100%;
+  width: fit-content;
+  padding: 5px 10px;
+  margin-left: 20px;
+  border-radius: 10px;
 }
 
 
