@@ -207,8 +207,9 @@ li a:hover:not(.active) {
   display: flex;
   height: 71px;
   width: 197px;
-  margin-top: 1em;
-  margin: 0.2em;
+  margin-top : 0.2em;
+  margin-bottom : 0.2em;
+  margin-right: 0.2em;
   background-color: #CD3838;
   color: #FFFFFF;
   font-family: 'Doppio One', sans-serif;
