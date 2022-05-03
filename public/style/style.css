@@ -380,10 +380,14 @@ li a:hover:not(.active) {
 
 .logicon{
   height: 30px;
-/*   margin: 10px 0; */
   bottom: 0;
 }
 
+#navbar{
+  width: 56%;
+  float: left;
+  margin-top: 1%;
+}
 
 
 
