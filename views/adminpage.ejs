@@ -7,9 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link href="/style/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/bbadb5f9e0.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    
+
+
     <div class="header">
         <div class="logoDiv">
             <a href="/"><img src="exammatch.png" /></a>
@@ -23,16 +27,16 @@
         <div class="main">
             <div class="adminContent">
                 <div class="adminBtn">
-                    <button onclick="verifyUser()">Verify User</button>
-                    <button onclick="editUser()">Edit User</button>
-                    <button onclick="deleteUser()">Delete User</button>
+                    <button onclick="verifyUser()">Verify User <i class="fa-solid fa-user-check"></i></i></button>
+                    <button onclick="editUser()">Edit User <i class="fa-solid fa-user-pen"></i></button>
+                    <button onclick="deleteUser()">Delete User <i class="fa-solid fa-user-xmark"></i></button>
                 </div>
                 <div class="adminUsers">
                     <div id="verifyUser" style="display:none;">
                         <p>this is verifyUser</p>
                     </div>
                     <div id="editUser" style="display:none;">
-                        <p>this is editUser</p>
+                        <p>this is editUser </p>
                     </div>
                     <div id="deleteUser" style="display:none;">
                         <p>this is deleteUser</p>
@@ -70,6 +74,15 @@
             document.getElementById("deleteUser").setAttribute("style", "display:block");
         }
     </script>
+
+
 </body>
 
 </html>
+    
+
+    
+  </body>
+</html>
+
+
