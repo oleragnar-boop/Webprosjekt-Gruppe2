@@ -349,7 +349,7 @@ li a:hover:not(.active) {
 
 #topavatar{
   width: 60px;
-  margin-left: 485px;
+  margin-left: 60%;
 }
 
 #katt{
@@ -387,7 +387,7 @@ li a:hover:not(.active) {
 }
 
 #navbar{
-  width: 56%;
+  width: 46%;
   float: left;
   margin-top: 1%;
 }
@@ -408,6 +408,44 @@ li a:hover:not(.active) {
   padding: 5px 10px;
   margin-left: 20px;
   border-radius: 10px;
+}
+
+#notifdropdown{
+  float: left;
+}
+
+#topbell{
+  height: 50px;
+}
+
+#dropbtn{
+  all: unset;
+}
+
+#dropbtn img{
+  background-color: #FF9D9D;
+  border-radius: 5px;
+  align-self: flex-end;
+}
+
+#navDivIndex {
+  width: 54%;
+  float: right;
+  margin-top: 1%;  
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+#navDivIndex span {
+  float: right;
+  margin-right: 3%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #FF9D9D;
+  color: black;
+
 }
 
 
