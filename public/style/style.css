@@ -427,12 +427,13 @@ li a:hover:not(.active) {
 
 #dropbtn{
   all: unset;
+  height: fit-content;
 }
 
 #dropbtn img{
   background-color: #FF9D9D;
   border-radius: 5px;
-  margin-right: 370px; /* midlertidig løsning */
+  margin-right: 630px; /* midlertidig løsning */
 }
 
 #navDivIndex {
