@@ -175,8 +175,8 @@ li a:hover:not(.active) {
   border-style: solid;
   padding: 10px;
   margin-right: 10px;
-  height: 500px;
-  width: 1000px;
+  
+  
 }
 
 #registerForm {
@@ -187,7 +187,6 @@ li a:hover:not(.active) {
   padding-bottom: 1%;
   padding-top: 1%;
   background-color: #FF9D9D;
-  
 }
 
 
@@ -208,13 +207,13 @@ li a:hover:not(.active) {
   display: flex;
   height: 71px;
   width: 197px;
-  max-width: 90%;
   margin-top: 1em;
+  margin: 0.2em;
   background-color: #CD3838;
   color: #FFFFFF;
   font-family: 'Doppio One', sans-serif;
   border-radius: 10px;
-  font-size: 48px;
+  font-size: 2.5em;
   justify-content: center;
   align-content: center;
   border-width: 2px;
