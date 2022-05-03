@@ -307,6 +307,7 @@ li a:hover:not(.active) {
 .adminBtn {
   display: flex;
   flex-direction: column;
+  width: 120px;
 }
 
 .adminBtn > button {
@@ -320,6 +321,10 @@ li a:hover:not(.active) {
   border-width: 1px;
 }
 
+.adminBtn > button:hover {
+  cursor:pointer
+}
+
 .adminContent {
   width: 900px;
   height: 400px;
@@ -330,8 +335,7 @@ li a:hover:not(.active) {
   background-color: #FFFFFF ;
   width: 600px;
   height: 200px;
-
- 
+  margin-left: 200px;
 }
 
 
@@ -356,7 +360,7 @@ li a:hover:not(.active) {
 
 
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1400px) {
   .header{
     height: 10%;
   }
@@ -397,5 +401,5 @@ li a:hover:not(.active) {
 }
 
 @media only screen and (max-width: 800px) {
- 
+ /* For mobil */
 }
