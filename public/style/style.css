@@ -52,7 +52,7 @@ footer {
 
 .navDiv span {
   float: right;
-  margin-right: 5%;
+  margin-right: 3%;
   padding: 10px;
   border-radius: 10px;
   background-color: #FF9D9D;
@@ -359,6 +359,30 @@ li a:hover:not(.active) {
 
 }
 
+#mainindex{
+  margin: 0 auto;
+  width: 98%;
+  height: 550px;
+  display: flex;
+  background-color: #D15C5C;
+}
+
+#headerindex {
+  display: flex;
+  width: 100%;
+  height: 18%;
+  font-size: 30px;
+}
+
+#blackindexEM{
+  width: 100px;
+}
+
+.logicon{
+  height: 30px;
+/*   margin: 10px 0; */
+  bottom: 0;
+}
 
 
 
