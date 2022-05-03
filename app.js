@@ -19,7 +19,6 @@ mongoose.connect(mongoDB, {
     const dataCollection = db.collection('ExamMatch')
     db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-    //Making the view of this app ejs
     app.use(express.static(__dirname + '/assets'));
     app.use(express.static(__dirname + '/public'));
     app.set('views', path.join(__dirname, 'views'));
@@ -33,6 +32,7 @@ mongoose.connect(mongoDB, {
     app.listen(process.env.PORT || 3000, function () {
       console.log('listening on 3000')
     })
+    
 
     app.get('/login', (req, res) => {
       res.render('loginpage.ejs')
