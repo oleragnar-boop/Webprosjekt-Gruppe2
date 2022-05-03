@@ -359,7 +359,7 @@ li a:hover:not(.active) {
   position: sticky;
   width: 200px;
   z-index: 1;
-  padding-left: 100px;
+  padding-left: 1500px;
 
 }
 
