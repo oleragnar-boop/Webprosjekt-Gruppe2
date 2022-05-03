@@ -49,6 +49,7 @@ footer {
   align-items: center;
   float: right;
   margin-top: 1%;
+  gap: 12px;
 }
 
 .navDiv span {
@@ -404,13 +405,13 @@ li a:hover:not(.active) {
 }
 
 #innernavbar{
+  display: flex;
   background-color: #D15C5C;
   max-height: 100%;
-  width: fit-content;
+  width: 830px;
   padding: 5px 10px;
   margin-left: 20px;
   border-radius: 10px;
-
 }
 
 #notifdropdown{
@@ -428,7 +429,6 @@ li a:hover:not(.active) {
 #dropbtn img{
   background-color: #FF9D9D;
   border-radius: 5px;
-  align-self: flex-end;
 }
 
 #navDivIndex {
