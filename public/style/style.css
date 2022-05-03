@@ -469,6 +469,28 @@ li a:hover:not(.active) {
 
 
 
+#filterheader{
+  background-color: #CD3838;
+  border: black solid;
+  width: 50%;
+}
+
+#filterheader h3{
+  color: white;
+}
+
+h3{
+  font-size: 25px;
+}
+
+#filtersindex{
+  background-color: #FF9D9D;
+  border: black solid;
+  width: 50%;
+}
+
+
+
 
 /* Extra small devices (phones, 600px and down) */
 /* @media only screen and (max-width: 600px) {...} */
