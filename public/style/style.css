@@ -326,16 +326,24 @@ li a:hover:not(.active) {
 }
 
 .adminContent {
+  display: flex;
   width: 900px;
   height: 400px;
   background-color: #D15C5C;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .adminUsers {
   background-color: #FFFFFF ;
   width: 600px;
-  height: 200px;
-  margin-left: 200px;
+  height: 300px;
+  margin-left: 100px;
+  margin-right: 50px;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
 }
 
 #topavatar{
@@ -343,7 +351,13 @@ li a:hover:not(.active) {
   margin-left: 485px;
 }
 
+#katt{
+  position: sticky;
+  width: 200px;
+  z-index: 1;
+  padding-left: 100px;
 
+}
 
 
 
