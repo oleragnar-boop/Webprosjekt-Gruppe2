@@ -302,6 +302,47 @@ li a:hover:not(.active) {
   border-radius: 5px;
 }
 
+
+.adminBtn {
+  display: flex;
+  flex-direction: column;
+}
+
+.adminBtn > button {
+  margin: 10px;
+  font-family: 'Doppio One', sans-serif;
+  width: fit-content;
+  background-color:#FF9D9D;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+.adminContent {
+  width: 900px;
+  height: 400px;
+  background-color: #D15C5C;
+}
+
+.adminUsers {
+  background-color: #FFFFFF ;
+  width: 600px;
+  height: 200px;
+
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
 /* Extra small devices (phones, 600px and down) */
 /* @media only screen and (max-width: 600px) {...} */
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -312,7 +353,7 @@ li a:hover:not(.active) {
 /* @media only screen and (min-width: 992px) {...} */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
-@media only screen and (min-width: 1800px) {
+@media only screen and (min-width: 1500px) {
 
 }
 
