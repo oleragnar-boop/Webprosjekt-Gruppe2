@@ -303,5 +303,31 @@ li a:hover:not(.active) {
   border-radius: 5px;
 }
 
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) {...} */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  footer{
+    height: 16.5%;
+    font-size: 8px;
+  }
 
+  #requestBox {
+    background-color: #D15C5C;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    text-align: center;
+    max-width: 30%;
+    height: 400px;
+    float: right;
+    margin-right: 200px;
+  }
+}
 
