@@ -406,12 +406,15 @@ li a:hover:not(.active) {
 
 #innernavbar{
   display: flex;
+  justify-content: space-around;
   background-color: #D15C5C;
   max-height: 100%;
   width: 830px;
   padding: 5px 10px;
+  padding-left: 30px;
   margin-left: 20px;
   border-radius: 10px;
+
 }
 
 #notifdropdown{
@@ -429,6 +432,7 @@ li a:hover:not(.active) {
 #dropbtn img{
   background-color: #FF9D9D;
   border-radius: 5px;
+  margin-right: 370px; /* midlertidig løsning */
 }
 
 #navDivIndex {
