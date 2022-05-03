@@ -1,46 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link href="/style/style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="header">
-      <div class="logoDiv">
-        <a href="/"><img src="exammatch.png" /></a>
-      </div>
-      <div class="navDiv">
-        <span>En</span>
-      </div>
+        <div class="logoDiv">
+            <a href="/"><img src="exammatch.png" /></a>
+        </div>
+        <div class="navDiv">
+            <span>En</span>
+        </div>
     </div>
 
     <div class="content_center">
-      <div class="main">
-          <div class="adminContent">
-          <div class="adminBtn">
-                <button>Verify User</button>
-                <button>Edit User</button>
-                <button>Delete User</button>      
-          </div>
-          <div class="adminUsers">             
+        <div class="main">
+            <div class="adminContent">
+                <div class="adminBtn">
+                    <button onclick="verifyUser()">Verify User</button>
+                    <button onclick="editUser()">Edit User</button>
+                    <button onclick="deleteUser()">Delete User</button>
+                </div>
+                <div class="adminUsers">
+                    <div id="verifyUser" style="display:none;">
+                        <p>this is verifyUser</p>
+                    </div>
+                    <div id="editUser" style="display:none;">
+                        <p>this is editUser</p>
+                    </div>
+                    <div id="deleteUser" style="display:none;">
+                        <p>this is deleteUser</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        </div>
-        </div>
-      </div>
+    </div>
     </div>
     <div>
         <img id="katt" src="katt.png">
     </div>
     <footer>
-      <p>This website was made as a part of the subject IDG2671 Webprosjekt.</p>
-      <p>Authors:</p>
-      <p>Mons Stenbråten, Sivert Grønli Amundsen,</p>
-      <p>Daniel Peder Björk, Ole Ragnar Randen</p>
-      <p>Copyright &copy;2022</p>
+        <p>This website was made as a part of the subject IDG2671 Webprosjekt.</p>
+        <p>Authors:</p>
+        <p>Mons Stenbråten, Sivert Grønli Amundsen,</p>
+        <p>Daniel Peder Björk, Ole Ragnar Randen</p>
+        <p>Copyright &copy;2022</p>
     </footer>
-    
-  </body>
+
+    <script>
+        function verifyUser(){
+            document.getElementById("verifyUser").setAttribute("style", "display:block");
+            document.getElementById("editUser").setAttribute("style", "display:none");
+            document.getElementById("deleteUser").setAttribute("style", "display:none");
+        }
+        function editUser(){
+            document.getElementById("verifyUser").setAttribute("style", "display:none");
+            document.getElementById("editUser").setAttribute("style", "display:block");
+            document.getElementById("deleteUser").setAttribute("style", "display:none");
+        }
+        function deleteUser(){
+            document.getElementById("verifyUser").setAttribute("style", "display:none");
+            document.getElementById("editUser").setAttribute("style", "display:none");
+            document.getElementById("deleteUser").setAttribute("style", "display:block");
+        }
+    </script>
+</body>
+
 </html>
