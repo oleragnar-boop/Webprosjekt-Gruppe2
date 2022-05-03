@@ -45,14 +45,14 @@ footer {
 }
 
 .navDiv {
-  width: 44%;
+  display: flex;
+  align-items: center;
   float: right;
   margin-top: 1%;
 }
 
 .navDiv span {
   float: right;
-  margin-right: 3%;
   padding: 10px;
   border-radius: 10px;
   background-color: #FF9D9D;
@@ -374,7 +374,6 @@ li a:hover:not(.active) {
 #headerindex {
   display: flex;
   width: 100%;
-  height: 9%;
   font-size: 30px;
 }
 
@@ -515,8 +514,4 @@ li a:hover:not(.active) {
 
 @media only screen and (max-width: 800px) {
  /* For mobil */
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 90623dbc66a1b465ad31c027342edcec134b6bb0
