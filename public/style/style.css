@@ -205,8 +205,8 @@ li a:hover:not(.active) {
 
 .submitBtn {
   display: flex;
-  height: 71px;
-  width: 197px;
+  height: 60px;
+  width: 195px;
   margin-top : 0.2em;
   margin-bottom : 0.2em;
   margin-right: 0.2em;
@@ -312,7 +312,7 @@ li a:hover:not(.active) {
 /* Large devices (laptops/desktops, 992px and up) */
 /* @media only screen and (min-width: 992px) {...} */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   footer{
     height: 16.5%;
     font-size: 8px;
