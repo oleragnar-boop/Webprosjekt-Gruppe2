@@ -3,6 +3,8 @@ Schema = mongoose.Schema
 bcrypt = require('bcrypt')
 SALT_WORK_FACTOR = 10;
 
+const noteSchema = new Schema({ teacher_email: {type:String}, note: {type:String}});
+
 const userSchema = new Schema({
     firstname:{type:String, required:true},
     lastname: {type:String, required:true},
@@ -17,7 +19,10 @@ const userSchema = new Schema({
     tags: {type:String},
     avatar: {type:Number, enum:['1', '2', '3', '4', '5'], default: '1', required:true},
     adminStatus: {type:String, enum:['none','admin','super'], default: 'none', required:true},
-    isApproved: {type:String, enum:['no', 'yes'], default: 'no', required:true}
+    isApproved: {type:String, enum:['no', 'yes'], default: 'no', required:true},
+    bookmarkedTeachers: {type:String},
+    bookmarkedRequests: {type:String},
+    personalNotes: [noteSchema]
 })
 
 userSchema.pre('save', function(next) {

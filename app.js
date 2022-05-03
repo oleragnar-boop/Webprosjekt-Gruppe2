@@ -43,6 +43,11 @@ mongoose.connect(mongoDB, {
       res.render('index.ejs')
     })
 
+    //bypass
+    app.get('/adminpage', (req, res) => {
+      res.render('adminpage.ejs')
+    })
+
     app.get('/register', (req, res) => {
       res.render('registerpage.ejs')
     })

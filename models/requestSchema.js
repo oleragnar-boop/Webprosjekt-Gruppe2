@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 Schema = mongoose.Schema
 
 const requestSchema = new Schema({
+    request_id: {type:Number, required:true},
     title:{type:String, required:true},
     course: {type:String, required:true},
     language: {type:String, required:true},
