@@ -352,7 +352,6 @@ li a:hover:not(.active) {
 
 #topavatar{
   width: 60px;
-  margin-left: 485px;
 }
 
 #katt{
@@ -390,7 +389,7 @@ li a:hover:not(.active) {
 }
 
 #navbar{
-  width: 56%;
+  width: 46%;
   float: left;
   margin-top: 1%;
 }
@@ -412,6 +411,42 @@ li a:hover:not(.active) {
   margin-left: 20px;
   border-radius: 10px;
 
+}
+
+#notifdropdown{
+  float: left;
+}
+
+#topbell{
+  height: 50px;
+}
+
+#dropbtn{
+  all: unset;
+}
+
+#dropbtn img{
+  background-color: #FF9D9D;
+  border-radius: 5px;
+  align-self: flex-end;
+}
+
+#navDivIndex {
+  width: 54%;
+  float: right;
+  margin-top: 1%;  
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+#navDivIndex span {
+  float: right;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #FF9D9D;
+  color: black;
 }
 
 
@@ -476,4 +511,8 @@ li a:hover:not(.active) {
 
 @media only screen and (max-width: 800px) {
  /* For mobil */
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 90623dbc66a1b465ad31c027342edcec134b6bb0
