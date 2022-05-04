@@ -477,6 +477,7 @@ li a:hover:not(.active) {
 
 #filterheader h3{
   color: white;
+  text-align: center;
 }
 
 h3{
@@ -496,6 +497,7 @@ h3{
   border: black solid;
   width: 20%;
   text-align: center;
+  margin-left: 17%;
 }
 
 #newrequest button{
