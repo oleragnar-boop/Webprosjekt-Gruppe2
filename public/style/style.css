@@ -521,7 +521,7 @@ h3{
 }
 
 .tagShow {
-  margin-top: 3px;
+  margin-top: 22px;
 }
 
 .tagShow > span {
@@ -542,6 +542,7 @@ h3{
 
 .fa-angle-down{
   margin-left: 18%;
+  margin-top: 40px;
 }
 
 #newrequest{
