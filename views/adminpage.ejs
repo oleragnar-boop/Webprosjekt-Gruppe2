@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    
+
 
 
     <div class="header">
@@ -26,21 +26,49 @@
     <style>
         #verifyUser {
             max-width: 100%;
+            max-height: 100%;
+            overflow: hidden;
+            /* position: relative; */
         }
 
         #verifyLeft {
-            max-width: 45%;
-            margin: 5% 5%;
+            /* position: absolute; */
+            max-width: 290px;
+            height: 100%;
+            margin-left: 5%;
+            margin-top: 2.4%;
         }
 
         #verifyLeft div {
             overflow-y: auto;
-            max-height: 200px;
+            max-height: 195px;
             width: 100%;
         }
 
         #verifyLeft p {
-            max-width: 85%;
+            max-width: 81%;
+            border-radius: 10px;
+            padding: 10px;
+            border-style: solid;
+            border-color: black;
+            background-color: #CD3838;
+            color: white;
+        }
+
+        #verifyRight {
+            margin-left: 295px;
+            max-width: 290px;
+            max-height: 100%;
+            margin-top: 5%;
+        }
+
+        #verifyRight div {
+            max-height: 195px;
+            width: 100%;
+        }
+
+        #verifyRight p {
+            max-width: 81%;
             border-radius: 10px;
             padding: 10px;
             border-style: solid;
@@ -61,22 +89,20 @@
             padding: 10px;
         }
 
-::-webkit-scrollbar {
-  width: 15px;
-}
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
 
-::-webkit-scrollbar-track {
-  background: #F6DEDE; 
-  border-radius: 10px;
-  margin-left: 5px;
-}
+        ::-webkit-scrollbar-track {
+            background: #F6DEDE;
+            border-radius: 10px;
+            margin-left: 5px;
+        }
 
-::-webkit-scrollbar-thumb {
-  background: #000000; 
-  border-radius: 10px;
-}
-
-
+        ::-webkit-scrollbar-thumb {
+            background: #000000;
+            border-radius: 10px;
+        }
     </style>
 
 
@@ -92,16 +118,21 @@
                     <div id="verifyUser" style="display:none;">
                         <div id="verifyLeft">
                             <p>Pending User Requests</p>
-                                <div>
-                                    <% users.forEach(function(users) { %>
-                                       <button class="userNameAdmin"><%= users.firstname %> <%= users.lastname %></button><br>
-                                    <% }); %> 
-                                    </div>
+                            <div>
+                                <% users.forEach(function(users) { %>
+                                    <button class="userNameAdmin">
+                                        <%= users.firstname %>
+                                            <%= users.lastname %>
+                                    </button><br>
+                                    <% }); %>
+                            </div>
                         </div>
-
-                        <div id="verifyRight">
-
-                        </div>
+                      <!--   <div id="verifyRight">
+                            <p>wip </p>
+                            <div>
+                                <P>user data goes here</P>
+                            </div>
+                        </div> -->
                     </div>
                     <div id="editUser" style="display:none;">
                         <p>this is editUser </p>
@@ -126,17 +157,17 @@
     </footer>
 
     <script>
-        function verifyUser(){
+        function verifyUser() {
             document.getElementById("verifyUser").setAttribute("style", "display:block");
             document.getElementById("editUser").setAttribute("style", "display:none");
             document.getElementById("deleteUser").setAttribute("style", "display:none");
         }
-        function editUser(){
+        function editUser() {
             document.getElementById("verifyUser").setAttribute("style", "display:none");
             document.getElementById("editUser").setAttribute("style", "display:block");
             document.getElementById("deleteUser").setAttribute("style", "display:none");
         }
-        function deleteUser(){
+        function deleteUser() {
             document.getElementById("verifyUser").setAttribute("style", "display:none");
             document.getElementById("editUser").setAttribute("style", "display:none");
             document.getElementById("deleteUser").setAttribute("style", "display:block");
@@ -147,10 +178,9 @@
 </body>
 
 </html>
-    
 
-    
-  </body>
+
+
+</body>
+
 </html>
-
-
