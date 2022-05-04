@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Doppio+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Doppio+One&display=swap");
 
 html,
 body {
@@ -9,13 +9,13 @@ body {
 body {
   overflow-x: hidden;
   overflow-y: hidden;
-  font-family: 'Doppio One', sans-serif;
-  background-color: #FDDEDE;
+  font-family: "Doppio One", sans-serif;
+  background-color: #fddede;
 }
 
 footer {
   overflow: hidden;
-  background-color: #FF9D9D;
+  background-color: #ff9d9d;
   text-align: center;
   font-size: 15px;
   width: 100%;
@@ -52,12 +52,49 @@ footer {
   gap: 12px;
 }
 
+.navDivLogReg {
+  display: flex;
+  align-items: center;
+  float: right;
+  margin-top: 1%;
+  gap: 12px;
+  margin-left: auto;
+  margin-right: 2%;
+  margin-bottom: 150px;
+}
+
+.navDivLogReg span {
+  float: right;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ff9d9d;
+  color: black;
+}
+
+.navDivLanding {
+  display: flex;
+  float: right;
+  margin-top: 1%;
+  gap: 12px;
+  margin-left: auto;
+  margin-right: 1%;
+}
+
 .navDiv span {
   float: right;
   padding: 10px;
   border-radius: 10px;
-  background-color: #FF9D9D;
+  background-color: #ff9d9d;
   color: black;
+}
+
+.navDivLanding span {
+  float: right;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ff9d9d;
+  color: black;
+  height: fit-content;
 }
 
 .navButton {
@@ -79,7 +116,7 @@ footer {
 }
 
 .box h2 {
-  background-color: #FF9D9D;
+  background-color: #ff9d9d;
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
@@ -88,7 +125,7 @@ footer {
 }
 
 .box div {
-  background-color: #FF9D9D;
+  background-color: #ff9d9d;
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
@@ -97,7 +134,7 @@ footer {
 }
 
 #requestBox {
-  background-color: #D15C5C;
+  background-color: #d15c5c;
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
@@ -148,7 +185,7 @@ li a:hover:not(.active) {
 }
 
 .active {
-  background-color: #04AA6D;
+  background-color: #04aa6d;
 }
 
 .content_center {
@@ -172,15 +209,13 @@ li a:hover:not(.active) {
 #registerBox {
   display: flex;
   justify-content: center;
-  background-color: #D15C5C;
+  background-color: #d15c5c;
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
   padding: 10px;
   margin-right: 10px;
-  text-align:center;
-  
-  
+  text-align: center;
 }
 
 #registerForm {
@@ -190,12 +225,11 @@ li a:hover:not(.active) {
   padding-left: 3%;
   padding-bottom: 1%;
   padding-top: 1%;
-  background-color: #FF9D9D;
+  background-color: #ff9d9d;
   width: 700px;
 }
 
-
-#registerForm>input {
+#registerForm > input {
   border-radius: 5px;
 }
 
@@ -211,12 +245,12 @@ li a:hover:not(.active) {
 .submitBtn {
   height: 60px;
   width: 195px;
-  margin-top : 0.2em;
-  margin-bottom : 0.2em;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
   margin-right: 0.2em;
-  background-color: #CD3838;
-  color: #FFFFFF;
-  font-family: 'Doppio One', sans-serif;
+  background-color: #cd3838;
+  color: #ffffff;
+  font-family: "Doppio One", sans-serif;
   font-size: 2.5em;
   border-width: 2px;
   border-style: solid;
@@ -225,7 +259,6 @@ li a:hover:not(.active) {
 
 .submitBtn:hover {
   cursor: pointer;
-  
 }
 
 .alreadyLogin {
@@ -237,14 +270,14 @@ li a:hover:not(.active) {
   padding-top: 5px;
   height: 300px;
   width: 15%;
-  background-color: #D15C5C;
+  background-color: #d15c5c;
   border-radius: 10px;
   font-size: 15px;
   border-style: solid;
 }
 
 .alreadyLogin div {
-  background-color: #FF9D9D;
+  background-color: #ff9d9d;
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
@@ -252,9 +285,9 @@ li a:hover:not(.active) {
   width: 70%;
 }
 
-.alreadyLogin>button {
-  background-color: #FF9D9D;
-  font-family: 'Doppio One', sans-serif;
+.alreadyLogin > button {
+  background-color: #ff9d9d;
+  font-family: "Doppio One", sans-serif;
   height: 35px;
   width: auto;
   border-radius: 10px;
@@ -283,7 +316,7 @@ li a:hover:not(.active) {
 }
 
 #loginBox {
-  background-color: #D15C5C;
+  background-color: #d15c5c;
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
@@ -298,28 +331,26 @@ li a:hover:not(.active) {
   padding-left: 3%;
   padding-bottom: 1%;
   padding-top: 1%;
-  background-color: #FF9D9D;
+  background-color: #ff9d9d;
 }
 
 #loginForm input {
   border-radius: 5px;
 }
 
-
 .adminBtn {
   display: flex;
   flex-direction: column;
   width: 120px;
-
 }
 
 .adminBtn > button {
   margin: 10px;
-  font-family: 'Doppio One', sans-serif;
+  font-family: "Doppio One", sans-serif;
   font-size: 1em;
   font-weight: 100;
   width: fit-content;
-  background-color:#FF9D9D;
+  background-color: #ff9d9d;
   width: 150px;
   height: 40px;
   border-radius: 5px;
@@ -327,21 +358,21 @@ li a:hover:not(.active) {
 }
 
 .adminBtn > button:hover {
-  cursor:pointer
+  cursor: pointer;
 }
 
 .adminContent {
   display: flex;
   width: 900px;
   height: 400px;
-  background-color: #D15C5C;
+  background-color: #d15c5c;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
 }
 
 .adminUsers {
-  background-color: #FFFFFF ;
+  background-color: #ffffff;
   width: 600px;
   height: 300px;
   margin-left: 100px;
@@ -351,24 +382,23 @@ li a:hover:not(.active) {
   border-width: 1px;
 }
 
-#topavatar{
+#topavatar {
   width: 60px;
 }
 
-#katt{
+#katt {
   position: sticky;
   width: 200px;
   z-index: 1;
   padding-left: 1500px;
-
 }
 
-#mainindex{
+#mainindex {
   margin: 0 auto;
   width: 98%;
   height: 755px;
   display: flex;
-  background-color: #D15C5C;
+  background-color: #d15c5c;
   border-radius: 10px;
 }
 
@@ -379,24 +409,24 @@ li a:hover:not(.active) {
   margin-bottom: 10px;
 }
 
-#blackindexEM{
+#blackindexEM {
   margin-top: 5px;
   max-height: 45.33px;
 }
 
-.logicon{
+.logicon {
   height: 30px;
   bottom: 0;
 }
 
-#navbar{
+#navbar {
   width: 46%;
   float: left;
   margin-top: 1%;
 }
 
-#navbar a{
-  background-color: #FF9D9D;
+#navbar a {
+  background-color: #ff9d9d;
   text-decoration: none;
   color: black;
   border-radius: 5px;
@@ -404,34 +434,33 @@ li a:hover:not(.active) {
   margin-left: 10px;
 }
 
-#innernavbar{
+#innernavbar {
   display: flex;
   justify-content: space-around;
-  background-color: #D15C5C;
+  background-color: #d15c5c;
   max-height: 100%;
   width: 830px;
   padding: 5px 10px;
   padding-left: 30px;
   margin-left: 20px;
   border-radius: 10px;
-
 }
 
-#notifdropdown{
+#notifdropdown {
   float: left;
 }
 
-#topbell{
+#topbell {
   height: 50px;
 }
 
-#dropbtn{
+#dropbtn {
   all: unset;
   height: fit-content;
 }
 
-#dropbtn img{
-  background-color: #FF9D9D;
+#dropbtn img {
+  background-color: #ff9d9d;
   border-radius: 5px;
   margin-right: 630px; /* midlertidig løsning */
 }
@@ -439,7 +468,7 @@ li a:hover:not(.active) {
 #navDivIndex {
   width: 54%;
   float: right;
-  margin-top: 1%;  
+  margin-top: 1%;
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
@@ -450,11 +479,11 @@ li a:hover:not(.active) {
   float: right;
   padding: 10px;
   border-radius: 10px;
-  background-color: #FF9D9D;
+  background-color: #ff9d9d;
   color: black;
 }
 
-#imhere{
+#imhere {
   background-color: #680000;
 }
 
@@ -465,32 +494,25 @@ li a:hover:not(.active) {
   margin-right: 1%;
 }
 
-
-
-
-
-#filterheader{
-  background-color: #CD3838;
+#filterheader {
+  background-color: #cd3838;
   border: black solid;
   width: 50%;
 }
 
-#filterheader h3{
+#filterheader h3 {
   color: white;
 }
 
-h3{
+h3 {
   font-size: 25px;
 }
 
-#filtersindex{
-  background-color: #FF9D9D;
+#filtersindex {
+  background-color: #ff9d9d;
   border: black solid;
   width: 50%;
 }
-
-
-
 
 /* Extra small devices (phones, 600px and down) */
 /* @media only screen and (max-width: 600px) {...} */
@@ -502,21 +524,19 @@ h3{
 /* @media only screen and (min-width: 992px) {...} */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
-
-
 @media only screen and (max-width: 1400px) {
-  .header{
+  .header {
     height: 10%;
   }
 
-  footer{
+  footer {
     height: 16.5%;
     font-size: 8px;
     margin-top: 100px;
   }
 
   #requestBox {
-    background-color: #D15C5C;
+    background-color: #d15c5c;
     border-radius: 10px;
     border-width: 2px;
     border-style: solid;
@@ -526,24 +546,24 @@ h3{
     margin-left: 200px;
   }
 
-  #decoBox{
+  #decoBox {
     margin-top: 100px;
   }
 
-  .box div{
+  .box div {
     padding: none;
   }
 
-  .requestText{
+  .requestText {
     margin: 0;
     font-size: 20px;
   }
 
-  h2{
+  h2 {
     font-size: 25px;
   }
 }
 
 @media only screen and (max-width: 800px) {
- /* For mobil */
+  /* For mobil */
 }
