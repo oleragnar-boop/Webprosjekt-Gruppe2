@@ -70,9 +70,10 @@
         #verifyRight p {
             max-width: 81%;
             border-radius: 10px;
-            padding: 10px;
+            padding: 1px;
             border-style: solid;
             border-color: black;
+            border-width: 1px;
             background-color: #CD3838;
             color: white;
         }
@@ -83,15 +84,27 @@
             margin-top: 6%;
             border-radius: 10px;
             border-style: solid;
+            border-width: 1px;
             border-color: black;
             background-color: #FF9D9D;
             color: black;
             padding: 10px;
         }
 
-        ::-webkit-scrollbar {
-            width: 15px;
-        }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F6DEDE; 
+  border-radius: 10px;
+  margin-left: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #272525; 
+  border-radius: 10px;
+}
 
         ::-webkit-scrollbar-track {
             background: #F6DEDE;
