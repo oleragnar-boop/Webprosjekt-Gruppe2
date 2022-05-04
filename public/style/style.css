@@ -521,7 +521,7 @@ h3{
 }
 
 .tagShow {
-  margin-top: 3px;
+  margin-top: 22px;
 }
 
 .tagShow > span {
@@ -532,6 +532,7 @@ h3{
 }
 
 .reqtag{
+<<<<<<< HEAD
   margin-top: 30px;
 }
 
@@ -550,6 +551,9 @@ h3{
 
 .fa-angle-down{
   margin-left: 18%;
+=======
+  margin-top: 40px;
+>>>>>>> parent of ab82995 (fixed request design)
 }
 
 #newrequest{
