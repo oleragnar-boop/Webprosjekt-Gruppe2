@@ -43,7 +43,7 @@ mongoose.connect(mongoDB, {
       res.render('index.ejs')
     })
 
-    //bypass
+  
     app.get('/adminpage', (req, res) => {
       db.collection('users').find({isApproved: "no"}).toArray()
       .then(results => {
