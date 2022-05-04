@@ -483,8 +483,9 @@ li a:hover:not(.active) {
   color: black;
 }
 
-#imhere {
+li #imhere {
   background-color: #680000;
+  color: white;
 }
 
 .centerDiv {
