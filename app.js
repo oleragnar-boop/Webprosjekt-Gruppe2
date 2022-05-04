@@ -99,7 +99,10 @@ mongoose.connect(mongoDB, {
         tags: "",
         avatar: 1,
         adminStatus: "none",
-        isApproved: "no"
+        isApproved: "no",
+        bookmarkedTeachers: "",
+        bookmarkedRequests: ""
+        //personalNotes: ["", ""]
       })
       try {
         newUser.save()

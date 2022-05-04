@@ -23,6 +23,63 @@
         </div>
     </div>
 
+    <style>
+        #verifyUser {
+            max-width: 100%;
+        }
+
+        #verifyLeft {
+            max-width: 45%;
+            margin: 5% 5%;
+        }
+
+        #verifyLeft div {
+            overflow-y: auto;
+            max-height: 200px;
+            width: 100%;
+        }
+
+        #verifyLeft p {
+            max-width: 85%;
+            border-radius: 10px;
+            padding: 10px;
+            border-style: solid;
+            border-color: black;
+            background-color: #CD3838;
+            color: white;
+        }
+
+        .userNameAdmin {
+            all: unset;
+            width: 85%;
+            margin-top: 6%;
+            border-radius: 10px;
+            border-style: solid;
+            border-color: black;
+            background-color: #FF9D9D;
+            color: black;
+            padding: 10px;
+        }
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F6DEDE; 
+  border-radius: 10px;
+  margin-left: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000; 
+  border-radius: 10px;
+}
+
+
+    </style>
+
+
     <div class="content_center">
         <div class="main">
             <div class="adminContent">
@@ -34,7 +91,7 @@
                 <div class="adminUsers">
                     <div id="verifyUser" style="display:none;">
                         <div id="verifyLeft">
-                            <span>Pending User Requests</span>
+                            <p>Pending User Requests</p>
                                 <div>
                                     <% users.forEach(function(users) { %>
                                        <button class="userNameAdmin"><%= users.firstname %> <%= users.lastname %></button><br>
