@@ -123,7 +123,7 @@
         <div class="main">
             <div class="adminContent">
                 <div class="adminBtn">
-                    <button onclick="verifyUser()">Verify User <i class="fa-solid fa-user-check"></i></i></button>
+                    <button id="verifyBtn" onclick="verifyUser()">Verify User <i class="fa-solid fa-user-check"></i></i></button>
                     <button onclick="editUser()">Edit User <i class="fa-solid fa-user-pen"></i></button>
                     <button onclick="deleteUser()">Delete User <i class="fa-solid fa-user-xmark"></i></button>
                 </div>
@@ -172,6 +172,7 @@
     <script>
         function verifyUser() {
             document.getElementById("verifyUser").setAttribute("style", "display:block");
+            document.getElementById("verifyBtn").setAttribute("style", "color:white;background-color:#CD3838");
             document.getElementById("editUser").setAttribute("style", "display:none");
             document.getElementById("deleteUser").setAttribute("style", "display:none");
         }
