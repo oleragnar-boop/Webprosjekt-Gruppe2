@@ -521,7 +521,7 @@ h3{
 }
 
 .tagShow {
-  margin-top: 22px;
+  margin-top: 3px;
 }
 
 .tagShow > span {
@@ -532,7 +532,16 @@ h3{
 }
 
 .reqtag{
-  margin-top: 40px;
+  margin-top: 30px;
+}
+
+.fa-bookmark{
+  margin-bottom: 13%;
+  margin-left: 4%;
+}
+
+.fa-angle-down{
+  margin-left: 18%;
 }
 
 #newrequest{
