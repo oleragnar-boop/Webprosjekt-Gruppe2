@@ -392,7 +392,8 @@ li a:hover:not(.active) {
   position: sticky;
   width: 200px;
   z-index: 1;
-  padding-left: 1500px;
+  margin-left: 200px;
+  margin-top: 4%;
 }
 
 #mainindex {
@@ -553,7 +554,7 @@ h4{
   display: flex;
   align-items: center;
   font-family: "Doppio One", sans-serif;
-  height: 120px;
+  height: 130px;
   margin-top: 10px;
   margin-left: 20px;
   margin-right: 20px;
