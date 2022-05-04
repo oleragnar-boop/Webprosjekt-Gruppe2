@@ -540,6 +540,14 @@ h3{
   margin-left: 4%;
 }
 
+.fa-bookmark:hover{
+  background-color: rgb(185, 37, 37);
+}
+
+.fa-bookmark:active{
+  background-color: rgb(109, 24, 24);
+}
+
 .fa-angle-down{
   margin-left: 18%;
 }
