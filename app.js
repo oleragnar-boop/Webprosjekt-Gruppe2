@@ -45,7 +45,10 @@ mongoose.connect(mongoDB, {
 
     //bypass
     app.get('/adminpage', (req, res) => {
-      res.render('adminpage.ejs')
+      db.collection('users').find({isApproved: "no"}).toArray()
+      .then(results => {
+        res.render('adminpage.ejs', {users: results})
+      })
     })
 
     app.get('/register', (req, res) => {

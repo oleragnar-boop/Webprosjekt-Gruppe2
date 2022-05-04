@@ -33,7 +33,18 @@
                 </div>
                 <div class="adminUsers">
                     <div id="verifyUser" style="display:none;">
-                        <p>this is verifyUser</p>
+                        <div id="verifyLeft">
+                            <span>Pending User Requests</span>
+                                <div>
+                                    <% users.forEach(function(users) { %>
+                                       <button class="userNameAdmin"><%= users.firstname %> <%= users.lastname %></button><br>
+                                    <% }); %> 
+                                    </div>
+                        </div>
+
+                        <div id="verifyRight">
+
+                        </div>
                     </div>
                     <div id="editUser" style="display:none;">
                         <p>this is editUser </p>
