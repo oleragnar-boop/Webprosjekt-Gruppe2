@@ -520,6 +520,18 @@ h3{
   font-size: 20px;
 }
 
+.tagShow {
+  display: flex;
+  flex-direction: column;
+}
+
+.tagShow > span {
+  border-radius: 3px;
+  margin-bottom: 3px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
 #newrequest{
   background-color: #680000;
   color: white;
