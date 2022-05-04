@@ -396,7 +396,7 @@ li a:hover:not(.active) {
 #mainindex {
   margin: 0 auto;
   width: 98%;
-  height: 755px;
+  height: 620px;
   display: flex;
   background-color: #d15c5c;
   border-radius: 10px;
