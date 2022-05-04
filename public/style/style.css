@@ -506,6 +506,7 @@ li a:hover:not(.active) {
 
 h3{
   font-size: 30px;
+  margin: 0%;
 }
 
 #filtersindex {
