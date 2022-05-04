@@ -523,6 +523,7 @@ h3{
 .tagShow {
   display: flex;
   flex-direction: column;
+  margin-left: auto;
 }
 
 .tagShow > span {
