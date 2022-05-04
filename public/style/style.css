@@ -480,15 +480,31 @@ li a:hover:not(.active) {
 }
 
 h3{
-  font-size: 25px;
+  font-size: 30px;
 }
 
 #filtersindex{
   background-color: #FF9D9D;
   border: black solid;
   width: 50%;
+  font-size: 20px;
 }
 
+#newrequest{
+  background-color: #680000;
+  color: white;
+  border: black solid;
+  width: 20%;
+  text-align: center;
+}
+
+#newrequest button{
+  all: unset;
+}
+
+h4{
+  font-size: 25px;
+}
 
 
 
