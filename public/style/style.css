@@ -617,6 +617,7 @@ h4{
 
 .requestheader{
   font-size: 27px;
+  margin: 0;
 }
 
 
@@ -640,6 +641,10 @@ gap: 20px;
 .tagItems > input {
   width: 15px;
   height: 15px;
+}
+
+.avaname .teachername{
+  margin: 0;
 }
 
 
