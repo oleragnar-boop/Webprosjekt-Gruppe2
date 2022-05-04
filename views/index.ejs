@@ -56,9 +56,10 @@
                 <h3>Filter Requests <i class="fa-solid fa-filter"></i></h3>
             </div>
             <div id="filtersindex">
+                <div class="dropdownDiv">
                 <form action="" method="GET">
                     <label for="school">School:</label>
-                    <select name="schools" id="school">
+                    <select name="schools" id="school" style="margin-left: 200px; width: 86px;">
                         <option value="none" selected>----------</option>
                         <option value="NTNU">NTNU</option>
                         <option value="UIO">UIO</option>
@@ -74,7 +75,7 @@
                         <option value="HINN">HINN</option>
                     </select> <br>  -->
                     <label for="language">Language:</label>
-                    <select name="languages" id="language">
+                    <select name="languages" id="language" style="margin-left: 168px; width: 86px;">
                         <option value="none" selected>----------</option>
                         <option value="English">English</option>
                         <option value="Norwegian">Norwegian</option>
@@ -82,7 +83,7 @@
                         <option value="French">French</option>
                     </select> <br>
                     <label for="timeadded">Time Added:</label>
-                    <select name="times" id="timeadded">
+                    <select name="times" id="timeadded" style="margin-left: 152px; width: 86px;">
                         <option value="none" selected>----------</option>
                         <option value="today">today</option>
                         <option value="thisweek">this week</option>
@@ -90,27 +91,28 @@
                         <option value="thisyear">this year</option>
                     </select>
                 </form>
+            </div>
 
                 <h4>Tags:</h4>
 
-                <div class="tagItems" style="border-style: none; padding: 7px;">
-                    <span style="background-color: grey; color: white;">Data</span><input type="checkbox">
-                    <span style="background-color: blue; color: white;">Design</span><input type="checkbox">
-                    <span style="background-color: lime; color: white;">Code</span><input type="checkbox">
-                    <br>
-                    <span style="background-color: red; color: white;">Health</span><input type="checkbox">
-                    <span style="background-color: turquoise; color: white;">Physics</span><input type="checkbox">
-                    <span style="background-color: green; color: white;">Biology</span><input type="checkbox">
-                    <br>
-                    <span style="background-color: #bcf778; color: white;">Economics</span><input type="checkbox">
-                    <span style="background-color: brown; color: white;">Law</span><input type="checkbox">
-                    <span style="background-color: purple; color: white;">Philosophy</span><input type="checkbox">
-                    <br>
-                    <span style="background-color: yellow; color: white;">Engineer</span><input type="checkbox">
-                    <span style="background-color: #f87cdd; color: white;">Architecture</span><input type="checkbox">
-                    <span style="background-color: darkblue; color: white;">Math</span><input type="checkbox">
-                </div>
-
+                    <div class="tagItems" style="border-style: none; padding: 7px;">
+                        <span style="background-color: grey; color: white;">Data</span><input type="checkbox">
+                        <span style="background-color: blue; color: white;">Design</span><input type="checkbox">
+                        <span style="background-color: lime; color: white;">Code</span><input type="checkbox">
+                        <br>
+                        <span style="background-color: red; color: white;">Health</span><input type="checkbox">
+                        <span style="background-color: turquoise; color: white;">Physics</span><input type="checkbox">
+                        <span style="background-color: green; color: white;">Biology</span><input type="checkbox">
+                        <br>
+                        <span style="background-color: #bcf778; color: white;">Economics</span><input type="checkbox">
+                        <span style="background-color: brown; color: white;">Law</span><input type="checkbox">
+                        <span style="background-color: purple; color: white;">Philosophy</span><input type="checkbox">
+                        <br>
+                        <span style="background-color: yellow; color: white;">Engineer</span><input type="checkbox">
+                        <span style="background-color: #f87cdd; color: white;">Architecture</span><input type="checkbox">
+                        <span style="background-color: darkblue; color: white;">Math</span><input type="checkbox">
+                    </div>
+        
             </div>
             <div id="newrequest">
                 <button>New Request</button>
@@ -122,55 +124,33 @@
                 <input id="searchbox" type="text" placeholder="Search.." name="search">
                 <button id="searchbutton" type="submit"><i class="fa fa-search"></i></button>
             </form>
-            <div id="chat1">
-                <div class="avaname">
-                    <img id="chatAvatar" src="profileavatar.png" alt="profile avatar">
-                    <p class="teachername">Trine Snuggerud</p>
+            <div id="chat1"><img id="chatAvatar" src="profileavatar.png" alt="profile avatar">
+                <p class="requestheader">Hey, teacher in webfundementals in need of an examiner!</p>
+                <div class="tagShow">
+                <span style="background-color: grey; color: white;">Data</span> <span
+                    style="background-color: blue; color: white;">Design</span> <span
+                    style="background-color: lime; color: white;">Code</span>
+                <i class="fa-regular fa-bookmark"></i>
                 </div>
-                <div class="reqtag">
-                    <p class="requestheader">Hey, teacher in webfundementals in need of an examiner!</p>
-                    <div class="tagShow">
-                        <span style="background-color: grey; color: white;">Data</span> 
-                        <span style="background-color: blue; color: white;">Design</span> 
-                        <span style="background-color: lime; color: white;">Code</span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-angle-down"></i>                
+            </div>
+            <div id="chat2"><img id="chatAvatar" src="profileavatar.png" alt="profile avatar">
+                <p class="requestheader">In need of examiner for my medicine class.</p>
+                <div class="tagShow">
+                <span style="background-color: red; color: white;">Health</span>
+                <span style="background-color: green; color: white;">Biology</span>
+                <span style="background-color: darkblue; color: white;">Math</span>
                 <i class="fa-regular fa-bookmark"></i>
             </div>
-            <div id="chat2">
-                <div class="avaname">
-                    <img id="chatAvatar" src="profileavatar.png" alt="profile avatar">
-                    <p class="teachername">Mina Larsen </p>
-                </div>
-                <div class="reqtag">
-                    <p class="requestheader">In need of examiner for my medicine class.</p>
-                    <div class="tagShow">
-                        <span style="background-color: red; color: white;">Health</span>
-                        <span style="background-color: green; color: white;">Biology</span>
-                        <span style="background-color: darkblue; color: white;">Math</span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-angle-down"></i>
-                <i class="fa-regular fa-bookmark"></i>
             </div>
-            <div id="chat3">
-                <div class="avaname">
-                    <img id="chatAvatar" src="profileavatar.png" alt="profile avatar">
-                    <p class="teachername">Berit Fransen</p>
-                </div>
-                <div class="reqtag">
-                    <p class="requestheader">My advanced physics class requires one more examiner.</p>
-                    <div class="tagShow">
-                        <span style="background-color: yellow; color: white;">Engineer</span>
-                        <span style="background-color: turquoise; color: white;">Physics</span>
-                    </div>
-                </div>                    
-                <i class="fa-solid fa-angle-down"></i> 
+            <div id="chat3"><img id="chatAvatar" src="profileavatar.png" alt="profile avatar">
+                <p class="requestheader">My advanced physics class requires one more examiner.</p>
+                <div class="tagShow">
+                <span style="background-color: yellow; color: white;">Engineer</span>
+                <span style="background-color: turquoise; color: white;">Physics</span>
                 <i class="fa-regular fa-bookmark"></i>
+                
             </div>
         </div>
-
     </div>
 
     </div>
