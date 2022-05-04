@@ -49,6 +49,7 @@ footer {
   align-items: center;
   float: right;
   margin-top: 1%;
+  gap: 12px;
 }
 
 .navDiv span {
@@ -375,6 +376,7 @@ li a:hover:not(.active) {
   display: flex;
   width: 100%;
   font-size: 30px;
+  margin-bottom: 10px;
 }
 
 #blackindexEM{
@@ -403,10 +405,13 @@ li a:hover:not(.active) {
 }
 
 #innernavbar{
+  display: flex;
+  justify-content: space-around;
   background-color: #D15C5C;
   max-height: 100%;
-  width: fit-content;
+  width: 830px;
   padding: 5px 10px;
+  padding-left: 30px;
   margin-left: 20px;
   border-radius: 10px;
 
@@ -422,12 +427,13 @@ li a:hover:not(.active) {
 
 #dropbtn{
   all: unset;
+  height: fit-content;
 }
 
 #dropbtn img{
   background-color: #FF9D9D;
   border-radius: 5px;
-  align-self: flex-end;
+  margin-right: 630px; /* midlertidig løsning */
 }
 
 #navDivIndex {
@@ -460,6 +466,28 @@ li a:hover:not(.active) {
 }
 
 
+
+
+
+#filterheader{
+  background-color: #CD3838;
+  border: black solid;
+  width: 50%;
+}
+
+#filterheader h3{
+  color: white;
+}
+
+h3{
+  font-size: 25px;
+}
+
+#filtersindex{
+  background-color: #FF9D9D;
+  border: black solid;
+  width: 50%;
+}
 
 
 
