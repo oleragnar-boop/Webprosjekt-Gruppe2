@@ -504,15 +504,34 @@ li a:hover:not(.active) {
   color: white;
 }
 
-h3 {
-  font-size: 25px;
+h3{
+  font-size: 30px;
 }
 
 #filtersindex {
   background-color: #ff9d9d;
   border: black solid;
   width: 50%;
+  font-size: 20px;
 }
+
+#newrequest{
+  background-color: #680000;
+  color: white;
+  border: black solid;
+  width: 20%;
+  text-align: center;
+}
+
+#newrequest button{
+  all: unset;
+}
+
+h4{
+  font-size: 25px;
+}
+
+
 
 /* Extra small devices (phones, 600px and down) */
 /* @media only screen and (max-width: 600px) {...} */
