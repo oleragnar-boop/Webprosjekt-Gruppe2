@@ -483,8 +483,9 @@ li a:hover:not(.active) {
   color: black;
 }
 
-#imhere {
+li #imhere {
   background-color: #680000;
+  color: white;
 }
 
 .centerDiv {
@@ -522,6 +523,7 @@ h3{
   border: black solid;
   width: 20%;
   text-align: center;
+  margin-left: 17%;
 }
 
 #newrequest button{
