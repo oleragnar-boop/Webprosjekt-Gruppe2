@@ -386,6 +386,8 @@ li a:hover:not(.active) {
   width: 60px;
 }
 
+
+
 #katt {
   position: sticky;
   width: 200px;
@@ -534,7 +536,37 @@ h4{
   font-size: 25px;
 }
 
+.chatBox {
+  margin-top: 2%;
+  height: 500px;
+  width: 70%;
+  margin-right: 10%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border-style: solid;
+}
 
+#chat1,
+#chat2,
+#chat3 {
+  display: flex;
+  align-items: center;
+  font-family: "Doppio One", sans-serif;
+  height: 150px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #ff9d9d;
+  border-radius: 10px;
+  padding-left: 30px;
+  padding-right: 20px;
+
+}
+
+#chatAvatar {
+  width: 100px;
+  padding-right: 40px;
+}
 
 /* Extra small devices (phones, 600px and down) */
 /* @media only screen and (max-width: 600px) {...} */
