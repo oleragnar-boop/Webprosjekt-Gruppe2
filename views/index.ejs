@@ -27,36 +27,80 @@
             </div>
 
         </div>
-        
-    <div class="centerDiv">
-        <div class="navDiv">
-            <div id="notifdropdown">
-                <button onclick="myFunction()" id="dropbtn"><img id="topbell" src="bell.png" alt="notification icon"></button>
-                <div id="myDropdown" class="dropdown-content">
-<!--                   <a href="#">Link 1</a>
+
+        <div class="centerDiv">
+            <div class="navDiv">
+                <div id="notifdropdown">
+                    <button onclick="myFunction()" id="dropbtn"><img id="topbell" src="bell.png"
+                            alt="notification icon"></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <!--                   <a href="#">Link 1</a>
                   <a href="#">Link 2</a>
                   <a href="#">Link 3</a> -->
+                    </div>
                 </div>
+
+                <a href="profile"><img id="topavatar" src="profileavatar.png" alt="profile avatar"></a>
+                <span>En</span>
+                <a href="landing"><span>Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></span></a>
             </div>
 
-            <a href="profile"><img id="topavatar" src="profileavatar.png" alt="profile avatar"></a>
-            <span>En</span> 
-            <a href="landing"><span>Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></span></a>
-        </div>
-                      
-            
+
         </div>
     </div>
 
     <div id="mainindex">
         <div class="box">
-            <div id="filterheader"><h3>Filter Requests</h3></div>
+            <div id="filterheader">
+                <h3>Filter Requests <i class="fa-solid fa-filter"></i></h3>
+            </div>
             <div id="filtersindex">
                 <form action="" method="GET">
                     <label for="school">School:</label>
-                    <input type="">
+                    <select name="schools" id="school">
+                        <option value="none" selected>----------</option>
+                        <option value="NTNU">NTNU</option>
+                        <option value="UIO">UIO</option>
+                        <option value="BI">BI</option>
+                        <option value="HINN">HINN</option>
+                    </select> <br>
+                    <!--                     <label for="subject">Subject:</label>
+                    <select name="subjects" id="subject">
+                        <option value="none" selected>----------</option>
+                        <option value="NTNU">NTNU</option>
+                        <option value="UIO">UIO</option>
+                        <option value="BI">BI</option>
+                        <option value="HINN">HINN</option>
+                    </select> <br>  -->
+                    <label for="language">Language:</label>
+                    <select name="languages" id="language">
+                        <option value="none" selected>----------</option>
+                        <option value="English">English</option>
+                        <option value="Norwegian">Norwegian</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="French">French</option>
+                    </select> <br>
+                    <label for="timeadded">Time Added:</label>
+                    <select name="times" id="timeadded">
+                        <option value="none" selected>----------</option>
+                        <option value="today">today</option>
+                        <option value="thisweek">this week</option>
+                        <option value="thismonth">this month</option>
+                        <option value="thisyear">this year</option>
+                    </select>
                 </form>
+
+                <h4>Tags:</h4>
+            </div>
+            <div id="newrequest">
+                <button>New Request</button>
+            </div>
         </div>
+
+        <div class="chatBox">
+            <div id="chat1"><img id="chatAvatar" src="profileavatar.png" alt="profile avatar"> Chat1</div>
+            <div id="chat2"><img id="chatAvatar" src="profileavatar.png" alt="profile avatar"> Chat2</div>
+            <div id="chat3"><img id="chatAvatar" src="profileavatar.png" alt="profile avatar"> Chat3</div>
         </div>
     </div>
 
