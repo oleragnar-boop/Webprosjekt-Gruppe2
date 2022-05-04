@@ -8,6 +8,7 @@
     <title>Landing page</title>
     <link href="/style/style.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/bbadb5f9e0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -42,7 +43,7 @@
 
                 <a href="profile"><img id="topavatar" src="profileavatar.png" alt="profile avatar"></a>
                 <span>En</span>
-                <a href="landing"><span>Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></span></a>
+                <a href="/"><span>Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></span></a>
             </div>
 
 
@@ -98,6 +99,12 @@
         </div>
 
         <div class="chatBox">
+            <div id="searchdiv">
+                <form id="searchform" action="">
+                    <input id="searchbox" type="text" placeholder="Search.." name="search">
+                    <button id="searchbutton" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
             <div id="chat1"><img id="chatAvatar" src="profileavatar.png" alt="profile avatar"> Chat1</div>
             <div id="chat2"><img id="chatAvatar" src="profileavatar.png" alt="profile avatar"> Chat2</div>
             <div id="chat3"><img id="chatAvatar" src="profileavatar.png" alt="profile avatar"> Chat3</div>
