@@ -506,6 +506,10 @@ li #imhere {
   margin-right: 1%;
 }
 
+select{
+  float: right;
+}
+
 #filterheader {
   background-color: #cd3838;
   border: black solid;
@@ -537,9 +541,8 @@ h3{
   border-radius: 3px;
   margin-top: 5px;
   margin-right: 5px;
-  font-size: 1.1em;
-  padding: 2px;
-  
+  -webkit-text-stroke: 0.7px rgb(0, 0, 0);
+  padding: 1px;
 }
 
 .reqtag{
@@ -655,18 +658,30 @@ h4{
 .tagItems{
 display: flex;
 flex-wrap: wrap;
-gap: 20px;
+gap: 15px;
 }
 
-.tagItems > span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20px;
-  width: fit-content;
-  border-radius: 3px;
-  font-size: 15px;
+.tagItems > label {
+  -webkit-text-stroke: 0.7px rgb(0, 0, 0);  
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+}
 
+label > span {
+  border-radius: 3px;
+  padding: 2px;
+}
+
+
+
+
+input {
+  width: 15px;
+  padding: 0;
+  margin: 0;
+  vertical-align: bottom;
+  top: -1px;
 }
 
 .tagItems > input {
