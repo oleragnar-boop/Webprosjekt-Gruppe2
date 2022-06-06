@@ -8,7 +8,8 @@ const mongoDB = 'mongodb+srv://admin:adminpassword@cluster0.0nuub.mongodb.net/Ex
 const path = require('path');
 const db = mongoose.connection;
 const bcrypt = require('bcrypt')
-
+const async = require('async');
+const cookieParser = require('cookie-parser');
 
 mongoose.connect(mongoDB, {
   useUnifiedTopology: true,
@@ -23,6 +24,7 @@ mongoose.connect(mongoDB, {
     app.use(express.static(__dirname + '/public'));
     app.set('views', path.join(__dirname, 'views'));
     app.set('view engine', 'ejs')
+    app.use(cookieParser());
 
     app.use(bodyParser.urlencoded({
       extended: true
@@ -34,9 +36,9 @@ mongoose.connect(mongoDB, {
     })
     
 
-    app.get('/login', (req, res) => {
+     app.get('/login', (req, res) => {
       res.render('loginpage.ejs')
-    })
+    }) 
 
     //bypass
     app.get('/tempLogin', (req, res) => {
@@ -56,6 +58,7 @@ mongoose.connect(mongoDB, {
     })
 
     app.get('/index', (req, res) => {
+      console.log(req.cookies) 
       res.render('index.ejs')
     })
 
@@ -65,6 +68,14 @@ mongoose.connect(mongoDB, {
 
     //GET for the open and closed requests on the landing page
     app.get('/', async (req, res) => {
+
+      res.clearCookie("role");
+      res.clearCookie("user");
+      res.clearCookie("_id");
+      res.cookie('isLoggedIn', "no" )
+
+      console.log(req.cookies) 
+
       db.collection('requests').count({
         open: "false"
       })
@@ -113,30 +124,96 @@ mongoose.connect(mongoDB, {
       }
     })
 
+    app.post('/loginUser', function(req, res) {
+      async.waterfall([
+        function (callback) {
+          db.collection('users').findOne({
+            "email": req.body.email
+          }, function (err, result) {
+            if (err) {
+              console.log(err);
+              res.send({error: "An error has occurred"});
+            } else {
+              if (result == null) {
+                res.send({"error": "This email address is not recognised, please check you have entered your email correctly"});
+              } else {
+                console.log("Email recognised");
+                bcrypt.compare(req.body.password, result.password, function(err, data) {
+                  if (err){
+                    console.log("Something went wrong, please try again")
+                  }
+                  if (data) {
+                    console.log("Login successful, redirecting")
+
+                    res.cookie('user', result.email )
+                    res.cookie('role', result.role )
+                    res.cookie('_id', result._id )
+                    res.cookie('isLoggedIn', "yes" )
+
+                    res.redirect('/index')
+                  } else {
+                    console.log("Wrong password")
+                  }
+                })
+              }
+            }
+          });
+        },
+        function (res, callback){
+          var hashedPass = res.password;
+          bcrypt.compare(req.body.password, hashedPass, function(err, res) {
+            if (err){
+              console.log("Something went wrong, please try again")
+            }
+            if (res) {
+              console.log("Passwords Match, attempting login")
+                redirect('/index')
+            } else {S
+              console.log("Wrong password")
+            }
+          });
+          }
+      ])
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
     //POST for login
-    app.post('/loginUser', async (req, res) => {
+    /* app.post('/loginUser', async (req, res) => {
       let passwordsMatch = "false";
+      let password = req.body.password
       db.collection('users').findOne({
         email: req.body.email,
         isApproved: "yes"
       })
-        .then(results => {
-          if (!results) {
+        .then(obj => {
+          if (!obj) {
             console.log("User does not exist or has not yet been approved for ExamMatch")
+            res.render('loginpage.ejs')
           } else {
-            let resultBody = results.body;
-            let hashedPassword = results.password;
+            let hashedPassword = obj.password;
             bcrypt.compare(req.body.password, hashedPassword, function (err, res) {
               if (!res) {
                 console.log("Wrong password")
               } else {
                 passwordsMatch = "true";
                 console.log(passwordsMatch)
+                res.render('index.ejs')
               }
             })
           }
         })
-    });
+    }) */
 
 
     /*endre denna for å legge te ny side

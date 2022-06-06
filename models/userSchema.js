@@ -18,14 +18,14 @@ const userSchema = new Schema({
     workingHours: {type:Number},
     tags: {type:String},
     avatar: {type:Number, enum:['1', '2', '3', '4', '5'], default: '1', required:true},
-    adminStatus: {type:String, enum:['none','admin','super'], default: 'none', required:true},
+    role: {type:String, enum:['standard','admin','super'], default: 'standard', required:true},
     isApproved: {type:String, enum:['no', 'yes'], default: 'no', required:true},
     bookmarkedTeachers: {type:String},
     bookmarkedRequests: {type:String},
     //personalNotes: [noteSchema]
 })
 
-userSchema.pre('save', function(next) {
+ userSchema.pre('save', function(next) {
     let user = this;
 
     if (!user.isModified('password')) return next();
@@ -46,5 +46,6 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
         if (err) return cb(err);
         cb(null, isMatch);
     });
-};
+}; 
+
 module.exports = mongoose.model("User", userSchema, "users")
