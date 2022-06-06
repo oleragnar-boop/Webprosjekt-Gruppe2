@@ -91,20 +91,20 @@
             padding: 10px;
         }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
 
-::-webkit-scrollbar-track {
-  background: #F6DEDE; 
-  border-radius: 10px;
-  margin-left: 5px;
-}
+        ::-webkit-scrollbar-track {
+            background: #F6DEDE;
+            border-radius: 10px;
+            margin-left: 5px;
+        }
 
-::-webkit-scrollbar-thumb {
-  background: #272525; 
-  border-radius: 10px;
-}
+        ::-webkit-scrollbar-thumb {
+            background: #272525;
+            border-radius: 10px;
+        }
 
         ::-webkit-scrollbar-track {
             background: #F6DEDE;
@@ -123,29 +123,37 @@
         <div class="main">
             <div class="adminContent">
                 <div class="adminBtn">
-                    <button id="verifyBtn" onclick="verifyUser()">Verify User <i class="fa-solid fa-user-check"></i></i></button>
+                    <button id="verifyBtn" onclick="verifyUser()">Verify User <i
+                            class="fa-solid fa-user-check"></i></i></button>
                     <button onclick="editUser()">Edit User <i class="fa-solid fa-user-pen"></i></button>
                     <button onclick="deleteUser()">Delete User <i class="fa-solid fa-user-xmark"></i></button>
                 </div>
                 <div class="adminUsers">
-                    <div id="verifyUser" style="display:none;">
+                    <div id="verifyUser" style="display:none">
                         <div id="verifyLeft">
                             <p>Pending User Requests</p>
                             <div>
+                                <form action="<!-- /loginUser -->" method="POST" id="verifyForm"></form>
+                                <label for="email">Select a user to verify</label><br />
+                                <select name="email" id="email" required>
+                                <option disabled selected value>Select a user</option>
                                 <% users.forEach(function(users) { %>
-                                    <button class="userNameAdmin">
-                                        <%= users.firstname %>
-                                            <%= users.lastname %>
-                                    </button><br>
-                                    <% }); %>
+                                    <option><%= users.email %></option>
+                                    <% }) %>
+                                </select>
+                                <input class="submitBtn" type="submit" value="Login" />
+                            </form>
                             </div>
                         </div>
-                      <!--   <div id="verifyRight">
-                            <p>wip </p>
-                            <div>
-                                <P>user data goes here</P>
-                            </div>
-                        </div> -->
+                        <div id="verifyRight">
+<!--                                 <form action="/loginUser" method="POST" id="loginForm">
+                                    <label for="email">Email:</label><br />
+                                    <input type="email" id="email" name="email" /><br />
+                                    <label for="password">Password:</label><br />
+                                    <input type="password" id="password" name="password" /><br />
+                                    <input class="submitBtn" type="submit" value="Login"  />
+                                  </form> -->
+                        </div>
                     </div>
                     <div id="editUser" style="display:none;">
                         <p>this is editUser </p>
