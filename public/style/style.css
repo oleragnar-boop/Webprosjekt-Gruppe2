@@ -25,6 +25,10 @@ footer {
   left: 0;
 }
 
+img {
+  -webkit-user-drag: none;
+}
+
 .header {
   display: flex;
   width: 100%;
@@ -42,6 +46,7 @@ footer {
 .logoDiv img {
   float: right;
   width: 20%;
+  user-select: none; 
 }
 
 .navDiv {
@@ -157,6 +162,7 @@ footer {
   margin-top: 53px;
   margin-left: 200px;
   max-height: 50%;
+  user-select: none;
 }
 
 ul {
@@ -313,6 +319,7 @@ li a:hover:not(.active) {
 
 .alreadyLogin img {
   max-height: 75%;
+  user-select: none;
 }
 
 #loginBox {
@@ -466,6 +473,7 @@ li a:hover:not(.active) {
   background-color: #ff9d9d;
   border-radius: 5px;
   margin-right: 630px; /* midlertidig løsning */
+  
 }
 
 #navDivIndex {
