@@ -546,7 +546,6 @@ h3{
   border-radius: 3px;
   margin-top: 5px;
   margin-right: 5px;
-  -webkit-text-stroke: 0.7px rgb(0, 0, 0);
   padding: 1px;
 }
 
@@ -668,7 +667,6 @@ gap: 15px;
 }
 
 .tagItems > label {
-  -webkit-text-stroke: 0.7px rgb(0, 0, 0);  
   display: block;
   padding-left: 15px;
   text-indent: -15px;
@@ -677,6 +675,11 @@ gap: 15px;
 label > span {
   border-radius: 3px;
   padding: 2px;
+}
+
+span .textinspan {
+  all: unset;
+  mix-blend-mode:difference; 
 }
 
 
