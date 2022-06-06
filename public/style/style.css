@@ -25,6 +25,10 @@ footer {
   left: 0;
 }
 
+img {
+  -webkit-user-drag: none;
+}
+
 .header {
   display: flex;
   width: 100%;
@@ -42,6 +46,7 @@ footer {
 .logoDiv img {
   float: right;
   width: 20%;
+  user-select: none; 
 }
 
 .navDiv {
@@ -157,6 +162,7 @@ footer {
   margin-top: 53px;
   margin-left: 200px;
   max-height: 50%;
+  user-select: none;
 }
 
 ul {
@@ -313,6 +319,7 @@ li a:hover:not(.active) {
 
 .alreadyLogin img {
   max-height: 75%;
+  user-select: none;
 }
 
 #loginBox {
@@ -466,6 +473,7 @@ li a:hover:not(.active) {
   background-color: #ff9d9d;
   border-radius: 5px;
   margin-right: 630px; /* midlertidig løsning */
+  
 }
 
 #navDivIndex {
@@ -498,6 +506,10 @@ li #imhere {
   margin-right: 1%;
 }
 
+select{
+  float: right;
+}
+
 #filterheader {
   background-color: #cd3838;
   border: black solid;
@@ -522,13 +534,15 @@ h3{
 
 .tagShow {
   margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .tagShow > span {
   border-radius: 3px;
-  margin-bottom: 3px;
   margin-top: 5px;
   margin-right: 5px;
+  -webkit-text-stroke: 0.7px rgb(0, 0, 0);
+  padding: 1px;
 }
 
 .reqtag{
@@ -559,7 +573,7 @@ h3{
   border: black solid;
   width: 20%;
   text-align: center;
-  margin-left: 17%;
+  margin-left: 23%;
 }
 
 #newrequest button{
@@ -644,18 +658,30 @@ h4{
 .tagItems{
 display: flex;
 flex-wrap: wrap;
-gap: 20px;
+gap: 15px;
 }
 
-.tagItems > span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20px;
-  width: fit-content;
-  border-radius: 3px;
-  font-size: 15px;
+.tagItems > label {
+  -webkit-text-stroke: 0.7px rgb(0, 0, 0);  
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+}
 
+label > span {
+  border-radius: 3px;
+  padding: 2px;
+}
+
+
+
+
+input {
+  width: 15px;
+  padding: 0;
+  margin: 0;
+  vertical-align: bottom;
+  top: -1px;
 }
 
 .tagItems > input {
