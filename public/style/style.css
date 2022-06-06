@@ -258,6 +258,7 @@ li a:hover:not(.active) {
 #emailInput {
   height: 30px;
   padding: 5px;
+  margin-bottom: 5px;
 }
 
 .submitBtn {
@@ -269,7 +270,6 @@ li a:hover:not(.active) {
   border-width: 2px;
   border-style: solid;
   border-color: #111;
-  margin-top: 5px;
   border-radius: 5px;
 }
 
