@@ -5,8 +5,116 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
+    <link href="/style/style.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/bbadb5f9e0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/scripts/script.js"></script>
 </head>
 <body>
-    <h1>Profile page</h1>
+    <div id="headerindex">
+        <div id="navbar">
+            <div id="innernavbar">
+                <ul>
+                    <li><img id="blackindexEM" src="exammatchblack.png"></a></li>
+                    <li><a href="index">Home</a></li>
+                    <li><a href="myrequests">My Requests</a></li>
+                    <li><a href="findteachers">Find Teachers</a></li>
+                    <li><a href="mybookmarks">My Bookmarks</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="centerDiv">
+            <div class="navDiv">
+                <div id="notifdropdown">
+                    <button onclick="myFunction()" id="dropbtn"><img id="topbell" src="bell.png"
+                            alt="notification icon"></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <!--                   <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a> -->
+                    </div>
+                </div>
+
+                <a href="profile"><img id="topavatar" src="profileavatar.png" alt="profile avatar"></a>
+                <span>En</span>
+                <a href="/"><span>Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></span></a>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div id="mainindex">
+        
+        <div class="whitebox">
+
+            <!-- Left -->
+            <div class="nameandprofilepicture"></div>
+            <div class="schooldiv">
+                <label for="">School:</label>
+                <select name="" id="">
+                    <!-- Function for filling the options based on the database -->
+                    <option value="ex1">something 1</option>
+                    <option value="ex2">something 2</option>
+                </select>
+            </div>
+            <div class="jobtitlediv">
+                <label for="">Job Title:</label>
+                <select name="" id="">
+                    <!-- Function for filling the options based on the database -->
+                    <option value="ex1">something 1</option>
+                    <option value="ex2">something 2</option>
+                </select>
+            </div>
+            <div class="linktoschooldiv">
+                <div class="whitediv"></div>
+            </div>
+
+            <!-- Middle -->
+            <div class="notepinkdiv">
+                <div class="notewhitediv"><!-- Function for storing textbox text --></div>
+            </div>
+            <div class="languagediv">
+                <div class="whitediv"><!-- Function for multiple languages --></div>
+            </div>
+            <div class="employmentdiv">
+                <label for="">Employment Status</label>
+                <select name="" id="">
+                    <!-- Maybe more types -->
+                    <option value="parttime">Part Time</option>
+                    <option value="fulltime">Full Time</option>
+                </select>
+            </div>
+            
+            <!-- Right -->
+            <div class="pinkexamcorrdiv">
+                <div class="whiteexamcorrdiv"><!-- Function --></div>
+            </div>
+            <div class="hoursdiv">
+                <div class="hoursspent">Working hours spent: <!-- Function --></div>
+                <div class="hoursleft">Working hours left: <!-- Function --></div>
+            </div>
+            <div class="assoctags">
+                Associated Tags
+                <!-- Add tags function here -->
+            </div>
+            <div class="edit">Edit</div>
+
+        </div>
+
+    
+    </div>
+
+
+<footer>
+    <p>This website was made as a part of the subject IDG2671 Webprosjekt.</p>
+    <p>Authors:</p>
+    <p>Mons Stenbråten, Sivert Grønli Amundsen,</p>
+    <p>Ole Ragnar Randen</p>
+    <p>Copyright &copy;2022</p>
+</footer>
+
 </body>
 </html>
