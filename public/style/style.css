@@ -630,6 +630,7 @@ h4{
   height: 50px;
   margin-top: 20px;
   margin-left: 5px;
+  cursor: pointer;
 }
 
 #searchbox{
