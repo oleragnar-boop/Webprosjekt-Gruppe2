@@ -28,7 +28,6 @@
         #verifyUser {
             max-width: 100%;
             max-height: 100%;
-            overflow: hidden;
             margin: 0 auto;
             /* position: relative; */
         }
@@ -81,7 +80,6 @@
                     </div>
                     <div id="editUser" style="display:none;">
                         <div class="formHolder">
-                        <p>Edit a User</p>
                         <form method="POST" action="<!-- /addUser -->" id="registerForm">
                             <label for="email">Select a User to update:</label><br />
                             <select name="email" id="email" required>
@@ -102,12 +100,12 @@
                           </form>
                         </div>
                     </div>
-                    <div id="deleteUser" style="display:none;">
+                    <div id="deleteUser">
                         <div class="formHolder">
                         <p>Select a user to Delete</p>
                             <div>
                                 <form action="/deleteuser" method="GET" id="deleteForm">
-                                <select name="email" id="email" required>
+                                <select name="email" id="emailInput" required>
                                 <option disabled selected value>Select a user:</option>
                                 <% verified.forEach(function(user) { %>
                                     <option><%= user.email %></option>

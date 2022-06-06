@@ -225,7 +225,7 @@ li a:hover:not(.active) {
 }
 
 #registerForm {
-  font-size: 1.2em;
+  font-size: 1em;
   border-style: solid;
   border-radius: 10px;
   border-width: 2px;
@@ -233,7 +233,12 @@ li a:hover:not(.active) {
   padding-bottom: 1%;
   padding-top: 1%;
   background-color: #ff9d9d;
-  width: 700px;
+  width: 500px;
+  height: 325px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 #registerForm > input {
@@ -248,14 +253,15 @@ li a:hover:not(.active) {
 #email {
   height: 30px;
   padding: 5px;
+  margin: -15px;
+}
+#emailInput {
+  height: 30px;
+  padding: 5px;
 }
 
 .submitBtn {
   height: 60px;
-  
-  margin-top: 0.2em;
-  margin-bottom: 0.2em;
-  margin-right: 0.2em;
   background-color: #cd3838;
   color: #ffffff;
   font-family: "Doppio One", sans-serif;
@@ -263,6 +269,8 @@ li a:hover:not(.active) {
   border-width: 2px;
   border-style: solid;
   border-color: #111;
+  margin-top: 5px;
+  border-radius: 5px;
 }
 
 .submitBtn:hover {
@@ -386,7 +394,7 @@ li a:hover:not(.active) {
 .adminUsers {
   background-color: #ffffff;
   width: 600px;
-  height: 300px;
+  height: 350px;
   margin-left: 100px;
   margin-right: 50px;
   border-radius: 10px;
@@ -395,6 +403,14 @@ li a:hover:not(.active) {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#deleteForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 #topavatar {
@@ -721,6 +737,9 @@ flex-direction: column;
 
 }
 
+#deleteUser {
+
+}
 
 /* Extra small devices (phones, 600px and down) */
 /* @media only screen and (max-width: 600px) {...} */
