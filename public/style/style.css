@@ -392,6 +392,9 @@ li a:hover:not(.active) {
   border-radius: 10px;
   border-style: solid;
   border-width: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #topavatar {
@@ -702,6 +705,17 @@ input {
 .dropdownDiv {
   display: flex;
   justify-content: space-between;
+}
+
+
+#verifyForm{
+display: flex;
+flex-direction: column;
+}
+
+#verifyForm > #email {
+  width: 200px;
+
 }
 
 
