@@ -225,6 +225,7 @@ li a:hover:not(.active) {
 }
 
 #registerForm {
+  font-size: 1.2em;
   border-style: solid;
   border-radius: 10px;
   border-width: 2px;
@@ -237,6 +238,7 @@ li a:hover:not(.active) {
 
 #registerForm > input {
   border-radius: 5px;
+  width: 250px;
 }
 
 #firstname,
@@ -250,14 +252,14 @@ li a:hover:not(.active) {
 
 .submitBtn {
   height: 60px;
-  width: 195px;
+  
   margin-top: 0.2em;
   margin-bottom: 0.2em;
   margin-right: 0.2em;
   background-color: #cd3838;
   color: #ffffff;
   font-family: "Doppio One", sans-serif;
-  font-size: 2.5em;
+  font-size: 1.5em;
   border-width: 2px;
   border-style: solid;
   border-color: #111;
@@ -332,6 +334,7 @@ li a:hover:not(.active) {
 }
 
 #loginForm {
+  font-size: 1.2em;
   border-style: solid;
   border-radius: 10px;
   border-width: 2px;
