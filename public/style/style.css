@@ -530,13 +530,16 @@ h3{
 
 .tagShow {
   margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .tagShow > span {
   border-radius: 3px;
-  margin-bottom: 3px;
   margin-top: 5px;
   margin-right: 5px;
+  font-size: 1.1em;
+  padding: 2px;
+  
 }
 
 .reqtag{
