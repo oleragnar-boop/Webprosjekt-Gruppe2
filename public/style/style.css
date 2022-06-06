@@ -260,6 +260,11 @@ li a:hover:not(.active) {
   padding: 5px;
   margin-bottom: 5px;
 }
+#emailLogin, #passwordLogin {
+  height: 20px;
+  padding: 5px;
+  margin-bottom: 25px;
+}
 
 .submitBtn {
   height: 60px;
