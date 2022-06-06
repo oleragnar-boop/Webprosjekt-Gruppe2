@@ -322,6 +322,7 @@ mongoose.connect(mongoDB, {
             })
         }) */
 
+        //404 page to show users on invalid routes
         app.get('*', function(req, res) {
           res.render('404.ejs')
         });
