@@ -37,31 +37,33 @@ mongoose.connect(mongoDB, {
     })
     
 
+    //Serving the login page
      app.get('/login', (req, res) => {
       res.render('loginpage.ejs')
     }) 
-
-    //bypass
-    app.get('/tempLogin', (req, res) => {
-      res.render('index.ejs')
-    })
-
   
+    //Serving the admin page
     app.get('/adminpage', (req, res) => {
       db.collection('users').find({isApproved: "no"}).toArray()
       .then(results => {
-        res.render('adminpage.ejs', {users: results})
+        let notVerified = results
+        db.collection('users').find({isApproved: "yes"}).toArray()
+        .then(results => {
+          let verified = results
+          res.render('adminpage.ejs', {notVerified: notVerified, verified: verified})
+        })
       })
     })
 
+    //Serving the register page
     app.get('/register', (req, res) => {
       res.render('registerpage.ejs')
     })
 
+    //Serving the index page, checks if a user is logged in, if not they are sent to login
     app.get('/index', (req, res) => {
       let cookieObject = Object.values(req.cookies)
       let loginStatus = cookieObject[3]
-
 
       if (loginStatus != "yes") {
         res.redirect('/login')
@@ -71,11 +73,12 @@ mongoose.connect(mongoDB, {
       }
     })
 
+    //Serving the profile page
     app.get('/profile', (req, res) => {
       res.render('profile.ejs')
     })
 
-    //GET for the open and closed requests on the landing page
+    //GET for the open and closed requests on the landing page, also serves said landing page
     app.get('/', async (req, res) => {
 
       res.clearCookie("role");
@@ -133,6 +136,8 @@ mongoose.connect(mongoDB, {
       }
     })
 
+
+    //POST for logging user in, setting cookies for later reference
     app.post('/loginUser', function(req, res) {
       async.waterfall([
         function (callback) {
@@ -186,44 +191,33 @@ mongoose.connect(mongoDB, {
       ])
     });
 
-//functions
-
-
-
-
-
-
-
-
-
-
-
-    //POST for login
-    /* app.post('/loginUser', async (req, res) => {
-      let passwordsMatch = "false";
-      let password = req.body.password
-      db.collection('users').findOne({
-        email: req.body.email,
-        isApproved: "yes"
-      })
-        .then(obj => {
-          if (!obj) {
-            console.log("User does not exist or has not yet been approved for ExamMatch")
-            res.render('loginpage.ejs')
-          } else {
-            let hashedPassword = obj.password;
-            bcrypt.compare(req.body.password, hashedPassword, function (err, res) {
-              if (!res) {
-                console.log("Wrong password")
-              } else {
-                passwordsMatch = "true";
-                console.log(passwordsMatch)
-                res.render('index.ejs')
-              }
-            })
+    //POST for making a user verified
+    app.post('/verifyStudent', async (req, res) => {
+      db.collection('users').findOneAndUpdate(
+        {
+          email: req.body.email
+        },
+        {
+          $set:
+          {
+            isApproved: "yes"         
           }
+        },
+      ).then((result) => {
+        res.redirect('/adminpage')
+      })
+        .catch((error) => console.error(error));
+    })
+
+    //GET that functions as a delete
+    app.get('/deleteuser', async (req, res) => {
+      db.collection('users').findOneAndDelete({ email: req.query.email })
+        .then(results => {
+          res.redirect( '/adminpage')
         })
-    }) */
+    })
+
+
 
 
     /*endre denna for å legge te ny side
@@ -327,4 +321,8 @@ mongoose.connect(mongoDB, {
               res.send({ "results": results, "time": [t1, t2] })
             })
         }) */
+
+        app.get('*', function(req, res) {
+          res.render('404.ejs')
+        });
   });
