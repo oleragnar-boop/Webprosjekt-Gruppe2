@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
 const requestSchema = new Schema({
     request_id: {type:Number, required:true},
@@ -11,6 +11,7 @@ const requestSchema = new Schema({
     date: {type:Date, required:true, default: Date.now},
     description: {type:String, required:true, maxLength: 250},
     author: {type:String, required:true},
+    author_id: {type: Schema.Types.ObjectId, required: true},
     open: {type:String, required:true, default:"true"}
 })
 
