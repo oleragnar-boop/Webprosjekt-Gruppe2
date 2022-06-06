@@ -506,6 +506,10 @@ li #imhere {
   margin-right: 1%;
 }
 
+select{
+  float: right;
+}
+
 #filterheader {
   background-color: #cd3838;
   border: black solid;
@@ -658,7 +662,10 @@ gap: 15px;
 }
 
 .tagItems > label {
-  -webkit-text-stroke: 0.7px rgb(0, 0, 0);
+  -webkit-text-stroke: 0.7px rgb(0, 0, 0);  
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
 }
 
 label > span {
@@ -666,11 +673,6 @@ label > span {
   padding: 2px;
 }
 
-label {
-  display: block;
-  padding-left: 15px;
-  text-indent: -15px;
-}
 
 
 
