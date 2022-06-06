@@ -343,6 +343,8 @@ li a:hover:not(.active) {
 
 #loginForm input {
   border-radius: 5px;
+  width: 150px;
+  margin-right: 10px;
 }
 
 .adminBtn {
