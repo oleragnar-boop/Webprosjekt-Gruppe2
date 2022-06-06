@@ -10,6 +10,7 @@ const db = mongoose.connection;
 const bcrypt = require('bcrypt')
 const async = require('async');
 const cookieParser = require('cookie-parser');
+const _ = require('underscore');
 
 mongoose.connect(mongoDB, {
   useUnifiedTopology: true,
@@ -58,8 +59,16 @@ mongoose.connect(mongoDB, {
     })
 
     app.get('/index', (req, res) => {
-      console.log(req.cookies) 
-      res.render('index.ejs')
+      let cookieObject = Object.values(req.cookies)
+      let loginStatus = cookieObject[3]
+
+
+      if (loginStatus != "yes") {
+        res.redirect('/login')
+      } else {
+        res.render('index.ejs')
+        console.log(loginStatus)
+      }
     })
 
     app.get('/profile', (req, res) => {
@@ -72,7 +81,7 @@ mongoose.connect(mongoDB, {
       res.clearCookie("role");
       res.clearCookie("user");
       res.clearCookie("_id");
-      res.cookie('isLoggedIn', "no" )
+      res.clearCookie("isLoggedIn");
 
       console.log(req.cookies) 
 
@@ -128,7 +137,8 @@ mongoose.connect(mongoDB, {
       async.waterfall([
         function (callback) {
           db.collection('users').findOne({
-            "email": req.body.email
+            "email": req.body.email,
+            "isApproved": "yes"
           }, function (err, result) {
             if (err) {
               console.log(err);
