@@ -1047,17 +1047,56 @@ right: 30px; */
   display:none;
 }
 .show{
-  display:block;
+  display:flex;
+  align-items: center;
+  justify-content: center;
   opacity:    1; 
-  background: #000; 
+  background: #ff9d9d; 
   width:      400px;
   height:     300px; 
   z-index:    10;
   top:        0; 
-  left:       0; 
+  right:       0; 
   position:   fixed;
-  margin-left: 65%;
+  margin-right: 7.8%;
+  margin-top: 5%;
+  flex-direction: column;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: black;
 }
+
+#alertTexts{
+  width: 400px;
+  height: fit-content;
+  color: black;
+}
+
+#alertTexts > span {
+  font-size: 0.6em;
+  margin: 10px;
+  border-style: solid;
+  border-width: 0.5px;
+  border-radius: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: white;
+}
+
+#alertTexts > button {
+  margin-bottom: 10px;
+  background-color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-width: 0.5px;
+  border-radius: 3px;
+
+}
+
 
 .icon-button__badge {
   position: absolute;
