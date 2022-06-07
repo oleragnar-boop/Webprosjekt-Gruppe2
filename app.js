@@ -78,6 +78,7 @@ mongoose.connect(mongoDB, {
       res.render('profile.ejs')
     })
 
+
     //GET for the open and closed requests on the landing page, also serves said landing page
     app.get('/', async (req, res) => {
 
