@@ -46,7 +46,7 @@ img {
 .logoDiv img {
   float: right;
   width: 20%;
-  user-select: none; 
+  user-select: none;
 }
 
 .navDiv {
@@ -260,7 +260,8 @@ li a:hover:not(.active) {
   padding: 5px;
   margin-bottom: 5px;
 }
-#emailLogin, #passwordLogin {
+#emailLogin,
+#passwordLogin {
   height: 20px;
   padding: 5px;
   margin-bottom: 25px;
@@ -422,8 +423,6 @@ li a:hover:not(.active) {
   width: 60px;
 }
 
-
-
 #katt {
   position: sticky;
   width: 200px;
@@ -441,7 +440,7 @@ li a:hover:not(.active) {
   border-radius: 10px;
 }
 
-.whitebox{
+.whitebox {
   margin: 15px;
   padding: 10px;
   width: 100%;
@@ -511,7 +510,6 @@ li a:hover:not(.active) {
   background-color: #ff9d9d;
   border-radius: 5px;
   margin-right: 630px; /* midlertidig løsning */
-  
 }
 
 #navDivIndex {
@@ -544,7 +542,7 @@ li #imhere {
   margin-right: 1%;
 }
 
-select{
+select {
   float: right;
 }
 
@@ -558,7 +556,7 @@ select{
   color: white;
 }
 
-h3{
+h3 {
   font-size: 30px;
   margin: 0%;
 }
@@ -582,29 +580,29 @@ h3{
   padding: 1px;
 }
 
-.reqtag{
+.reqtag {
   margin-top: 26px;
 }
 
-.fa-bookmark{
+.fa-bookmark {
   margin-bottom: 13%;
   margin-left: 4%;
 }
 
-.fa-bookmark:hover{
+.fa-bookmark:hover {
   background-color: rgb(185, 37, 37);
 }
 
-.fa-bookmark:active{
+.fa-bookmark:active {
   background-color: rgb(109, 24, 24);
 }
 
-.fa-angle-down{
+.fa-angle-down {
   margin-left: 18%;
   margin-top: 40px;
 }
 
-#newrequest{
+#newrequest {
   background-color: #680000;
   color: white;
   border: black solid;
@@ -613,11 +611,11 @@ h3{
   margin-left: 23%;
 }
 
-#newrequest button{
+#newrequest button {
   all: unset;
 }
 
-h4{
+h4 {
   font-size: 25px;
   text-align: center;
 }
@@ -646,7 +644,6 @@ h4{
   border-radius: 10px;
   padding-left: 30px;
   padding-right: 20px;
-
 }
 
 #chatAvatar {
@@ -654,7 +651,7 @@ h4{
   padding-right: 40px;
 }
 
-#searchbutton{
+#searchbutton {
   background-color: #ff9d9d;
   border: none;
   border-radius: 3px;
@@ -665,7 +662,7 @@ h4{
   cursor: pointer;
 }
 
-#searchbox{
+#searchbox {
   background-color: #ff9d9d;
   border: none;
   border-radius: 3px;
@@ -677,26 +674,25 @@ h4{
   width: 20%;
 }
 
-::placeholder{
+::placeholder {
   color: rgb(0, 0, 0);
   font-size: 28px;
 }
 
-#searchform{
+#searchform {
   display: flex;
   align-content: center;
 }
 
-.requestheader{
+.requestheader {
   font-size: 27px;
   margin: 0;
 }
 
-
-.tagItems{
-display: flex;
-flex-wrap: wrap;
-gap: 15px;
+.tagItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .tagItems > label {
@@ -712,11 +708,8 @@ label > span {
 
 span .textinspan {
   all: unset;
-  mix-blend-mode:difference; 
+  mix-blend-mode: difference;
 }
-
-
-
 
 input {
   width: 15px;
@@ -731,7 +724,7 @@ input {
   height: 15px;
 }
 
-.avaname .teachername{
+.avaname .teachername {
   margin: 0;
 }
 
@@ -740,17 +733,14 @@ input {
   justify-content: space-between;
 }
 
-
-#verifyForm{
-display: flex;
-flex-direction: column;
+#verifyForm {
+  display: flex;
+  flex-direction: column;
 }
 
 #verifyForm > #email {
   width: 200px;
-
 }
-
 
 /* Profile img style in profile.ejs */
 .profile-pic {
@@ -768,7 +758,7 @@ flex-direction: column;
   width: 128px;
   height: 128px;
   border: 2px solid rgba(255, 255, 255, 0.2);
-/*   position: absolute;
+  /*   position: absolute;
   top: 72px; */
 }
 img {
@@ -776,48 +766,47 @@ img {
   height: auto;
 }
 .p-image {
-position: absolute;
-/* top: 167px;
+  position: absolute;
+  /* top: 167px;
 right: 30px; */
-color: #666666;
-transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  color: #666666;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .p-image:hover {
-transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .upload-button {
-font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 .upload-button:hover {
-transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
-color: #999;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: #999;
 }
 
 /* other profile.ejs styles */
 
-
-#left{
+#left {
   float: left;
   flex: 0.25 1 0;
   height: fit-content;
   margin-right: 30px;
 }
 
-#middle{
+#middle {
   float: left;
   flex: 0.25 1 0;
   margin-right: 30px;
 }
 
-#right{
+#right {
   float: right;
   flex: 0.5 1 0;
 }
 
-.nameandprofilepicture{
+.nameandprofilepicture {
   border: #111 solid;
-  background-color:#ff9d9d;
+  background-color: #ff9d9d;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
@@ -825,49 +814,49 @@ color: #999;
   text-align: center;
 }
 
-.schooldiv{
+.schooldiv {
   border: #111 solid;
-  background-color:#ff9d9d;
+  background-color: #ff9d9d;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
 }
 
-.jobtitlediv{
+.jobtitlediv {
   border: #111 solid;
-  background-color:#ff9d9d;
+  background-color: #ff9d9d;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
 }
 
-.linktoschooldiv{
+.linktoschooldiv {
   border: #111 solid;
-  background-color:#ff9d9d;
+  background-color: #ff9d9d;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
 }
 
-.linkwhitediv{
+.linkwhitediv {
   border: #111 solid;
-  background-color:#ffffff;
+  background-color: #ffffff;
   padding: 1px;
   border-radius: 10px;
   width: 70%;
   float: right;
 }
 
-.whitediv{
+.whitediv {
   border: #111 solid;
-  background-color:#ffffff;
+  background-color: #ffffff;
   padding: 10px;
   border-radius: 10px;
 }
 
-.notepinkdiv{
+.notepinkdiv {
   border: #111 solid;
-  background-color:#ff9d9d;
+  background-color: #ff9d9d;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
@@ -875,39 +864,39 @@ color: #999;
   height: 243px;
 }
 
-.notewhitediv{
+.notewhitediv {
   border: #111 solid;
-  background-color:#ffffff;
+  background-color: #ffffff;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
 }
 
-.languagediv{
+.languagediv {
   border: #111 solid;
-  background-color:#ff9d9d;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.employmentdiv{
-  border: #111 solid;
-  background-color:#ff9d9d;
+  background-color: #ff9d9d;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
 }
 
-#employstatus{
+.employmentdiv {
+  border: #111 solid;
+  background-color: #ff9d9d;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#employstatus {
   float: none;
 }
 
-.pinkexamcorrdiv{
+.pinkexamcorrdiv {
   border: #111 solid;
-  background-color:#ff9d9d;
+  background-color: #ff9d9d;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
@@ -915,36 +904,36 @@ color: #999;
   height: 173px;
 }
 
-.whiteexamcorrdiv{
+.whiteexamcorrdiv {
   border: #111 solid;
-  background-color:#ffffff;
+  background-color: #ffffff;
   padding: 10px;
   border-radius: 10px;
 }
 
-.hoursdiv{
+.hoursdiv {
   display: flex;
   justify-content: space-around;
   border: #111 solid;
-  background-color:#ff9d9d;
+  background-color: #ff9d9d;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
 }
 
-.assoctags{
+.assoctags {
   border: #111 solid;
-  background-color:#ff9d9d;
+  background-color: #ff9d9d;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
 }
 
-.edit{
+.edit {
   border: #111 solid;
-  background-color:#ff9d9d;
+  background-color: #ff9d9d;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 10px;
@@ -955,10 +944,11 @@ color: #999;
 
 /* Notify button */
 
-#notifyDiv{
-display: flex;
-align-items: center;
-margin-right: 10px;
+#notifyDiv {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  -webkit-user-drag: none;
 }
 
 .icon-button {
@@ -979,8 +969,20 @@ margin-right: 10px;
   cursor: pointer;
 }
 
-.icon-button:active {
-  background: #cccccc;
+.hide{
+  display:none;
+}
+.show{
+  display:block;
+  opacity:    1; 
+  background: #000; 
+  width:      400px;
+  height:     300px; 
+  z-index:    10;
+  top:        0; 
+  left:       0; 
+  position:   fixed;
+  margin-left: 65%;
 }
 
 .icon-button__badge {
