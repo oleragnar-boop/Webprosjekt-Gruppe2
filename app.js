@@ -72,7 +72,7 @@ mongoose.connect(mongoDB, {
       if (loginStatus = "yes") {
         db.collection('requests').find({
           open: "true"
-        })
+        }).toArray()
           .then(results => {
             let openRequests = results;
                 res.render('index.ejs', {
