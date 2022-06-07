@@ -22,6 +22,7 @@ mongoose.connect(mongoDB, {
     db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
     app.use(express.static(__dirname + '/assets'));
+    app.use(express.static(__dirname + '/scripts'));
     app.use(express.static(__dirname + '/public'));
     app.set('views', path.join(__dirname, 'views'));
     app.set('view engine', 'ejs')
@@ -192,7 +193,7 @@ mongoose.connect(mongoDB, {
     });
 
     //POST for making a user verified
-    app.post('/verifyStudent', async (req, res) => {
+    app.post('/verifyUser', async (req, res) => {
       db.collection('users').findOneAndUpdate(
         {
           email: req.body.email
@@ -201,6 +202,26 @@ mongoose.connect(mongoDB, {
           $set:
           {
             isApproved: "yes"         
+          }
+        },
+      ).then((result) => {
+        res.redirect('/adminpage')
+      })
+        .catch((error) => console.error(error));
+    })
+
+    app.post('/updateUser', async (req, res) => {
+      db.collection('users').findOneAndUpdate(
+        {
+          email: req.body.email
+        },
+        {
+          $set:
+          {
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
+            password: req.body.password,
+            affSchool: req.body.affSchool,      
           }
         },
       ).then((result) => {
