@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const User = require('./models/userSchema')
+const Request = require('./models/requestSchema')
 const app = express();
 const mongoDB = 'mongodb+srv://admin:adminpassword@cluster0.0nuub.mongodb.net/ExamMatch?retryWrites=true&w=majority'
 const path = require('path');
@@ -68,17 +69,40 @@ mongoose.connect(mongoDB, {
       let cookieObject = Object.values(req.cookies)
       let loginStatus = cookieObject[3]
 
-      if (loginStatus != "yes") {
+      if (loginStatus = "yes") {
+        db.collection('requests').find({
+          open: "true"
+        })
+          .then(results => {
+            let openRequests = results;
+                res.render('index.ejs', {
+                  openRequests: openRequests
+                })
+              })
+          } else {
         res.redirect('/login')
-      } else {
-        res.render('index.ejs')
-        console.log(loginStatus)
       }
     })
 
     //Serving the profile page
     app.get('/profile', (req, res) => {
-      res.render('profile.ejs')
+      let cookieObject = Object.values(req.cookies)
+      let loginStatus = cookieObject[3]
+      let currentUser = cookieObject[2]
+
+      if (loginStatus = "yes") {
+        db.collection('user').findOne({
+          _id: currentUser
+        })
+          .then(results => {
+            let userData = results;
+                res.render('profile.ejs', {
+                  userData: userData
+                })
+              })
+          } else {
+        res.redirect('/login')
+      }
     })
 
 
@@ -168,6 +192,9 @@ mongoose.connect(mongoDB, {
                     res.cookie('role', result.role, {expire : new Date(Date.now()+ 86400*1000)} )
                     res.cookie('_id', result._id, {expire : new Date(Date.now()+ 86400*1000)} )
                     res.cookie('isLoggedIn', "yes", {expire : new Date(Date.now()+ 86400*1000)} )
+                    res.cookie('userfname', result.firstname, {expire : new Date(Date.now()+ 86400*1000)} )
+                    res.cookie('userlname', result.lastname, {expire : new Date(Date.now()+ 86400*1000)} )
+                    
 
                     res.redirect('/index')
                   } else {
@@ -277,6 +304,36 @@ app.post('/upload', (req, res) => {
     }
   })
 })
+
+    //POST to add new request
+    app.post('/addRequest', async (req, res) => {
+
+      let cookieObject = Object.values(req.cookies)
+      let currentUser = `${cookieObject[4]} ${cookieObject[5]}`
+      let userId = cookieObject[2]
+
+
+      let newRequest = new Request({
+        title: req.body.title ,
+        course: req.body.course,
+        language: req.body.language,
+       estimated_workload: req.body.estimated_workload,
+        tags: req.body.tags,
+        date: req.body.date,
+        description: req.body.description,
+        author: currentUser,
+        author_id: userId,
+      })
+      try {
+        newRequest.save()
+        res.redirect('/index')
+        console.log(newRequest)
+      } catch (err) {
+        console.log(err)
+      }
+    })
+
+    //Get all requests
 
 
     /*endre denna for å legge te ny side
