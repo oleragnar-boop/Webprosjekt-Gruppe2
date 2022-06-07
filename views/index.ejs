@@ -9,7 +9,7 @@
     <link href="/style/style.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/bbadb5f9e0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="/scripts/script.js"></script>
+    <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
@@ -206,8 +206,16 @@
                     </div>
                 </div>
                 <i class="fa-solid fa-angle-down"></i>
-                <i class="fa-regular fa-bookmark"></i>
+                <i class="fa-regular fa-bookmark" onClick ="bookmarkColorChange()"></i>
             </div>
+
+            <script>
+            function bookmarkColorChange() {
+                const bookmark = document.getElementsByClassName("fa-bookmark::before");
+                bookmark.addEventListener('click', function onClick(event) {
+                    event.bookmark.style.backgroundColor = 'red';
+                });
+            }</script>
 
             <div class="wrap-collapsible">
                 <input id="collapsible" class="toggle" type="checkbox">
