@@ -1037,6 +1037,7 @@ right: 30px; */
   border: none;
   outline: none;
   border-radius: 50%;
+  transition:  0.3s ease;
 }
 
 .icon-button:hover {
@@ -1044,7 +1045,7 @@ right: 30px; */
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
-  transition: 0.1s ease;
+  transition:  0.1s ease ;
 }
 
 .hide{
