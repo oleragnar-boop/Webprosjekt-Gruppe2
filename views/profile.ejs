@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <link href="/style/style.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/bbadb5f9e0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="/scripts/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
+
 <body>
     <div id="headerindex">
         <div id="navbar">
@@ -47,74 +51,119 @@
     </div>
 
     <div id="mainindex">
-        
+
         <div class="whitebox">
 
             <!-- Left -->
-            <div class="nameandprofilepicture"></div>
-            <div class="schooldiv">
-                <label for="">School:</label>
-                <select name="" id="">
-                    <!-- Function for filling the options based on the database -->
-                    <option value="ex1">something 1</option>
-                    <option value="ex2">something 2</option>
-                </select>
-            </div>
-            <div class="jobtitlediv">
-                <label for="">Job Title:</label>
-                <select name="" id="">
-                    <!-- Function for filling the options based on the database -->
-                    <option value="ex1">something 1</option>
-                    <option value="ex2">something 2</option>
-                </select>
-            </div>
-            <div class="linktoschooldiv">
-                <div class="whitediv"></div>
+            <div id="left">
+                <div class="nameandprofilepicture">
+                    <h1><!-- Function for displaying your name --></h1>
+                    <h1>(You)</h1>
+
+                    <!-- Function for displaying your name -->
+
+                    <!-- Function for displaying a profile img box -->
+                    <!--                 <div style="background-image: url('small-profile.jpeg');background-size: cover; height:480px; padding-top:80px;">
+                    <img src="small-profile.jpeg" style="height:150px">
+                </div> -->
+
+                    <div class="row">
+                        <div class="small-12 medium-2 large-2 columns">
+                            <div class="circle">
+                                <img class="profile-pic"
+                                    src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+
+                            </div>
+                            <div class="p-image">
+                                <i class="fa fa-camera upload-button"></i>
+                                <input class="file-upload" type="file" accept="image/*" style="width:fit-content ;" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="schooldiv">
+                    <label for="">School:</label>
+                    <select name="" id="">
+                        <!-- Function for filling the options based on the database -->
+                        <option value="ex1">something 1</option>
+                        <option value="ex2">something 2</option>
+                    </select>
+                </div>
+                <div class="jobtitlediv">
+                    <label for="">Job Title:</label>
+                    <select name="" id="">
+                        <!-- Function for filling the options based on the database -->
+                        <option value="ex1">something 1</option>
+                        <option value="ex2">something 2</option>
+                    </select>
+                </div>
+                <div class="linktoschooldiv">
+                    Link:
+                    <div class="linkwhitediv"> Placeholdertext</div>
+                </div>
             </div>
 
             <!-- Middle -->
-            <div class="notepinkdiv">
-                <div class="notewhitediv"><!-- Function for storing textbox text --></div>
+            <div id="middle">
+                <div class="notepinkdiv">
+                    <h1>Personal Notes</h1>
+                    <div class="notewhitediv">
+                        <!-- Function for storing textbox text -->
+                    </div>
+                </div>
+                <div class="languagediv">
+                    <h1>Language Fluency:</h1>
+                    <div class="whitediv">
+                        Placeholdertext <!-- Function for multiple languages -->
+                    </div>
+                </div>
+                <div class="employmentdiv">
+                    <label for=""><h1>Employment Status</h1></label>
+                    <select name="" id="employstatus">
+                        <!-- Maybe more types -->
+                        <option value="parttime">Part Time</option>
+                        <option value="fulltime">Full Time</option>
+                    </select>
+                </div>
             </div>
-            <div class="languagediv">
-                <div class="whitediv"><!-- Function for multiple languages --></div>
-            </div>
-            <div class="employmentdiv">
-                <label for="">Employment Status</label>
-                <select name="" id="">
-                    <!-- Maybe more types -->
-                    <option value="parttime">Part Time</option>
-                    <option value="fulltime">Full Time</option>
-                </select>
-            </div>
-            
+
             <!-- Right -->
-            <div class="pinkexamcorrdiv">
-                <div class="whiteexamcorrdiv"><!-- Function --></div>
+            <div id="right">
+                <div class="pinkexamcorrdiv">
+                    <h1>Exams corrected this year:</h1>
+                    <div class="whiteexamcorrdiv">
+                        <!-- Function -->
+                    </div>
+                </div>
+                <div class="hoursdiv">
+                    <div class="hoursspent"><h1>Working hours spent:</h1>
+                        Placeholdertext <!-- Function -->
+                    </div>
+                    <div class="hoursleft"><h1>Working hours left:</h1>
+                        Placeholdertext <!-- Function -->
+                    </div>
+                </div>
+                <div class="assoctags">
+                    <h1>Associated Tags</h1>
+                    <h1>||Placeholder to get height||</h1><!-- Add tags function here -->
+                </div>
+                <div class="edit">Edit</div>
             </div>
-            <div class="hoursdiv">
-                <div class="hoursspent">Working hours spent: <!-- Function --></div>
-                <div class="hoursleft">Working hours left: <!-- Function --></div>
-            </div>
-            <div class="assoctags">
-                Associated Tags
-                <!-- Add tags function here -->
-            </div>
-            <div class="edit">Edit</div>
 
         </div>
 
-    
     </div>
 
 
-<footer>
-    <p>This website was made as a part of the subject IDG2671 Webprosjekt.</p>
-    <p>Authors:</p>
-    <p>Mons Stenbråten, Sivert Grønli Amundsen,</p>
-    <p>Ole Ragnar Randen</p>
-    <p>Copyright &copy;2022</p>
-</footer>
+    <footer>
+        <p>This website was made as a part of the subject IDG2671 Webprosjekt.</p>
+        <p>Authors:</p>
+        <p>Mons Stenbråten, Sivert Grønli Amundsen,</p>
+        <p>Ole Ragnar Randen</p>
+        <p>Copyright &copy;2022</p>
+    </footer>
 
 </body>
+
 </html>

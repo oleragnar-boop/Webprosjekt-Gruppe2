@@ -11,6 +11,8 @@ const bcrypt = require('bcrypt')
 const async = require('async');
 const cookieParser = require('cookie-parser');
 const _ = require('underscore');
+const multer= require('multer');
+const ImageModel = require("./models/image.model");
 
 mongoose.connect(mongoDB, {
   useUnifiedTopology: true,
@@ -78,6 +80,7 @@ mongoose.connect(mongoDB, {
     app.get('/profile', (req, res) => {
       res.render('profile.ejs')
     })
+
 
     //GET for the open and closed requests on the landing page, also serves said landing page
     app.get('/', async (req, res) => {
@@ -238,7 +241,42 @@ mongoose.connect(mongoDB, {
         })
     })
 
+//Storing Image
 
+const Storage = multer.diskStorage({
+  destination: 'uploads',
+  filename:(req,file,cb) => {
+    cb(null, file.originalname)
+  },
+});
+
+const upload = multer({
+  storage:Storage
+}).single('testImage')
+
+/* app.get("/", (req, res) => {
+  res.send("upload file");
+}); */
+
+app.post('/upload', (req, res) => {
+  upload(req, res, (err) => {
+    if(err){
+      console.log(err)
+    }
+    else{
+      const newImage = new ImageModel({
+        name: req.body.name,
+        image:{
+          data:req.file.filename,
+          contentType:'image/png'
+        }
+      })
+      newImage.save()
+      .then(() => res.send('successfuly uploaded'))
+      .catch(err=>console.log(err))
+    }
+  })
+})
 
 
     /*endre denna for å legge te ny side

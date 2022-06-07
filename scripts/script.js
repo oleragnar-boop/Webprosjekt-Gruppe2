@@ -16,3 +16,43 @@ function bookmarkColorChange() {
         bookmark.style.backgroundColor = 'red';
     });
 }
+
+
+// for profile img in profile.ejs
+$(document).ready(function () {
+    var readURL = function (input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+  
+        reader.onload = function (e) {
+          $(".profile-pic").attr("src", e.target.result);
+        };
+  
+        reader.readAsDataURL(input.files[0]);
+      }
+    };
+  
+    $(".file-upload").on("change", function () {
+      readURL(this);
+    });
+  
+    $(".upload-button").on("click", function () {
+      $(".file-upload").click();
+    });
+  });
+
+// Make expandable div in index.ejs
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
