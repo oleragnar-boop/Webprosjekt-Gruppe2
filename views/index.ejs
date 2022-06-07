@@ -31,8 +31,16 @@
         </div>
 
         <div class="centerDiv">
+            <!-- The alert content -->
+            <div id="alertTexts" class="hide">
+                <span>Good morning, you have a new request!</span>
+                <span>Good morning, you have a new request!</span>
+                <span>Good morning, you have a new request!</span>
+                <span>Good morning, you have a new request!</span>
+                <button id="closeAlertTexts" onclick="onButtonClickClose()">Close</button>
+            </div>
             <div id="notifyDiv">
-                <button type="button" class="icon-button">
+                <button type="button" class="icon-button" onclick="onButtonClick()">
                     <span class="material-icons">notifications</span>
                     <span class="icon-button__badge">2</span>
                 </button>
@@ -264,9 +272,15 @@
                 <div class="reqtag">
                     <p class="requestheader">In need of examiner for my medicine class.</p>
                     <div class="tagShow">
-                        <span style="background-color: red; color: white;"><p class="textinspan">Health</p></span>
-                        <span style="background-color: green; color: white;"><p class="textinspan">Biology</p></span>
-                        <span style="background-color: darkblue; color: white;"><p class="textinspan">Math</p></span>
+                        <span style="background-color: red; color: white;">
+                            <p class="textinspan">Health</p>
+                        </span>
+                        <span style="background-color: green; color: white;">
+                            <p class="textinspan">Biology</p>
+                        </span>
+                        <span style="background-color: darkblue; color: white;">
+                            <p class="textinspan">Math</p>
+                        </span>
                     </div>
                 </div>
                 <i class="fa-solid fa-angle-down"></i>
@@ -280,8 +294,12 @@
                 <div class="reqtag">
                     <p class="requestheader">My advanced physics class requires one more examiner.</p>
                     <div class="tagShow">
-                        <span style="background-color: yellow; color: white;"><p class="textinspan">Engineer</p></span>
-                        <span style="background-color: turquoise; color: white;"><p class="textinspan">Physics</p></span>
+                        <span style="background-color: yellow; color: white;">
+                            <p class="textinspan">Engineer</p>
+                        </span>
+                        <span style="background-color: turquoise; color: white;">
+                            <p class="textinspan">Physics</p>
+                        </span>
                     </div>
                 </div>
                 <i class="fa-solid fa-angle-down"></i>
@@ -300,6 +318,16 @@
         <p>Copyright &copy;2022</p>
     </footer>
 
+
+    <script>
+        function onButtonClick() {
+            document.getElementById('alertTexts').className = "show";
+        }
+
+        function onButtonClickClose() {
+            document.getElementById('alertTexts').className = "hide";
+        }
+    </script>
 </body>
 
 </html>

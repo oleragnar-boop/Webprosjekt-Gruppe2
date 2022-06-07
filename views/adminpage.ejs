@@ -66,7 +66,7 @@
                         <div class="formHolder">
                             <p>Select a user to Verify</p>
                             <div>
-                                <form action="/verifyStudent" method="POST" id="verifyForm">
+                                <form action="/verifyUser" method="POST" id="verifyForm">
                                 <select name="email" id="email" required>
                                 <option disabled selected value>Select a user</option>
                                 <% notVerified.forEach(function(user) { %>
@@ -80,7 +80,7 @@
                     </div>
                     <div id="editUser" style="display:none;">
                         <div class="formHolder">
-                        <form method="POST" action="<!-- /addUser -->" id="registerForm">
+                        <form method="POST" action="/updateUser" id="registerForm">
                             <label for="email">Select a User to update:</label><br />
                             <select name="email" id="email" required>
                                 <option disabled selected value>Select a user</option>
