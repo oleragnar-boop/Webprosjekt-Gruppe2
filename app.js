@@ -128,7 +128,7 @@ mongoose.connect(mongoDB, {
       if (loginStatus == "yes") {
         db.collection('requests').find({
           author: currentUser
-        }).toArray()
+        }).sort({_id:-1}).toArray()
           .then(results => {
             let myRequests = results;
             res.render('myrequests.ejs', {
