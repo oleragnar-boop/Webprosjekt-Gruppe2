@@ -1007,8 +1007,16 @@ right: 30px; */
   padding: 10px;
   border-radius: 10px;
   height: 100px;
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow-y: scroll;
+}
+
+.whiteexamcorrdiv table{
+  border-collapse: collapse;
+}
+
+.whiteexamcorrdiv table,.whiteexamcorrdiv th, .whiteexamcorrdiv td{
+  border: 1px solid;
 }
 
 .hoursdiv {
