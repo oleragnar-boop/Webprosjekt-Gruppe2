@@ -149,8 +149,10 @@ mongoose.connect(mongoDB, {
     })
 
     app.post('/acceptATeacher', async (req, res) => {
-      let currentDate = Date.now
+      let currentDate = new Date
       let dateLocal = currentDate.toLocaleString('no-NO')
+      let dateSplit = dateLocal.split(',')
+
       db.collection('requests').findOneAndUpdate(
         {
           _id: ObjectId(`${req.body.requestid}`)
@@ -160,7 +162,7 @@ mongoose.connect(mongoDB, {
           {
             acceptedTeacher: req.body.email,
             open: "false",
-            dateClosed: dateLocal
+            dateClosed: dateSplit[0]
           }
         } ,
       ).then((result) => {
