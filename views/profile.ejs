@@ -108,8 +108,10 @@
             <!-- Right -->
             <div id="right">
                 <div class="pinkexamcorrdiv">
-                    <h1>Exams corrected this year:</h1>
-                    <div class="whiteexamcorrdiv">
+                    <h1>
+                        Exams corrected this year:
+                    </h1>
+                    <div class="whiteexamcorrdiv">                    
                         <table>
                             <tr>
                                 <th>Date Taken</th>
@@ -125,8 +127,8 @@
                                     <td><%=request.author%></td>
                                 </tr>
                             <% }) %>
-                            </table
-                    </div>
+                            </table>
+                        </div>
                 </div>
                 <div class="hoursdiv">
                     <div class="hoursspent"><h1>Working hours spent:</h1>
@@ -140,7 +142,9 @@
                     <h1>Associated Tag</h1>
                     <h1 class="<%= userData.tags %>"><%= userData.tags %></h1><!-- Add tags function here -->
                 </div>
-                <div class="edit">Edit</div>
+                <div class="edit">
+                    Edit
+                </div>
             </div>
         </div>
 
