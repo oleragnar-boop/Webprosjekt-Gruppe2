@@ -48,6 +48,9 @@ mongoose.connect(mongoDB, {
   
     //Serving the admin page
     app.get('/adminpage', (req, res) => {
+      let cookieObject = Object.values(req.cookies)
+      let loginStatus = cookieObject[3]
+
       db.collection('users').find({isApproved: "no"}).toArray()
       .then(results => {
         let notVerified = results
@@ -134,6 +137,17 @@ mongoose.connect(mongoDB, {
         })
     })
 
+    app.get('/newrequest', (req, res) => {
+      let cookieObject = Object.values(req.cookies)
+      let loginStatus = cookieObject[3]
+
+      if (loginStatus = "yes") {
+          res.render('newrequest.ejs')
+          } else {
+        res.redirect('/login')
+      }
+    })
+
     //POST to register new user
     app.post('/addUser', async (req, res) => {
       let newUser = new User({
@@ -162,7 +176,7 @@ mongoose.connect(mongoDB, {
         console.log(err)
       }
     })
-
+ 
 
     //POST for logging user in, setting cookies for later reference
     app.post('/loginUser', function(req, res) {
@@ -306,10 +320,11 @@ app.post('/upload', (req, res) => {
 
     //POST to add new request
     app.post('/addRequest', async (req, res) => {
+      console.log(req.cookies)
 
       let cookieObject = Object.values(req.cookies)
-      let currentUser = `${cookieObject[4]} ${cookieObject[5]}`
-      let userId = cookieObject[2]
+      let currentUser = `${cookieObject[0]} ${cookieObject[1]}`
+      let userId = cookieObject[4]
 
 
       let newRequest = new Request({

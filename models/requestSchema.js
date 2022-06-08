@@ -5,7 +5,7 @@ const requestSchema = new Schema({
     title:{type:String, required:true},
     course: {type:String, required:true},
     language: {type:String, required:true},
-   estimated_workload: {type:String, required:true},
+   estimated_workload: {type:Number, required:true},
     tags: {type:String, required:true},
     date: {type:Date, required:true, default: Date.now},
     description: {type:String, required:true, maxLength: 250},

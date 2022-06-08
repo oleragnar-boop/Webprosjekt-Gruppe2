@@ -22,7 +22,7 @@ const userSchema = new Schema({
     isApproved: {type:String, enum:['no', 'yes'], default: 'no', required:true},
     bookmarkedTeachers: {type:String},
     bookmarkedRequests: {type:String},
-    //personalNotes: [noteSchema]
+    description: {type: String}
 })
 
  userSchema.pre('save', function(next) {
