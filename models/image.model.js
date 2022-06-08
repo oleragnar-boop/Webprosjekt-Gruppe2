@@ -12,4 +12,4 @@ const ImageSchema = mongoose.Schema({
     }
 });
 
-module.exports = ImageModel = mongoose.model('ImageModel', ImageSchema);
+module.exports = ImageModel = mongoose.model('ImageModel', ImageSchema, "imagemodels");
