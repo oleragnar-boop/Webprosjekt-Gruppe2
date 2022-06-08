@@ -91,7 +91,7 @@ mongoose.connect(mongoDB, {
       if (loginStatus == "yes") {
         db.collection('requests').find({
           open: "true"
-        }).sort({_id:-1}).toArray()
+        }).sort({ _id: -1 }).toArray()
           .then(results => {
             let openRequests = results;
             res.render('index.ejs', {
@@ -109,8 +109,8 @@ mongoose.connect(mongoDB, {
           _id: ObjectId(`${req.body.requestid}`)
         },
         {
-            $push: { suggestedTeachers: req.body.email }
-          },
+          $push: { suggestedTeachers: req.body.email }
+        },
       ).then((result) => {
         console.log(result)
         res.redirect('/index')
@@ -128,7 +128,7 @@ mongoose.connect(mongoDB, {
       if (loginStatus == "yes") {
         db.collection('requests').find({
           author: currentUser
-        }).sort({_id:-1}).toArray()
+        }).sort({ _id: -1 }).toArray()
           .then(results => {
             let myRequests = results;
             res.render('myrequests.ejs', {
@@ -141,17 +141,20 @@ mongoose.connect(mongoDB, {
     })
 
     app.post('/acceptATeacher', async (req, res) => {
+      let currentDate = Date.now
+      let dateLocal = currentDate.toLocaleString(no - NO)
       db.collection('requests').findOneAndUpdate(
         {
           _id: ObjectId(`${req.body.requestid}`)
         },
-         {
+        {
           $set:
           {
             acceptedTeacher: req.body.email,
-            open: "false"
+            open: "false",
+            dateClosed: dateLocal
           }
-          } ,
+        } ,
       ).then((result) => {
         console.log(result)
         res.redirect('/index')
@@ -172,11 +175,13 @@ mongoose.connect(mongoDB, {
         })
           .then(results => {
             let userData = results;
-            db.collection('schools').find().toArray()
+            db.collection('requests').find({
+              acceptedTeacher: currentUserEmail
+            }).toArray()
               .then(results => {
-                let schoolData = results;
+                let acceptedRequests = results;
                 res.render('profile.ejs', {
-                  userData: userData, schoolData: schoolData, avatar: avatar
+                  userData: userData, acceptedRequests: acceptedRequests, avatar: avatar
                 })
               }
               )
@@ -209,7 +214,7 @@ mongoose.connect(mongoDB, {
     })
 
     //Serving the teacherpage
-     app.get('/teacherpage', (req, res) => {
+    app.get('/teacherpage', (req, res) => {
       let cookieObject = req.cookies
       let loginStatus = cookieObject.isLoggedIn
       let avatar = cookieObject.avatar
@@ -222,15 +227,21 @@ mongoose.connect(mongoDB, {
         })
           .then(results => {
             let userData = results;
+            db.collection('requests').find({
+              acceptedTeacher: req.query.email
+            }).toArray()
+              .then(results => {
+                let acceptedRequests = results;
                 res.render('teacherpage.ejs', {
-                  userData: userData, avatar: avatar
+                  userData: userData, avatar: avatar, acceptedRequests: acceptedRequests
                 })
-              }
-              )
+              })
+          }
+          )
       } else {
         res.redirect('/login')
       }
-    }) 
+    })
 
 
     //GET for the open and closed requests on the landing page, also serves said landing page
@@ -442,9 +453,9 @@ mongoose.connect(mongoDB, {
         cb(null, file.originalname)
       },
     });
-    
+
     //Saving the image locally in "testImage" folder
-    
+
     const upload = multer({
       storage: Storage
     }).single('testImage')
@@ -494,7 +505,7 @@ mongoose.connect(mongoDB, {
         author: currentUser,
         author_id: userId,
         author_avatar: avatar,
-        jobTitle: req.body.jobTitle
+        jobTitle: req.body.jobTitle,
       })
       try {
         newRequest.save()
@@ -504,34 +515,6 @@ mongoose.connect(mongoDB, {
         console.log(err)
       }
     })
-
-    //Get all requests
-
-
-    /*endre denna for å legge te ny side
-    app.get('/', (req, res) => {
-      res.render('landing.ejs')
-    })*/
-
-    /*     //GET to fetch all the students from the user_data collection in mongodb
-        app.get('/data', async (req, res) => {
-          db.collection('user_data').find().toArray()
-            .then(results => {
-              res.render('data', { user_data: results, currentId: req.query.searchid, currentdegree: req.query.degree })
-            })
-        })
-
-        //GET that functions as a DELETE, uses the current searchid to find and delete a user with a matching id from the database 
-        app.get('/delstudent', async (req, res) => {
-          let currentid = parseInt(req.query.searchid);
-          let currentdegree = req.query.degree;
-          db.collection('user_data').findOneAndDelete({ student_id: currentid })
-            .then(results => {
-              res.render('data', { user_data: results, currentId: currentid, currentdegree: currentdegree })
-              console.log("Student", currentid, "Deleted")
-            })
-        })
-        */
 
     //404 page to show users on invalid routes
     app.get('*', function (req, res) {
