@@ -1300,6 +1300,10 @@ right: 30px; */
   text-align: initial;
 }
 
+#ccfindteach .chatBox{
+  padding-top: 10px;
+}
+
 .centercontent .chatBox{
   margin: 0;
   height: 490px;
@@ -1326,6 +1330,12 @@ right: 30px; */
  align-items: center;
  justify-content: center;
  margin-bottom: 50px;
+ background-color: #ff9d9d;
+ width: 90%;
+ margin: auto;
+ margin-bottom: 15px;
+ border-radius: 10px;
+ padding: 10px;
 }
 
 #teacherentryAvatar {
