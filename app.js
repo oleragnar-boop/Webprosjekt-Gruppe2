@@ -361,7 +361,9 @@ mongoose.connect(mongoDB, {
         cb(null, file.originalname)
       },
     });
-
+    
+    //Saving the image locally in "testImage" folder
+    
     const upload = multer({
       storage: Storage
     }).single('testImage')
