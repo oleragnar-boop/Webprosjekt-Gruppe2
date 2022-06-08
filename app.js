@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const User = require('./models/userSchema')
+const School = require('./models/schoolSchema');
 const Request = require('./models/requestSchema')
 const app = express();
 const mongoDB = 'mongodb+srv://admin:adminpassword@cluster0.0nuub.mongodb.net/ExamMatch?retryWrites=true&w=majority'
@@ -12,7 +13,7 @@ const bcrypt = require('bcrypt')
 const async = require('async');
 const cookieParser = require('cookie-parser');
 const _ = require('underscore');
-const multer= require('multer');
+const multer = require('multer');
 const ImageModel = require("./models/image.model");
 
 mongoose.connect(mongoDB, {
@@ -21,7 +22,7 @@ mongoose.connect(mongoDB, {
 })
   .then(mongoose => {
     console.log('Connected to Database')
-    const dataCollection = db.collection('ExamMatch') 
+    const dataCollection = db.collection('ExamMatch')
     db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
     app.use(express.static(__dirname + '/assets'));
@@ -39,13 +40,13 @@ mongoose.connect(mongoDB, {
     app.listen(process.env.PORT || 3000, function () {
       console.log('listening on 3000')
     })
-    
+
 
     //Serving the login page
-     app.get('/login', (req, res) => {
+    app.get('/login', (req, res) => {
       res.render('loginpage.ejs')
-    }) 
-  
+    })
+
     //Serving the admin page
     app.get('/adminpage', (req, res) => {
       let cookieObject = Object.values(req.cookies)
@@ -57,10 +58,14 @@ mongoose.connect(mongoDB, {
         db.collection('users').find({isApproved: "yes"}).toArray()
         .then(results => {
           let verified = results
-          res.render('adminpage.ejs', {notVerified: notVerified, verified: verified})
+          db.collection('users').find({ isApproved: "yes" }).toArray()
+            .then(results => {
+              let verified = results
+              res.render('adminpage.ejs', { notVerified: notVerified, verified: verified })
+            })
         })
-      })
     })
+  })
 
     //Serving the register page
     app.get('/register', (req, res) => {
@@ -78,11 +83,11 @@ mongoose.connect(mongoDB, {
         }).toArray()
           .then(results => {
             let openRequests = results;
-                res.render('index.ejs', {
-                  openRequests: openRequests
-                })
-              })
-          } else {
+            res.render('index.ejs', {
+              openRequests: openRequests
+            })
+          })
+      } else {
         res.redirect('/login')
       }
     })
@@ -99,11 +104,17 @@ mongoose.connect(mongoDB, {
         })
           .then(results => {
             let userData = results;
+            db.collection('schools').find().toArray()
+              .then(results => {
+                let schoolData = results;
                 res.render('profile.ejs', {
-                  userData: userData
+                  userData: userData, schoolData: schoolData
                 })
-              })
-          } else {
+              }
+              )
+
+          })
+      } else {
         res.redirect('/login')
       }
     })
@@ -117,7 +128,7 @@ mongoose.connect(mongoDB, {
       res.clearCookie("_id");
       res.clearCookie("isLoggedIn");
 
-      console.log(req.cookies) 
+      console.log(req.cookies)
 
       db.collection('requests').count({
         open: "false"
@@ -176,10 +187,24 @@ mongoose.connect(mongoDB, {
         console.log(err)
       }
     })
- 
+
+    //POST to register new school
+    app.post('/profile', async (req, res) => {
+      let newSchool = new School({
+        name: req.body.name
+      })
+      try {
+        newSchool.save()
+        res.redirect('/profile')
+        console.log(newSchool)
+      } catch (err) {
+        console.log(err)
+      }
+    })
+
 
     //POST for logging user in, setting cookies for later reference
-    app.post('/loginUser', function(req, res) {
+    app.post('/loginUser', function (req, res) {
       async.waterfall([
         function (callback) {
           db.collection('users').findOne({
@@ -188,26 +213,26 @@ mongoose.connect(mongoDB, {
           }, function (err, result) {
             if (err) {
               console.log(err);
-              res.send({error: "An error has occurred"});
+              res.send({ error: "An error has occurred" });
             } else {
               if (result == null) {
-                res.send({"error": "This email address is not recognised, please check you have entered your email correctly"});
+                res.send({ "error": "This email address is not recognised, please check you have entered your email correctly" });
               } else {
                 console.log("Email recognised");
-                bcrypt.compare(req.body.password, result.password, function(err, data) {
-                  if (err){
+                bcrypt.compare(req.body.password, result.password, function (err, data) {
+                  if (err) {
                     console.log("Something went wrong, please try again")
                   }
                   if (data) {
                     console.log("Login successful, redirecting")
- 
-                    res.cookie('user', result.email, {expire : new Date(Date.now()+ 86400*1000)} )
-                    res.cookie('role', result.role, {expire : new Date(Date.now()+ 86400*1000)} )
-                    res.cookie('_id', result._id, {expire : new Date(Date.now()+ 86400*1000)} )
-                    res.cookie('isLoggedIn', "yes", {expire : new Date(Date.now()+ 86400*1000)} )
-                    res.cookie('userfname', result.firstname, {expire : new Date(Date.now()+ 86400*1000)} )
-                    res.cookie('userlname', result.lastname, {expire : new Date(Date.now()+ 86400*1000)} )
-                    
+
+                    res.cookie('user', result.email, { expire: new Date(Date.now() + 86400 * 1000) })
+                    res.cookie('role', result.role, { expire: new Date(Date.now() + 86400 * 1000) })
+                    res.cookie('_id', result._id, { expire: new Date(Date.now() + 86400 * 1000) })
+                    res.cookie('isLoggedIn', "yes", { expire: new Date(Date.now() + 86400 * 1000) })
+                    res.cookie('userfname', result.firstname, { expire: new Date(Date.now() + 86400 * 1000) })
+                    res.cookie('userlname', result.lastname, { expire: new Date(Date.now() + 86400 * 1000) })
+
 
                     res.redirect('/index')
                   } else {
@@ -218,20 +243,21 @@ mongoose.connect(mongoDB, {
             }
           });
         },
-        function (res, callback){
+        function (res, callback) {
           var hashedPass = res.password;
-          bcrypt.compare(req.body.password, hashedPass, function(err, res) {
-            if (err){
+          bcrypt.compare(req.body.password, hashedPass, function (err, res) {
+            if (err) {
               console.log("Something went wrong, please try again")
             }
             if (res) {
               console.log("Passwords Match, attempting login")
-                redirect('/index')
-            } else {S
+              redirect('/index')
+            } else {
+              S
               console.log("Wrong password")
             }
           });
-          }
+        }
       ])
     });
 
@@ -244,7 +270,7 @@ mongoose.connect(mongoDB, {
         {
           $set:
           {
-            isApproved: "yes"         
+            isApproved: "yes"
           }
         },
       ).then((result) => {
@@ -264,7 +290,7 @@ mongoose.connect(mongoDB, {
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             password: req.body.password,
-            affSchool: req.body.affSchool,      
+            affSchool: req.body.affSchool,
           }
         },
       ).then((result) => {
@@ -277,46 +303,46 @@ mongoose.connect(mongoDB, {
     app.get('/deleteuser', async (req, res) => {
       db.collection('users').findOneAndDelete({ email: req.query.email })
         .then(results => {
-          res.redirect( '/adminpage')
+          res.redirect('/adminpage')
         })
     })
 
-//Storing Image
+    //Storing Image
 
-const Storage = multer.diskStorage({
-  destination: 'uploads',
-  filename:(req,file,cb) => {
-    cb(null, file.originalname)
-  },
-});
+    const Storage = multer.diskStorage({
+      destination: 'uploads',
+      filename: (req, file, cb) => {
+        cb(null, file.originalname)
+      },
+    });
 
-const upload = multer({
-  storage:Storage
-}).single('testImage')
+    const upload = multer({
+      storage: Storage
+    }).single('testImage')
 
-/* app.get("/", (req, res) => {
-  res.send("upload file");
-}); */
+    /* app.get("/", (req, res) => {
+      res.send("upload file");
+    }); */
 
-app.post('/upload', (req, res) => {
-  upload(req, res, (err) => {
-    if(err){
-      console.log(err)
-    }
-    else{
-      const newImage = new ImageModel({
-        name: req.body.name,
-        image:{
-          data:req.file.filename,
-          contentType:'image/png'
+    app.post('/upload', (req, res) => {
+      upload(req, res, (err) => {
+        if (err) {
+          console.log(err)
+        }
+        else {
+          const newImage = new ImageModel({
+            name: req.body.name,
+            image: {
+              data: req.file.filename,
+              contentType: 'image/png'
+            }
+          })
+          newImage.save()
+            .then(() => res.send('successfuly uploaded'))
+            .catch(err => console.log(err))
         }
       })
-      newImage.save()
-      .then(() => res.send('successfuly uploaded'))
-      .catch(err=>console.log(err))
-    }
-  })
-})
+    })
 
     //POST to add new request
     app.post('/addRequest', async (req, res) => {
@@ -328,10 +354,10 @@ app.post('/upload', (req, res) => {
 
 
       let newRequest = new Request({
-        title: req.body.title ,
+        title: req.body.title,
         course: req.body.course,
         language: req.body.language,
-       estimated_workload: req.body.estimated_workload,
+        estimated_workload: req.body.estimated_workload,
         tags: req.body.tags,
         date: req.body.date,
         description: req.body.description,
@@ -375,8 +401,8 @@ app.post('/upload', (req, res) => {
         })
         */
 
-        //404 page to show users on invalid routes
-        app.get('*', function(req, res) {
-          res.render('404.ejs')
-        });
+    //404 page to show users on invalid routes
+    app.get('*', function (req, res) {
+      res.render('404.ejs')
+    });
   });

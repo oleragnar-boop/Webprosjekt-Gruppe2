@@ -93,8 +93,13 @@
                     <label for="">School:</label>
                     <select name="" id="">
                         <!-- Function for filling the options based on the database -->
-                        <option value="ex1">something 1</option>
-                        <option value="ex2">something 2</option>
+                        
+                        <% schoolData.forEach(function(school) { %>
+                            <option><%= school.name %></option>
+                            <% }) %>
+
+                        <!-- <option value="ex1">something 1</option>
+                        <option value="ex2">something 2</option> -->
                     </select>
                 </div>
                 <div class="jobtitlediv">
@@ -107,7 +112,7 @@
                 </div>
                 <div class="linktoschooldiv">
                     Link:
-                    <div class="linkwhitediv"> Placeholdertext</div>
+                    <input type="text" class="linkwhitediv"></input>
                 </div>
             </div>
 
@@ -121,9 +126,9 @@
                 </div>
                 <div class="languagediv">
                     <h1>Language Fluency:</h1>
-                    <div class="whitediv">
-                        Placeholdertext <!-- Function for multiple languages -->
-                    </div>
+                    <input type="text" class="whitediv">
+                         <!-- Function for multiple languages -->
+                    </input>
                 </div>
                 <div class="employmentdiv">
                     <label for=""><h1>Employment Status</h1></label>
