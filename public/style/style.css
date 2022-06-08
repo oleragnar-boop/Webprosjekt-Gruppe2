@@ -791,10 +791,12 @@ input {
 #verifyForm {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 #verifyForm > #email {
   width: 200px;
+  margin-top: 0;
 }
 
 /* Profile img style in profile.ejs */
@@ -1264,6 +1266,10 @@ right: 30px; */
   flex-direction: column;
   text-align: center;
   align-items: center;
+}
+
+#ccmyrec{
+  text-align: initial;
 }
 
 .centercontent .chatBox{
