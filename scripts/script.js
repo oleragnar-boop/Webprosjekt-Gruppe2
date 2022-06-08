@@ -42,7 +42,7 @@ $(document).ready(function () {
   });
 
 // Make expandable div in index.ejs
-var coll = document.getElementsByClassName("collapsible");
+/* var coll = document.getElementsById("collapsible_@i");
 var i;
 
 for (i = 0; i < coll.length; i++) {
@@ -55,4 +55,4 @@ for (i = 0; i < coll.length; i++) {
       content.style.display = "block";
     }
   });
-}
+} */

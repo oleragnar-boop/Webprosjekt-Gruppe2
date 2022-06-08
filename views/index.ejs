@@ -215,15 +215,16 @@
                 bookmark.addEventListener('click', function onClick(event) {
                     event.bookmark.style.backgroundColor = 'red';
                 });
+
             }</script>
 
 <% openRequests.forEach(function(request) { %>
-            <div class="wrap-collapsible">
+            <div class="wrap-collapsible" >
                 <input id="collapsible" class="toggle" type="checkbox">
-                <label for="collapsible" class="lbl-toggle">
+                <label for="collapsible" class="lbl-toggle" >
                     <div class="avaname">
-                        <img id="chatAvatar" src="<%= request.author_avatar %>" alt="profile avatar"> <!-- Function to add your profilepicture from the database here -->
-                        <p class="teachername"><%= request.author %><!-- Function to display your name here --></p>
+                        <img id="chatAvatar" src="<%= request.author_avatar %>" alt="profile avatar">
+                        <p class="teachername"><%= request.author %></p>
                     </div>
                     <div class="reqtag">
                         <p class="requestheader"><%= request.title %></p>
@@ -231,12 +232,6 @@
                             <span style="background-color: rgb(76, 76, 76); color: white;">
                                 <p class="textinspan"><%= request.tags %></p>
                             </span>
-<!--                             <span style="background-color: blue; color: white;">
-                                <p class="textinspan">Design</p>
-                            </span>
-                            <span style="background-color: lime; color: white;">
-                                <p class="textinspan">Code</p>
-                            </span> -->
                         </div>
                     </div>
                     <i class="fa-regular fa-bookmark"></i>
