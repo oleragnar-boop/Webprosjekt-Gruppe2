@@ -17,7 +17,7 @@ const userSchema = new Schema({
     empStatus: {type:String},
     workingHours: {type:Number},
     tags: {type:String},
-    avatar: {type:Number, enum:['1', '2', '3', '4', '5'], default: '1', required:true},
+    avatar: {type:String, default: 'avatar0.png', required:true},
     role: {type:String, enum:['standard','admin','super'], default: 'standard', required:true},
     isApproved: {type:String, enum:['no', 'yes'], default: 'no', required:true},
     bookmarkedTeachers: {type:String},

@@ -55,23 +55,23 @@ mongoose.connect(mongoDB, {
 
 
       if (loginStatus == "yes" && userRole == "admin") {
-        db.collection('users').find({isApproved: "no"}).toArray()
-        .then(results => {
-          let notVerified = results
-          db.collection('users').find({isApproved: "yes"}).toArray()
+        db.collection('users').find({ isApproved: "no" }).toArray()
           .then(results => {
-            let verified = results
+            let notVerified = results
             db.collection('users').find({ isApproved: "yes" }).toArray()
               .then(results => {
                 let verified = results
-                res.render('adminpage.ejs', { notVerified: notVerified, verified: verified })
+                db.collection('users').find({ isApproved: "yes" }).toArray()
+                  .then(results => {
+                    let verified = results
+                    res.render('adminpage.ejs', { notVerified: notVerified, verified: verified })
+                  })
               })
           })
-      })
       } else {
         res.redirect('/login')
       }
-  })
+    })
 
     //Serving the register page
     app.get('/register', (req, res) => {
@@ -82,6 +82,7 @@ mongoose.connect(mongoDB, {
     app.get('/index', (req, res) => {
       let cookieObject = req.cookies
       let loginStatus = cookieObject.isLoggedIn
+      let avatar = cookieObject.avatar
 
       console.log(loginStatus)
 
@@ -92,7 +93,7 @@ mongoose.connect(mongoDB, {
           .then(results => {
             let openRequests = results;
             res.render('index.ejs', {
-              openRequests: openRequests
+              openRequests: openRequests, avatar: avatar
             })
           })
       } else {
@@ -104,6 +105,7 @@ mongoose.connect(mongoDB, {
       let cookieObject = req.cookies
       let loginStatus = cookieObject.isLoggedIn
       let currentUser = `${cookieObject.userfname} ${cookieObject.userlname}`
+      let avatar = cookieObject.avatar
 
 
       if (loginStatus == "yes") {
@@ -113,7 +115,7 @@ mongoose.connect(mongoDB, {
           .then(results => {
             let myRequests = results;
             res.render('myrequests.ejs', {
-              myRequests: myRequests
+              myRequests: myRequests, avatar: avatar
             })
           })
       } else {
@@ -126,6 +128,7 @@ mongoose.connect(mongoDB, {
       let cookieObject = req.cookies
       let loginStatus = cookieObject.isLoggedIn
       let currentUser = cookieObject._id
+      let avatar = cookieObject.avatar
 
       if (loginStatus == "yes") {
         db.collection('user').findOne({
@@ -137,7 +140,7 @@ mongoose.connect(mongoDB, {
               .then(results => {
                 let schoolData = results;
                 res.render('profile.ejs', {
-                  userData: userData, schoolData: schoolData
+                  userData: userData, schoolData: schoolData, avatar: avatar
                 })
               }
               )
@@ -158,6 +161,7 @@ mongoose.connect(mongoDB, {
       res.clearCookie('userfname')
       res.clearCookie('userlname')
       res.clearCookie('isLoggedIn')
+      res.clearCookie('avatar')
 
       console.log(req.cookies)
 
@@ -182,12 +186,15 @@ mongoose.connect(mongoDB, {
     app.get('/newrequest', (req, res) => {
       let cookieObject = req.cookies
       let loginStatus = cookieObject.isLoggedIn
+      let avatar = cookieObject.avatar
 
       console.log(req.cookies)
 
       if (loginStatus == "yes") {
-          res.render('newrequest.ejs')
-          } else {
+        res.render('newrequest.ejs', {
+          avatar: avatar
+        })
+      } else {
         res.redirect('/login')
       }
     })
@@ -265,6 +272,8 @@ mongoose.connect(mongoDB, {
                     res.cookie('isLoggedIn', "yes", result._isLoggedIn, { expire: new Date(Date.now() + 86400 * 1000) })
                     res.cookie('userfname', result.firstname, { expire: new Date(Date.now() + 86400 * 1000) })
                     res.cookie('userlname', result.lastname, { expire: new Date(Date.now() + 86400 * 1000) })
+                    res.cookie('avatar', result.avatar, { expire: new Date(Date.now() + 86400 * 1000) })
+
 
                     console.log(req.cookies)
 
@@ -387,6 +396,7 @@ mongoose.connect(mongoDB, {
       let cookieObject = req.cookies
       let currentUser = `${cookieObject.userfname} ${cookieObject.userlname}`
       let userId = cookieObject._id
+      let avatar = cookieObject.avatar
 
 
       let newRequest = new Request({
@@ -399,6 +409,7 @@ mongoose.connect(mongoDB, {
         description: req.body.description,
         author: currentUser,
         author_id: userId,
+        author_avatar: avatar
       })
       try {
         newRequest.save()

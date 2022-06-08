@@ -37,7 +37,7 @@
                     </div>
                 </div>
 
-                <a href="profile"><img id="topavatar" src="profileavatar.png" alt="profile avatar"></a>
+                <a href="profile"><img id="topavatar" src="<%= avatar %>" alt="profile avatar"></a>
                 <span>En</span>
                 <a href="/"><span>Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></span></a>
             </div>
@@ -53,7 +53,7 @@
                 <input id="collapsible" class="toggle" type="checkbox">
                 <label for="collapsible" class="lbl-toggle">
                     <div class="avaname">
-                        <img id="chatAvatar" src="profileavatar.png" alt="profile avatar"> <!-- Function to add your profilepicture from the database here -->
+                        <img id="chatAvatar" src="<%= request.author_avatar %>" alt="profile avatar"> <!-- Function to add your profilepicture from the database here -->
                         <p class="teachername"><%= request.author %><!-- Function to display your name here --></p>
                     </div>
                     <div class="reqtag">
