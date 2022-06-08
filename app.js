@@ -49,22 +49,28 @@ mongoose.connect(mongoDB, {
 
     //Serving the admin page
     app.get('/adminpage', (req, res) => {
-      let cookieObject = Object.values(req.cookies)
-      let loginStatus = cookieObject[3]
+      let cookieObject = req.cookies
+      let loginStatus = cookieObject.isLoggedIn
+      let userRole = cookieObject.role
 
-      db.collection('users').find({isApproved: "no"}).toArray()
-      .then(results => {
-        let notVerified = results
-        db.collection('users').find({isApproved: "yes"}).toArray()
+
+      if (loginStatus == "yes" && userRole == "admin") {
+        db.collection('users').find({isApproved: "no"}).toArray()
         .then(results => {
-          let verified = results
-          db.collection('users').find({ isApproved: "yes" }).toArray()
-            .then(results => {
-              let verified = results
-              res.render('adminpage.ejs', { notVerified: notVerified, verified: verified })
-            })
-        })
-    })
+          let notVerified = results
+          db.collection('users').find({isApproved: "yes"}).toArray()
+          .then(results => {
+            let verified = results
+            db.collection('users').find({ isApproved: "yes" }).toArray()
+              .then(results => {
+                let verified = results
+                res.render('adminpage.ejs', { notVerified: notVerified, verified: verified })
+              })
+          })
+      })
+      } else {
+        res.redirect('/login')
+      }
   })
 
     //Serving the register page
@@ -74,10 +80,12 @@ mongoose.connect(mongoDB, {
 
     //Serving the index page, checks if a user is logged in, if not they are sent to login
     app.get('/index', (req, res) => {
-      let cookieObject = Object.values(req.cookies)
-      let loginStatus = cookieObject[3]
+      let cookieObject = req.cookies
+      let loginStatus = cookieObject.isLoggedIn
 
-      if (loginStatus = "yes") {
+      console.log(loginStatus)
+
+      if (loginStatus == "yes") {
         db.collection('requests').find({
           open: "true"
         }).toArray()
@@ -92,13 +100,33 @@ mongoose.connect(mongoDB, {
       }
     })
 
+    app.get('/myrequests', (req, res) => {
+      let cookieObject = req.cookies
+      let loginStatus = cookieObject.isLoggedIn
+      let currentUser = cookieObject._id
+
+      if (loginStatus == "yes") {
+        db.collection('requests').find({
+          author_id: currentUser
+        }).toArray()
+          .then(results => {
+            let myRequests = results;
+            res.render('myrequests.ejs', {
+              myRequests: myRequests
+            })
+          })
+      } else {
+        res.redirect('/login')
+      }
+    })
+
     //Serving the profile page
     app.get('/profile', (req, res) => {
-      let cookieObject = Object.values(req.cookies)
-      let loginStatus = cookieObject[3]
-      let currentUser = cookieObject[2]
+      let cookieObject = req.cookies
+      let loginStatus = cookieObject.isLoggedIn
+      let currentUser = cookieObject._id
 
-      if (loginStatus = "yes") {
+      if (loginStatus == "yes") {
         db.collection('user').findOne({
           _id: currentUser
         })
@@ -126,7 +154,9 @@ mongoose.connect(mongoDB, {
       res.clearCookie("role");
       res.clearCookie("user");
       res.clearCookie("_id");
-      res.clearCookie("isLoggedIn");
+      res.clearCookie('userfname')
+      res.clearCookie('userlname')
+      res.clearCookie('isLoggedIn')
 
       console.log(req.cookies)
 
@@ -149,10 +179,12 @@ mongoose.connect(mongoDB, {
     })
 
     app.get('/newrequest', (req, res) => {
-      let cookieObject = Object.values(req.cookies)
-      let loginStatus = cookieObject[3]
+      let cookieObject = req.cookies
+      let loginStatus = cookieObject.isLoggedIn
 
-      if (loginStatus = "yes") {
+      console.log(req.cookies)
+
+      if (loginStatus == "yes") {
           res.render('newrequest.ejs')
           } else {
         res.redirect('/login')
@@ -229,9 +261,11 @@ mongoose.connect(mongoDB, {
                     res.cookie('user', result.email, { expire: new Date(Date.now() + 86400 * 1000) })
                     res.cookie('role', result.role, { expire: new Date(Date.now() + 86400 * 1000) })
                     res.cookie('_id', result._id, { expire: new Date(Date.now() + 86400 * 1000) })
-                    res.cookie('isLoggedIn', "yes", { expire: new Date(Date.now() + 86400 * 1000) })
+                    res.cookie('isLoggedIn', "yes", result._isLoggedIn, { expire: new Date(Date.now() + 86400 * 1000) })
                     res.cookie('userfname', result.firstname, { expire: new Date(Date.now() + 86400 * 1000) })
                     res.cookie('userlname', result.lastname, { expire: new Date(Date.now() + 86400 * 1000) })
+
+                    console.log(req.cookies)
 
 
                     res.redirect('/index')
@@ -348,9 +382,9 @@ mongoose.connect(mongoDB, {
     app.post('/addRequest', async (req, res) => {
       console.log(req.cookies)
 
-      let cookieObject = Object.values(req.cookies)
-      let currentUser = `${cookieObject[0]} ${cookieObject[1]}`
-      let userId = cookieObject[4]
+      let cookieObject = req.cookies
+      let currentUser = `${cookieObject.userfname} ${cookieObject.userlname}`
+      let userId = cookieObject._id
 
 
       let newRequest = new Request({
