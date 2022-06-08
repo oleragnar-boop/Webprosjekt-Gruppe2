@@ -1286,9 +1286,18 @@ right: 30px; */
 
 /* styles for findteacher.ejs */
 
-/* .teacherentry{
+.teacherentry{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ margin-bottom: 50px;
+}
 
-} */
+#teacherentryAvatar {
+width: 150px;
+margin-top: 20px;
+}
 
 
 /* Extra small devices (phones, 600px and down) */
