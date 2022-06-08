@@ -122,7 +122,22 @@
                 <div class="pinkexamcorrdiv">
                     <h1>Exams corrected this year:</h1>
                     <div class="whiteexamcorrdiv">
-                        <!-- Function -->
+                        <table>
+                            <tr>
+                                <th>Date Taken</th>
+                                <th>Title</th>
+                                <th>Coursename and Coursecode</th>
+                                <th>Requested by</th>
+                            </tr>
+                        <% acceptedRequests.forEach(function(request) { %>
+                                <tr>
+                                    <td><%=request.dateClosed%></td>
+                                    <td><%=request.title%></td>
+                                    <td><%=request.course%></td>
+                                    <td><%=request.author%></td>
+                                </tr>
+                            <% }) %>
+                            </table
                     </div>
                 </div>
                 <div class="hoursdiv">
