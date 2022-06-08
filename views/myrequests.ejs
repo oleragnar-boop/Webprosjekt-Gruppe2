@@ -50,7 +50,7 @@
         <div class="chatBox">
         <% myRequests.forEach(function(request) { %>
             <div class="wrap-collapsible">
-                <input id="collapsible" class="toggle" type="checkbox">
+                <input id="collapsible" class="toggle" type="checkbox" onclick="return false;" checked>
                 <label for="collapsible" class="lbl-toggle">
                     <div class="avaname">
                         <img id="chatAvatar" src="<%= request.author_avatar %>" alt="profile avatar"> <!-- Function to add your profilepicture from the database here -->
@@ -82,10 +82,22 @@
                             <div class="leftinner">
                                 <h1>Job title:</h1>
                                 <h1>Language: <%= request.language %></h1>
+                                <h1>Accept a teacher for your request:</h1>
+                                <form action="/acceptATeacher" method="POST" id="verifyForm">
+                                    <input type="hidden" name="requestid" value="<%= request._id %>">
+                                    <select name="email" id="email" required>
+                                    <option disabled selected value>Select a user</option>
+                                    <% request.suggestedTeachers.forEach(function(teacher) { %>
+                                        <option><%= teacher %></option>
+                                        <% }) %>
+                                    </select> <br/>
+                                    <input class="submitBtn" type="submit" value="Confirm" />
+                                </form>
                             </div>
                             <div class="rightinner">
                                 <h1>Course: <%= request.course %></h1>
                                 <h1>Estimated workload: <%= request.estimated_workload %></h1>
+                                <h1> Request is open: <%= request.open %></h1>
                             </div>
                         </div>
                     </div>

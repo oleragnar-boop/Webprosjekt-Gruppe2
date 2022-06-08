@@ -23,6 +23,7 @@ mongoose.connect(mongoDB, {
   .then(mongoose => {
     console.log('Connected to Database')
     const dataCollection = db.collection('ExamMatch')
+    const ObjectId = mongoose.Types.ObjectId;
     db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
     app.use(express.static(__dirname + '/assets'));
@@ -83,6 +84,7 @@ mongoose.connect(mongoDB, {
       let cookieObject = req.cookies
       let loginStatus = cookieObject.isLoggedIn
       let avatar = cookieObject.avatar
+      let userEmail = cookieObject.user
 
       console.log(loginStatus)
 
@@ -93,12 +95,27 @@ mongoose.connect(mongoDB, {
           .then(results => {
             let openRequests = results;
             res.render('index.ejs', {
-              openRequests: openRequests, avatar: avatar
+              openRequests: openRequests, avatar: avatar, userEmail: userEmail
             })
           })
       } else {
         res.redirect('/login')
       }
+    })
+
+    app.post('/applyForRequest', async (req, res) => {
+      db.collection('requests').updateOne(
+        {
+          _id: ObjectId(`${req.body.requestid}`)
+        },
+        {
+            $push: { suggestedTeachers: req.body.email }
+          },
+      ).then((result) => {
+        console.log(result)
+        res.redirect('/index')
+      })
+        .catch((error) => console.error(error));
     })
 
     app.get('/myrequests', (req, res) => {
@@ -121,6 +138,25 @@ mongoose.connect(mongoDB, {
       } else {
         res.redirect('/login')
       }
+    })
+
+    app.post('/acceptATeacher', async (req, res) => {
+      db.collection('requests').findOneAndUpdate(
+        {
+          _id: ObjectId(`${req.body.requestid}`)
+        },
+         {
+          $set:
+          {
+            acceptedTeacher: req.body.email,
+            open: "false"
+          }
+          } ,
+      ).then((result) => {
+        console.log(result)
+        res.redirect('/index')
+      })
+        .catch((error) => console.error(error));
     })
 
     //Serving the profile page
