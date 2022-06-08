@@ -151,6 +151,51 @@ mongoose.connect(mongoDB, {
       }
     })
 
+    app.get('/findteacher', (req, res) => {
+      let cookieObject = req.cookies
+      let loginStatus = cookieObject.isLoggedIn
+      let currentUser = `${cookieObject.userfname} ${cookieObject.userlname}`
+      let avatar = cookieObject.avatar
+
+
+      if (loginStatus == "yes") {
+        db.collection('users').find({
+        }).toArray()
+          .then(results => {
+            let allUsers = results;
+            res.render('findteacher.ejs', {
+              allUsers: allUsers, avatar: avatar
+            })
+          })
+      } else {
+        res.redirect('/login')
+      }
+    })
+
+    //Serving the teacherpage
+     app.get('/teacherpage', (req, res) => {
+      let cookieObject = req.cookies
+      let loginStatus = cookieObject.isLoggedIn
+      let avatar = cookieObject.avatar
+
+      console.log(cookieObject)
+
+      if (loginStatus == "yes") {
+        db.collection('users').findOne({
+          email: req.query.email
+        })
+          .then(results => {
+            let userData = results;
+                res.render('teacherpage.ejs', {
+                  userData: userData, avatar: avatar
+                })
+              }
+              )
+      } else {
+        res.redirect('/login')
+      }
+    }) 
+
 
     //GET for the open and closed requests on the landing page, also serves said landing page
     app.get('/', async (req, res) => {
@@ -412,7 +457,8 @@ mongoose.connect(mongoDB, {
         description: req.body.description,
         author: currentUser,
         author_id: userId,
-        author_avatar: avatar
+        author_avatar: avatar,
+        jobTitle: req.body.jobTitle
       })
       try {
         newRequest.save()

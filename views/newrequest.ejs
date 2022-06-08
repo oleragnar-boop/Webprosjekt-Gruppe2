@@ -18,10 +18,10 @@
             <div id="innernavbar">
                 <ul>
                     <li><img id="blackindexEM" src="exammatchblack.png"></a></li>
-                    <li><a id="imhere" href="index">Home</a></li>
+                    <li><a href="index">Home</a></li>
                     <li><a href="myrequests">My Requests</a></li>
-                    <li><a href="findteachers">Find Teachers</a></li>
-                    <li><a href="mybookmarks">My Bookmarks</a></li>
+                    <li><a href="findteacher">Find Teachers</a></li>
+                    <li><a href="index">My Bookmarks</a></li>
                 </ul>
             </div>
 
@@ -70,6 +70,15 @@
             <option>Economics</option>
             <option>Health</option>
             <option>Programming</option>
+          </select><br />
+          <label for="jobTitle">Choose a Job title for your request:</label><br />
+          <select id="jobTitle" name="jobTitle" required>
+            <option disabled selected value>Select an option</option>
+            <option>Associate Professor</option>
+            <option>Full Professor</option>
+            <option>Assistant professor</option>
+            <option>Lecturer</option>
+            <option>Other</option>
           </select><br />
             <label for="description">Description:</label><br />
             <input type="description" id="description" name="description" required /><br />

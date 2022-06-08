@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link href="/style/style.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/bbadb5f9e0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/scripts/script.js"></script>
+</head>
+<body>
+    <div id="headerindex">
+        <div id="navbar">
+            <div id="innernavbar">
+                <ul>
+                    <li><img id="blackindexEM" src="exammatchblack.png"></a></li>
+                    <li><a href="index">Home</a></li>
+                    <li><a href="myrequests">My Requests</a></li>
+                    <li><a id="imhere" href="findteachers">Find Teachers</a></li>
+                    <li><a href="index">My Bookmarks</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="centerDiv">
+            <div class="navDiv">
+                <div id="notifdropdown">
+                    <button onclick="myFunction()" id="dropbtn"><img id="topbell" src="bell.png"
+                            alt="notification icon"></button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <!--                   <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a> -->
+                    </div>
+                </div>
+
+                <a href="profile"><img id="topavatar" src="<%= avatar %>" alt="profile avatar"></a>
+                <span>En</span>
+                <a href="/"><span>Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></span></a>
+            </div>
+
+
+        </div>
+    </div>
+    <div id="mainindex">
+        <div class="centercontent">
+        <h1>All Teachers</h1>
+        <div class="chatBox">
+        <% allUsers.forEach(function(user) { %>
+            <div>
+
+
+                        <img id="chatAvatar" src="<%= user.avatar %>" alt="profile avatar">
+                        <h2><%= user.firstname %> <%= user.lastname %></h2>
+                        <h3>Description:</h3>
+                        <p><%= user.description %></p>
+                        <h3>Tag:</h3>
+                        <p><%= user.tags %></p>
+                        <h3>Email:</h3>
+                        <p><%= user.email %></p>
+                        <a href="teacherpage?email=<%= user.email %>">Go to Profile</a>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <p>This website was made as a part of the subject IDG2671 Webprosjekt.</p>
+    <p>Authors:</p>
+    <p>Mons Stenbråten, Sivert Grønli Amundsen,</p>
+    <p>Ole Ragnar Randen</p>
+    <p>Copyright &copy;2022</p>
+</footer>
+
+</body>
+</html>
