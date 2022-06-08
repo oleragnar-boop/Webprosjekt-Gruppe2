@@ -64,23 +64,12 @@
                     <h1><!-- Function for displaying your name --></h1>
                     <h1><%= userData.firstname %> <%= userData.lastname %></h1>
 
-                    <!-- Function for displaying your name -->
-
-                    <!-- Function for displaying a profile img box -->
-                    <!--                 <div style="background-image: url('small-profile.jpeg');background-size: cover; height:480px; padding-top:80px;">
-                    <img src="small-profile.jpeg" style="height:150px">
-                </div> -->
-
                     <div class="row">
                         <div class="small-12 medium-2 large-2 columns">
                             <div class="circle">
                                 <img class="profile-pic"
                                     src="<%= userData.avatar %>">
 
-                            </div>
-                            <div class="p-image">
-                                <i class="fa fa-camera upload-button"></i>
-                                <input class="file-upload" type="file" accept="image/*" style="width:fit-content ;" />
                             </div>
                         </div>
                     </div>
@@ -122,7 +111,22 @@
                 <div class="pinkexamcorrdiv">
                     <h1>Exams corrected this year:</h1>
                     <div class="whiteexamcorrdiv">
-                        <!-- Function -->
+                        <table>
+                            <tr>
+                                <th>Date Taken</th>
+                                <th>Title</th>
+                                <th>Coursename and Coursecode</th>
+                                <th>Requested by</th>
+                            </tr>
+                        <% acceptedRequests.forEach(function(request) { %>
+                                <tr>
+                                    <td><%=request.dateClosed%></td>
+                                    <td><%=request.title%></td>
+                                    <td><%=request.course%></td>
+                                    <td><%=request.author%></td>
+                                </tr>
+                            <% }) %>
+                            </table
                     </div>
                 </div>
                 <div class="hoursdiv">
