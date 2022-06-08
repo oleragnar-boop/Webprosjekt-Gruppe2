@@ -103,11 +103,12 @@ mongoose.connect(mongoDB, {
     app.get('/myrequests', (req, res) => {
       let cookieObject = req.cookies
       let loginStatus = cookieObject.isLoggedIn
-      let currentUser = cookieObject._id
+      let currentUser = `${cookieObject.userfname} ${cookieObject.userlname}`
+
 
       if (loginStatus == "yes") {
         db.collection('requests').find({
-          author_id: currentUser
+          author: currentUser
         }).toArray()
           .then(results => {
             let myRequests = results;
@@ -313,6 +314,7 @@ mongoose.connect(mongoDB, {
         .catch((error) => console.error(error));
     })
 
+    //POST for updating a user
     app.post('/updateUser', async (req, res) => {
       db.collection('users').findOneAndUpdate(
         {
