@@ -105,7 +105,11 @@
                                         </select> <br />
                                         <div class="emaillinktoprofilehead">
                                             <h1>Link to profile:</h1>
-                                            <div class="emaillinktoprofile">placeholder</div>
+                                            <div class="emaillinktoprofile">
+                                                <% request.suggestedTeachers.forEach(function(teacher) { %>
+                                                    <a href="teacherpage?email=<%= teacher%>"><%= teacher %></a>
+                                                <% }) %>
+                                            </div>
                                         </div>
                                         <input class="submitBtn" type="submit" value="Confirm" />
                                     </form>
