@@ -648,6 +648,16 @@ h3 {
   margin-left: 23%;
 }
 
+#newrequest a:link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#newrequest a:visited {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 #newrequest button {
   all: unset;
 }
@@ -666,7 +676,8 @@ h4 {
   border-radius: 10px;
   border-style: solid;
   overflow-x:hidden; 
-  overflow-y:auto
+  overflow-y:auto;
+  padding-bottom: 25px;
 }
 
 #chat1,
@@ -1209,9 +1220,11 @@ right: 30px; */
 
 .newRequestDiv {
   position: absolute;
+  text-align: center;
   top: 42%;
   left: 50%;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   transform: translateX(-50%) translateY(-50%);
@@ -1222,7 +1235,6 @@ right: 30px; */
   border-style: solid;
   border-radius: 10px;
   border-width: 2px;
-  padding-left: 3%;
   padding-bottom: 1%;
   padding-top: 1%;
   background-color: #ff9d9d;
