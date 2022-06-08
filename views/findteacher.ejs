@@ -19,7 +19,7 @@
                     <li><a href="index">Home</a></li>
                     <li><a href="myrequests">My Requests</a></li>
                     <li><a id="imhere" href="findteachers">Find Teachers</a></li>
-                    <li><a href="mybookmarks">My Bookmarks</a></li>
+                    <li><a href="index">My Bookmarks</a></li>
                 </ul>
             </div>
 
@@ -61,7 +61,7 @@
                         <p><%= user.tags %></p>
                         <h3>Email:</h3>
                         <p><%= user.email %></p>
-                        <a href="teacherpage.ejs?email=<%= user.email %>">Go to Profile</a>
+                        <a href="teacherpage?email=<%= user.email %>">Go to Profile</a>
             </div>
             <% }) %>
         </div>
