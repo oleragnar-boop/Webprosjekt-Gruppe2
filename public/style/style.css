@@ -1243,6 +1243,8 @@ right: 30px; */
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 #requestForm > input {
