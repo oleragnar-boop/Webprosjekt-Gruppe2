@@ -86,13 +86,13 @@
                     </div>
 
                     <h1>About me</h1>
-                    <textarea id="aboutme" rows="4" cols="50" readonly><%= userData.description %></textarea>
+                    <textarea id="aboutme" rows="4" cols="50" maxlength="350" readonly><%= userData.description %></textarea>
                 </div>
                 <div class="schooldiv">
-                    <p>School: <%= userData.affSchool %></p>
+                    School: <%= userData.affSchool %>
                 </div>
                 <div class="jobtitlediv">
-                    <p>Job Title: <%= userData.jobTitle %></p>
+                    Job Title: <%= userData.jobTitle %>
                 </div>
                 <div class="linktoschooldiv">
                     Link: <a href="<%= userData.jobLink %>"> <%= userData.jobLink %></a>
