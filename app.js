@@ -173,32 +173,28 @@ mongoose.connect(mongoDB, {
     })
 
     //Serving the teacherpage
-/*     app.get('/profile', (req, res) => {
+     app.get('/teacherpage', (req, res) => {
       let cookieObject = req.cookies
       let loginStatus = cookieObject.isLoggedIn
-      let currentTeacher = 
       let avatar = cookieObject.avatar
+
+      console.log(cookieObject)
 
       if (loginStatus == "yes") {
         db.collection('users').findOne({
-          email: currentUserEmail
+          email: req.query.email
         })
           .then(results => {
             let userData = results;
-            db.collection('schools').find().toArray()
-              .then(results => {
-                let schoolData = results;
-                res.render('profile.ejs', {
-                  userData: userData, schoolData: schoolData, avatar: avatar
+                res.render('teacherpage.ejs', {
+                  userData: userData, avatar: avatar
                 })
               }
               )
-
-          })
       } else {
         res.redirect('/login')
       }
-    }) */
+    }) 
 
 
     //GET for the open and closed requests on the landing page, also serves said landing page
