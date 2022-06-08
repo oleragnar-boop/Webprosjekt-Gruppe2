@@ -10,6 +10,8 @@
     <script src="https://kit.fontawesome.com/bbadb5f9e0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="/scripts/script.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
@@ -28,17 +30,21 @@
         </div>
 
         <div class="centerDiv">
+            <!-- The alert content -->
+            <div id="alertTexts" class="hide">
+                <span>Good morning, you have a new request!</span>
+                <span>Good morning, you have a new request!</span>
+                <span>Good morning, you have a new request!</span>
+                <span>Good morning, you have a new request!</span>
+                <button id="closeAlertTexts" onclick="onButtonClickClose()">Close</button>
+            </div>
+            <div id="notifyDiv">
+                <button type="button" class="icon-button" onclick="onButtonClick()">
+                    <span class="material-icons">notifications</span>
+                    <span class="icon-button__badge">2</span>
+                </button>
+            </div>
             <div class="navDiv">
-                <div id="notifdropdown">
-                    <button onclick="myFunction()" id="dropbtn"><img id="topbell" src="bell.png"
-                            alt="notification icon"></button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <!--                   <a href="#">Link 1</a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a> -->
-                    </div>
-                </div>
-
                 <a href="profile"><img id="topavatar" src="<%= avatar %>" alt="profile avatar"></a>
                 <span>En</span>
                 <a href="/"><span>Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></span></a>
@@ -121,6 +127,16 @@
         <p>Ole Ragnar Randen</p>
         <p>Copyright &copy;2022</p>
     </footer>
+
+    <script>
+        function onButtonClick() {
+            document.getElementById('alertTexts').className = "show";
+        }
+
+        function onButtonClickClose() {
+            document.getElementById('alertTexts').className = "hide";
+        }
+    </script>
 
 </body>
 
