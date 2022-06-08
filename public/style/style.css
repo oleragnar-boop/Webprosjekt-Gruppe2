@@ -1252,7 +1252,7 @@ right: 30px; */
   width: 250px;
 }
 
-/* Styles for myrequests.ejs and teacherpage.ejs */
+/* Styles for myrequests.ejs and findteacher.ejs */
 
 #mainindex .centercontent{
   width: 100%;
@@ -1283,7 +1283,11 @@ right: 30px; */
   padding: 5px;
 }
 
+/* styles for findteacher.ejs */
 
+/* .teacherentry{
+
+} */
 
 
 /* Extra small devices (phones, 600px and down) */
