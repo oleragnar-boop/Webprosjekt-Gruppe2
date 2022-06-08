@@ -1322,6 +1322,17 @@ right: 30px; */
   padding: 5px;
 }
 
+.emaillinktoprofile{
+  background-color:#fddede;
+  padding: 5px;
+  height: 30px;
+  width: 250px;
+  overflow: scroll;
+  overflow-x: hidden;
+  margin-bottom: 7px;
+  border-radius: 5px;
+}
+
 /* styles for findteacher.ejs */
 
 .teacherentry{
