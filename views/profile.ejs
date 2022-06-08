@@ -58,12 +58,11 @@
     <div id="mainindex">
 
         <div class="whitebox">
-
             <!-- Left -->
             <div id="left">
                 <div class="nameandprofilepicture">
                     <h1><!-- Function for displaying your name --></h1>
-                    <h1>(You)</h1>
+                    <h1><%= userData.firstname %> <%= userData.lastname %></h1>
 
                     <!-- Function for displaying your name -->
 
@@ -76,7 +75,7 @@
                         <div class="small-12 medium-2 large-2 columns">
                             <div class="circle">
                                 <img class="profile-pic"
-                                    src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+                                    src="<%= userData.avatar %>">
 
                             </div>
                             <div class="p-image">
@@ -90,17 +89,17 @@
                     <textarea id="aboutme" rows="4" cols="50"></textarea>
                 </div>
                 <div class="schooldiv">
-                    <label for="">School:</label>
-                    <select name="" id="">
-                        <!-- Function for filling the options based on the database -->
+                    <p>School: <%= userData.affSchool %></p>
+<!--                     <select name="" id="">
+                         Function for filling the options based on the database
                         
                         <% schoolData.forEach(function(school) { %>
                             <option><%= school.name %></option>
-                            <% }) %>
+                            <% }) %> 
 
-                        <!-- <option value="ex1">something 1</option>
-                        <option value="ex2">something 2</option> -->
-                    </select>
+                         <option value="ex1">something 1</option>
+                        <option value="ex2">something 2</option>
+                    </select> -->
                 </div>
                 <div class="jobtitlediv">
                     <label for="">Job Title:</label>
@@ -162,7 +161,6 @@
                 </div>
                 <div class="edit">Edit</div>
             </div>
-
         </div>
 
     </div>

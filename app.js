@@ -127,12 +127,12 @@ mongoose.connect(mongoDB, {
     app.get('/profile', (req, res) => {
       let cookieObject = req.cookies
       let loginStatus = cookieObject.isLoggedIn
-      let currentUser = cookieObject._id
+      let currentUserEmail = cookieObject.user
       let avatar = cookieObject.avatar
 
       if (loginStatus == "yes") {
-        db.collection('user').findOne({
-          _id: currentUser
+        db.collection('users').findOne({
+          email: currentUserEmail
         })
           .then(results => {
             let userData = results;
@@ -207,17 +207,18 @@ mongoose.connect(mongoDB, {
         password: req.body.password,
         affSchool: req.body.affSchool,
         email: req.body.email,
-        jobTitle: "",
-        jobLink: "",
-        languages: "",
-        empStatus: "",
+        jobTitle: req.body.jobtitle,
+        jobLink: req.body.link,
+        languages: req.body.language,
+        empStatus: req.body.empStatus,
         workingHours: 0,
-        tags: "",
-        avatar: 1,
-        adminStatus: "none",
+        tags: req.body.tags,
+        avatar: "",
+        role: "standard",
         isApproved: "no",
         bookmarkedTeachers: "",
-        bookmarkedRequests: ""
+        bookmarkedRequests: "",
+        description: req.body.description
       })
       try {
         newUser.save()

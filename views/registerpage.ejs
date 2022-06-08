@@ -27,15 +27,43 @@
       <div id="registerBox">
         <form method="POST" action="/addUser" id="registerForm">
           <label for="firstname">Firstname:</label><br />
-          <input type="text" id="firstname" name="firstname" /><br />
+          <input type="text" id="firstname" name="firstname" required /><br />
           <label for="lastname">Lastname:</label><br />
-          <input type="text" id="lastname" name="lastname" /><br />
+          <input type="text" id="lastname" name="lastname" required /><br />
           <label for="password">Password:</label><br />
-          <input type="password" id="password" name="password" /><br />
+          <input type="password" id="password" name="password" required /><br />
           <label for="affSchool">Affiliated School:</label><br />
-          <input type="text" id="affSchool" name="affSchool" /><br />
+          <input type="text" id="affSchool" name="affSchool" required /><br />
           <label for="email">School/work mail:</label><br />
-          <input type="email" id="email" name="email" /><br />
+          <input type="email" id="email" name="email" required /><br />
+          <label for="jobtitle">Job Title:</label><br />
+          <input type="text" id="jobtitle" name="jobtitle" required /><br />
+          <label for="link">Link to your school page:</label><br />
+          <input type="text" id="link" name="link" required /><br />
+          <label for="description">Write a short description about yourself:</label><br />
+          <input type="textarea" id="description" name="description" required /><br />
+          <label for="language">Language fluency:</label><br />
+          <select id="language" name="language" required><br />
+          <option disabled selected value>Select an option</option>
+          <option>Norwegian</option>
+          <option>English</option>
+          <option>Norwegian and English</option>
+        </select><br />
+          <label for="empStatus">Employment Status:</label><br />
+          <select id="empStatus" name="empStatus" required >
+          <option disabled selected value>Select an option</option>
+          <option>Part Time</option>
+          <option>Full Time</option>
+          <option>Other</option>
+        </select><br />
+          <label for="tags">Choose a tag you relate to:</label><br />
+          <select id="tags" name="tags" required>
+          <option disabled selected value>Select an option</option>
+          <option>Design</option>
+          <option>Economics</option>
+          <option>Health</option>
+          <option>Programming</option>
+        </select><br />
           <input class="submitBtn" type="submit" value="Register" />
         </form>
       </div>
