@@ -85,6 +85,14 @@ mongoose.connect(mongoDB, {
       let loginStatus = cookieObject.isLoggedIn
       let avatar = cookieObject.avatar
       let userEmail = cookieObject.user
+      let role = cookieObject.role
+      let adminBtnStyle = "none"
+
+      console.log(role)
+
+      if (role == "admin") {
+        adminBtnStyle = "block"
+      }
 
       console.log(loginStatus)
 
@@ -95,7 +103,7 @@ mongoose.connect(mongoDB, {
           .then(results => {
             let openRequests = results;
             res.render('index.ejs', {
-              openRequests: openRequests, avatar: avatar, userEmail: userEmail
+              openRequests: openRequests, avatar: avatar, userEmail: userEmail, adminBtnStyle: adminBtnStyle
             })
           })
       } else {
@@ -506,6 +514,7 @@ mongoose.connect(mongoDB, {
         author_id: userId,
         author_avatar: avatar,
         jobTitle: req.body.jobTitle,
+        dateClosed: Date.now()
       })
       try {
         newRequest.save()
