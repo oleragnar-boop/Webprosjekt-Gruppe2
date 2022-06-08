@@ -402,6 +402,9 @@ li a:hover:not(.active) {
 /*   margin-right: 10px; */
 }
 
+
+/* Style for admin page*/
+
 .adminBtn {
   display: flex;
   flex-direction: column;
@@ -448,6 +451,31 @@ li a:hover:not(.active) {
   justify-content: center;
   align-items: center;
 }
+
+#adminEdit {
+  font-size: 1em;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 2px;
+  padding-left: 3%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  background-color: #ff9d9d;
+  width: 500px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+/*   justify-content: center; */
+  flex-direction: column;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+#adminEdit > input {
+  border-radius: 5px;
+  width: 250px;
+}
+
 #deleteForm {
   display: flex;
   justify-content: center;
@@ -791,10 +819,12 @@ input {
 #verifyForm {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 #verifyForm > #email {
   width: 200px;
+  margin-top: 0;
 }
 
 /* Profile img style in profile.ejs */
@@ -1253,7 +1283,7 @@ right: 30px; */
   width: 250px;
 }
 
-/* Styles for myrequests.ejs and teacherpage.ejs */
+/* Styles for myrequests.ejs and findteacher.ejs */
 
 #mainindex .centercontent{
   width: 100%;
@@ -1264,6 +1294,10 @@ right: 30px; */
   flex-direction: column;
   text-align: center;
   align-items: center;
+}
+
+#ccmyrec{
+  text-align: initial;
 }
 
 .centercontent .chatBox{
@@ -1284,7 +1318,20 @@ right: 30px; */
   padding: 5px;
 }
 
+/* styles for findteacher.ejs */
 
+.teacherentry{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ margin-bottom: 50px;
+}
+
+#teacherentryAvatar {
+width: 150px;
+margin-top: 20px;
+}
 
 
 /* Extra small devices (phones, 600px and down) */
