@@ -1252,6 +1252,40 @@ right: 30px; */
   width: 250px;
 }
 
+/* Styles for myrequests.ejs and teacherpage.ejs */
+
+#mainindex .centercontent{
+  width: 100%;
+}
+
+.centercontent{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.centercontent .chatBox{
+  margin: 0;
+  height: 490px;
+}
+
+/* Styles for myrequests.ejs */
+#description{
+  width: 370px;
+  height: 170px;
+  resize: none;
+}
+
+#descdiv .submitBtn{
+  width: fit-content;
+  background-color: #680000;
+  padding: 5px;
+}
+
+
+
+
 /* Extra small devices (phones, 600px and down) */
 /* @media only screen and (max-width: 600px) {...} */
 /* Small devices (portrait tablets and large phones, 600px and up) */

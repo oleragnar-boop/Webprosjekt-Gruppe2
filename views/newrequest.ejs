@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +13,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
+
 <body>
     <div id="headerindex">
         <div id="navbar">
@@ -53,58 +55,65 @@
     </div>
     <div id="mainindex">
         <div class="newRequestDiv">
-        <h1>Make a Request</h1>
-        <form method="POST" action="/addRequest" id="requestForm">
-            <label for="title">Title:</label><br />
-            <input type="text" id="title" name="title" required /><br />
-            <label for="course">Course:</label><br />
-            <input type="text" id="course" name="course" required /><br />
-            <label for="language">Language:</label><br />
-            <input type="language" id="language" name="language" required /><br />
-            <label for="estimated_workload">Workload:</label><br />
-            <input type="number" id="estimated_workload" name="estimated_workload" required /><br />
-            <label for="tags">Choose a tag for your request:</label><br />
-            <select id="tags" name="tags" required>
-            <option disabled selected value>Select an option</option>
-            <option>Design</option>
-            <option>Economics</option>
-            <option>Health</option>
-            <option>Programming</option>
-          </select><br />
-          <label for="jobTitle">Choose a Job title for your request:</label><br />
-          <select id="jobTitle" name="jobTitle" required>
-            <option disabled selected value>Select an option</option>
-            <option>Associate Professor</option>
-            <option>Full Professor</option>
-            <option>Assistant professor</option>
-            <option>Lecturer</option>
-            <option>Other</option>
-          </select><br />
-            <label for="description">Description:</label><br />
-            <input type="description" id="description" name="description" required /><br />
-            <input class="submitBtn" type="submit" value="Submit Request" />
-          </form>
+            <h1>Make a Request</h1>
+            <form method="POST" action="/addRequest" id="requestForm">
+                <label for="title">Title:</label><br />
+                <input type="text" id="title" name="title" required /><br />
+                <label for="course">Course:</label><br />
+                <input type="text" id="course" name="course" required /><br />
+                <label for="language">Language:</label><br />
+                <input type="language" id="language" name="language" required /><br />
+                <label for="estimated_workload">Workload:</label><br />
+                <input type="number" id="estimated_workload" name="estimated_workload" required /><br />
+                <label for="tags">Choose a tag for your request:</label><br />
+                <select id="tags" name="tags" required>
+                    <option disabled selected value>Select an option</option>
+                    <option>Design</option>
+                    <option>Economics</option>
+                    <option>Health</option>
+                    <option>Programming</option>
+                </select><br />
+                <label for="jobTitle">Choose a Job title for your request:</label><br />
+                <select id="jobTitle" name="jobTitle" required>
+                    <option disabled selected value>Select an option</option>
+                    <option>Associate Professor</option>
+                    <option>Full Professor</option>
+                    <option>Assistant professor</option>
+                    <option>Lecturer</option>
+                    <option>Other</option>
+                </select><br />
+                <div id="descdiv">
+                    <label for="description">Description:</label><br />
+                    <textarea form="requestForm" id="description" name="description" rows="4" cols="50"
+                        required></textarea> <br />
+                    <input class="submitBtn" type="submit" value="Post New Request" />
+                </div>
+            </form>
+
+
+
         </div>
 
     </div>
 
 
-<footer>
-    <p>This website was made as a part of the subject IDG2671 Webprosjekt.</p>
-    <p>Authors:</p>
-    <p>Mons Stenbråten, Sivert Grønli Amundsen,</p>
-    <p>Ole Ragnar Randen</p>
-    <p>Copyright &copy;2022</p>
-</footer>
+    <footer>
+        <p>This website was made as a part of the subject IDG2671 Webprosjekt.</p>
+        <p>Authors:</p>
+        <p>Mons Stenbråten, Sivert Grønli Amundsen,</p>
+        <p>Ole Ragnar Randen</p>
+        <p>Copyright &copy;2022</p>
+    </footer>
 
-<script>
-    function onButtonClick() {
+    <script>
+        function onButtonClick() {
             document.getElementById('alertTexts').className = "show";
         }
 
         function onButtonClickClose() {
             document.getElementById('alertTexts').className = "hide";
         }
-</script>
+    </script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="/scripts/script.js"></script>
 </head>
+
 <body>
     <div id="headerindex">
         <div id="navbar">
@@ -46,23 +48,27 @@
         </div>
     </div>
     <div id="mainindex">
-        <h1>My requests</h1>
-        <div class="chatBox">
-        <% myRequests.forEach(function(request) { %>
-            <div class="wrap-collapsible">
-                <input id="collapsible" class="toggle" type="checkbox" onclick="return false;" checked>
-                <label for="collapsible" class="lbl-toggle">
-                    <div class="avaname">
-                        <img id="chatAvatar" src="<%= request.author_avatar %>" alt="profile avatar"> <!-- Function to add your profilepicture from the database here -->
-                        <p class="teachername"><%= request.author %><!-- Function to display your name here --></p>
-                    </div>
-                    <div class="reqtag">
-                        <p class="requestheader"><%= request.title %></p>
-                        <div class="tagShow">
-                            <span style="background-color: rgb(76, 76, 76); color: white;">
-                                <p class="textinspan"><%= request.tags %></p>
-                            </span>
-<!--                             <span style="background-color: blue; color: white;">
+        <div class="centercontent">
+            <h1>My requests</h1>
+            <div class="chatBox">
+                <% myRequests.forEach(function(request) { %>
+                <div class="wrap-collapsible">
+                    <input id="collapsible" class="toggle" type="checkbox" onclick="return false;" checked>
+                    <label for="collapsible" class="lbl-toggle">
+                        <div class="avaname">
+                            <img id="chatAvatar" src="<%= request.author_avatar %>" alt="profile avatar">
+                            <!-- Function to add your profilepicture from the database here -->
+                            <p class="teachername"><%= request.author %>
+                                <!-- Function to display your name here -->
+                            </p>
+                        </div>
+                        <div class="reqtag">
+                            <p class="requestheader"><%= request.title %></p>
+                            <div class="tagShow">
+                                <span style="background-color: rgb(76, 76, 76); color: white;">
+                                    <p class="textinspan"><%= request.tags %></p>
+                                </span>
+                                <!--                             <span style="background-color: blue; color: white;">
                                 <p class="textinspan">Design</p>
                             </span>
                             <span style="background-color: lime; color: white;">
@@ -102,19 +108,20 @@
                         </div>
                     </div>
                 </div>
+                <% }) %>
             </div>
-            <% }) %>
+        </div>
     </div>
-</div>
 
 
-<footer>
-    <p>This website was made as a part of the subject IDG2671 Webprosjekt.</p>
-    <p>Authors:</p>
-    <p>Mons Stenbråten, Sivert Grønli Amundsen,</p>
-    <p>Ole Ragnar Randen</p>
-    <p>Copyright &copy;2022</p>
-</footer>
+    <footer>
+        <p>This website was made as a part of the subject IDG2671 Webprosjekt.</p>
+        <p>Authors:</p>
+        <p>Mons Stenbråten, Sivert Grønli Amundsen,</p>
+        <p>Ole Ragnar Randen</p>
+        <p>Copyright &copy;2022</p>
+    </footer>
 
 </body>
+
 </html>
