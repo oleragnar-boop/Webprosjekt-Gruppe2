@@ -14,7 +14,8 @@ const requestSchema = new Schema({
     open: {type:String, required:true, default:"true"},
     acceptedTeacher: {type:String, required:true, default:"none"},
     suggestedTeachers: {type:Array, required:true, default:[]},
-    author_avatar: {type:String, required:true}
+    author_avatar: {type:String, required:true},
+    jobTitle: {type:String, required:true},
 })
 
 module.exports = mongoose.model("Request", requestSchema, "requests")
