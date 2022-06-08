@@ -861,6 +861,7 @@ right: 30px; */
   border-radius: 10px;
   width: 70%;
   float: right;
+  text-align: center;
 }
 
 .whitediv {
@@ -868,6 +869,7 @@ right: 30px; */
   background-color: #ffffff;
   padding: 10px;
   border-radius: 10px;
+  width: 90%;
 }
 
 .notepinkdiv {
