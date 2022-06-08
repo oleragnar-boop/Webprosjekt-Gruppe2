@@ -764,6 +764,7 @@ input {
   width: 128px;
   height: 128px;
   border: 2px solid rgba(255, 255, 255, 0.2);
+  margin: 0 auto;
   /*   position: absolute;
   top: 72px; */
 }
@@ -791,6 +792,14 @@ right: 30px; */
 }
 
 /* other profile.ejs styles */
+
+#aboutme{
+  width: 99%;
+  height: 20%;
+  border: #111 solid;
+  border-radius: 10px;
+  margin: 0 auto;
+}
 
 #left {
   float: left;
