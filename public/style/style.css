@@ -289,7 +289,7 @@ li a:hover:not(.active) {
 #passwordLogin {
   height: 20px;
   padding: 5px;
-  margin-bottom: 25px;
+/*   margin-bottom: 25px; */
 }
 
 .submitBtn {
@@ -329,7 +329,12 @@ li a:hover:not(.active) {
   border-width: 2px;
   border-style: solid;
   padding: 10px;
-  width: 70%;
+  width: 85%;
+  text-align: center;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .alreadyLogin > button {
@@ -348,6 +353,7 @@ li a:hover:not(.active) {
   display: flex;
   justify-content: center;
   align-content: center;
+  font-size: 25px;
 }
 
 .alreadyLogin a {
@@ -355,7 +361,7 @@ li a:hover:not(.active) {
   text-decoration: none;
   color: black;
   margin-bottom: 15px;
-  padding: 5px;
+  padding: 10px;
 }
 
 .alreadyLogin img {
@@ -370,6 +376,8 @@ li a:hover:not(.active) {
   border-style: solid;
   padding: 10px;
   margin-right: 10px;
+  width: 20%;
+  display: flex;
 }
 
 #loginForm {
@@ -377,16 +385,20 @@ li a:hover:not(.active) {
   border-style: solid;
   border-radius: 10px;
   border-width: 2px;
-  padding-left: 3%;
+/*   padding-left: 3%; */
   padding-bottom: 1%;
   padding-top: 1%;
   background-color: #ff9d9d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 #loginForm input {
   border-radius: 5px;
   width: 150px;
-  margin-right: 10px;
+/*   margin-right: 10px; */
 }
 
 .adminBtn {
