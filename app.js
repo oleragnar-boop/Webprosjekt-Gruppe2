@@ -153,7 +153,6 @@ mongoose.connect(mongoDB, {
         isApproved: "no",
         bookmarkedTeachers: "",
         bookmarkedRequests: ""
-        //personalNotes: ["", ""]
       })
       try {
         newUser.save()
