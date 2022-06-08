@@ -459,7 +459,8 @@ mongoose.connect(mongoDB, {
         description: req.body.description,
         author: currentUser,
         author_id: userId,
-        author_avatar: avatar
+        author_avatar: avatar,
+        jobTitle: req.body.jobTitle
       })
       try {
         newRequest.save()
