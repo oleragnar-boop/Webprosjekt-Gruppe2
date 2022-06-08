@@ -13,7 +13,7 @@ const requestSchema = new Schema({
     author_id: {type: Schema.Types.ObjectId, required: true},
     open: {type:String, required:true, default:"true"},
     acceptedTeacher: {type:String, required:true, default:"none"},
-    suggestedTeachers: {type:Array, required:true, default:["none"]},
+    suggestedTeachers: {type:Array, required:true, default:[]},
     author_avatar: {type:String, required:true},
     jobTitle: {type:String, required:true},
     dateClosed: {type:Date, required:true},
