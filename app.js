@@ -151,6 +151,55 @@ mongoose.connect(mongoDB, {
       }
     })
 
+    app.get('/findteacher', (req, res) => {
+      let cookieObject = req.cookies
+      let loginStatus = cookieObject.isLoggedIn
+      let currentUser = `${cookieObject.userfname} ${cookieObject.userlname}`
+      let avatar = cookieObject.avatar
+
+
+      if (loginStatus == "yes") {
+        db.collection('users').find({
+        }).toArray()
+          .then(results => {
+            let allUsers = results;
+            res.render('findteacher.ejs', {
+              allUsers: allUsers, avatar: avatar
+            })
+          })
+      } else {
+        res.redirect('/login')
+      }
+    })
+
+    //Serving the teacherpage
+/*     app.get('/profile', (req, res) => {
+      let cookieObject = req.cookies
+      let loginStatus = cookieObject.isLoggedIn
+      let currentTeacher = 
+      let avatar = cookieObject.avatar
+
+      if (loginStatus == "yes") {
+        db.collection('users').findOne({
+          email: currentUserEmail
+        })
+          .then(results => {
+            let userData = results;
+            db.collection('schools').find().toArray()
+              .then(results => {
+                let schoolData = results;
+                res.render('profile.ejs', {
+                  userData: userData, schoolData: schoolData, avatar: avatar
+                })
+              }
+              )
+
+          })
+      } else {
+        res.redirect('/login')
+      }
+    }) */
+
 
     //GET for the open and closed requests on the landing page, also serves said landing page
     app.get('/', async (req, res) => {
