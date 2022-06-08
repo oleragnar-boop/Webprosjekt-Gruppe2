@@ -150,7 +150,7 @@ mongoose.connect(mongoDB, {
 
     app.post('/acceptATeacher', async (req, res) => {
       let currentDate = Date.now
-      let dateLocal = currentDate.toLocaleString(no - NO)
+      let dateLocal = currentDate.toLocaleString('no-NO')
       db.collection('requests').findOneAndUpdate(
         {
           _id: ObjectId(`${req.body.requestid}`)
