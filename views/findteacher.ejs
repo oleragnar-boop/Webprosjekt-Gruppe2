@@ -46,6 +46,7 @@
         </div>
     </div>
     <div id="mainindex">
+        <div class="centercontent">
         <h1>All Teachers</h1>
         <div class="chatBox">
         <% allUsers.forEach(function(user) { %>
@@ -63,6 +64,7 @@
                         <a href="teacherpage.ejs?email=<%= user.email %>">Go to Profile</a>
             </div>
             <% }) %>
+        </div>
     </div>
 </div>
 
