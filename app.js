@@ -89,7 +89,7 @@ mongoose.connect(mongoDB, {
       if (loginStatus == "yes") {
         db.collection('requests').find({
           open: "true"
-        }).toArray()
+        }).sort({_id:-1}).toArray()
           .then(results => {
             let openRequests = results;
             res.render('index.ejs', {
@@ -213,7 +213,7 @@ mongoose.connect(mongoDB, {
         empStatus: req.body.empStatus,
         workingHours: 0,
         tags: req.body.tags,
-        avatar: "",
+        avatar: "avatar0.png",
         role: "standard",
         isApproved: "no",
         bookmarkedTeachers: "",

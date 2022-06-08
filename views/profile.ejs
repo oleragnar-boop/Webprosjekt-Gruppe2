@@ -86,32 +86,16 @@
                     </div>
 
                     <h1>About me</h1>
-                    <textarea id="aboutme" rows="4" cols="50"></textarea>
+                    <textarea id="aboutme" rows="4" cols="50" readonly><%= userData.description %></textarea>
                 </div>
                 <div class="schooldiv">
                     <p>School: <%= userData.affSchool %></p>
-<!--                     <select name="" id="">
-                         Function for filling the options based on the database
-                        
-                        <% schoolData.forEach(function(school) { %>
-                            <option><%= school.name %></option>
-                            <% }) %> 
-
-                         <option value="ex1">something 1</option>
-                        <option value="ex2">something 2</option>
-                    </select> -->
                 </div>
                 <div class="jobtitlediv">
-                    <label for="">Job Title:</label>
-                    <select name="" id="">
-                        <!-- Function for filling the options based on the database -->
-                        <option value="ex1">something 1</option>
-                        <option value="ex2">something 2</option>
-                    </select>
+                    <p>Job Title: <%= userData.jobTitle %></p>
                 </div>
                 <div class="linktoschooldiv">
-                    Link:
-                    <input type="text" class="linkwhitediv"></input>
+                    Link: <a href="<%= userData.jobLink %>"> <%= userData.jobLink %></a>
                 </div>
             </div>
 
@@ -125,17 +109,11 @@
                 </div>
                 <div class="languagediv">
                     <h1>Language Fluency:</h1>
-                    <input type="text" class="whitediv">
-                         <!-- Function for multiple languages -->
-                    </input>
+                    <p><%= userData.languages %></p>
                 </div>
                 <div class="employmentdiv">
-                    <label for=""><h1>Employment Status</h1></label>
-                    <select name="" id="employstatus">
-                        <!-- Maybe more types -->
-                        <option value="parttime">Part Time</option>
-                        <option value="fulltime">Full Time</option>
-                    </select>
+                    <h1>Employment Status</h1>
+                    <p><%= userData.empStatus %></p>
                 </div>
             </div>
 
@@ -156,8 +134,8 @@
                     </div>
                 </div>
                 <div class="assoctags">
-                    <h1>Associated Tags</h1>
-                    <h1>||Placeholder to get height||</h1><!-- Add tags function here -->
+                    <h1>Associated Tag</h1>
+                    <h1 class="<%= userData.tags %>"><%= userData.tags %></h1><!-- Add tags function here -->
                 </div>
                 <div class="edit">Edit</div>
             </div>
