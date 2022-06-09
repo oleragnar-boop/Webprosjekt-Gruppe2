@@ -9,7 +9,7 @@ const app = express();
 const mongoDB = 'mongodb+srv://admin:adminpassword@cluster0.0nuub.mongodb.net/ExamMatch?retryWrites=true&w=majority'
 const path = require('path');
 const db = mongoose.connection;
-const bcrypt = require('bcrypt')
+const bcryptjs = require('bcryptjs')
 const async = require('async');
 const cookieParser = require('cookie-parser');
 const _ = require('underscore');
@@ -354,7 +354,7 @@ mongoose.connect(mongoDB, {
                 res.send({ "error": "This email address is not recognised, please check you have entered your email correctly" });
               } else {
                 console.log("Email recognised");
-                bcrypt.compare(req.body.password, result.password, function (err, data) {
+                bcryptjs.compare(req.body.password, result.password, function (err, data) {
                   if (err) {
                     console.log("Something went wrong, please try again")
                   }
@@ -381,7 +381,7 @@ mongoose.connect(mongoDB, {
         },
         function (res, callback) {
           var hashedPass = res.password;
-          bcrypt.compare(req.body.password, hashedPass, function (err, res) {
+          bcryptjs.compare(req.body.password, hashedPass, function (err, res) {
             if (err) {
               console.log("Something went wrong, please try again")
             }
