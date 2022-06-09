@@ -88,13 +88,9 @@ mongoose.connect(mongoDB, {
       let role = cookieObject.role
       let adminBtnStyle = "none"
 
-      console.log(role)
-
       if (role == "admin") {
         adminBtnStyle = "block"
       }
-
-      console.log(loginStatus)
 
       if (loginStatus == "yes") {
         db.collection('requests').find({
@@ -111,6 +107,7 @@ mongoose.connect(mongoDB, {
       }
     })
 
+    //POST for applying to a request
     app.post('/applyForRequest', async (req, res) => {
       db.collection('requests').updateOne(
         {
@@ -120,12 +117,12 @@ mongoose.connect(mongoDB, {
           $push: { suggestedTeachers: req.body.email }
         },
       ).then((result) => {
-        console.log(result)
         res.redirect('/index')
       })
         .catch((error) => console.error(error));
     })
 
+    //GET that fetches your requests
     app.get('/myrequests', (req, res) => {
       let cookieObject = req.cookies
       let loginStatus = cookieObject.isLoggedIn
@@ -148,6 +145,7 @@ mongoose.connect(mongoDB, {
       }
     })
 
+    //POST for accepting a teacher for your request and closing it
     app.post('/acceptATeacher', async (req, res) => {
       let currentDate = new Date
       let dateLocal = currentDate.toLocaleString('no-NO')
@@ -166,7 +164,6 @@ mongoose.connect(mongoDB, {
           }
         } ,
       ).then((result) => {
-        console.log(result)
         res.redirect('/index')
       })
         .catch((error) => console.error(error));
@@ -202,6 +199,7 @@ mongoose.connect(mongoDB, {
       }
     })
 
+    //Serving the find teachers page
     app.get('/findteacher', (req, res) => {
       let cookieObject = req.cookies
       let loginStatus = cookieObject.isLoggedIn
@@ -228,8 +226,6 @@ mongoose.connect(mongoDB, {
       let cookieObject = req.cookies
       let loginStatus = cookieObject.isLoggedIn
       let avatar = cookieObject.avatar
-
-      console.log(cookieObject)
 
       if (loginStatus == "yes") {
         db.collection('users').findOne({
@@ -265,8 +261,6 @@ mongoose.connect(mongoDB, {
       res.clearCookie('isLoggedIn')
       res.clearCookie('avatar')
 
-      console.log(req.cookies)
-
       db.collection('requests').count({
         open: "false"
       })
@@ -285,12 +279,12 @@ mongoose.connect(mongoDB, {
         })
     })
 
+
+    //Serving the newrequest page
     app.get('/newrequest', (req, res) => {
       let cookieObject = req.cookies
       let loginStatus = cookieObject.isLoggedIn
       let avatar = cookieObject.avatar
-
-      console.log(req.cookies)
 
       if (loginStatus == "yes") {
         res.render('newrequest.ejs', {
@@ -325,7 +319,6 @@ mongoose.connect(mongoDB, {
       try {
         newUser.save()
         res.redirect('/register')
-        console.log(newUser)
       } catch (err) {
         console.log(err)
       }
@@ -339,7 +332,6 @@ mongoose.connect(mongoDB, {
       try {
         newSchool.save()
         res.redirect('/profile')
-        console.log(newSchool)
       } catch (err) {
         console.log(err)
       }
@@ -376,9 +368,6 @@ mongoose.connect(mongoDB, {
                     res.cookie('userfname', result.firstname, { expire: new Date(Date.now() + 86400 * 1000) })
                     res.cookie('userlname', result.lastname, { expire: new Date(Date.now() + 86400 * 1000) })
                     res.cookie('avatar', result.avatar, { expire: new Date(Date.now() + 86400 * 1000) })
-
-
-                    console.log(req.cookies)
 
 
                     res.redirect('/index')
@@ -470,10 +459,6 @@ mongoose.connect(mongoDB, {
       storage: Storage
     }).single('testImage')
 
-    /* app.get("/", (req, res) => {
-      res.send("upload file");
-    }); */
-
     app.post('/upload', (req, res) => {
       upload(req, res, (err) => {
         if (err) {
@@ -496,7 +481,6 @@ mongoose.connect(mongoDB, {
 
     //POST to add new request
     app.post('/addRequest', async (req, res) => {
-      console.log(req.cookies)
 
       let cookieObject = req.cookies
       let currentUser = `${cookieObject.userfname} ${cookieObject.userlname}`
@@ -521,7 +505,6 @@ mongoose.connect(mongoDB, {
       try {
         newRequest.save()
         res.redirect('/index')
-        console.log(newRequest)
       } catch (err) {
         console.log(err)
       }
