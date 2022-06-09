@@ -64,11 +64,12 @@
             <h1>My requests</h1>
             <div class="chatBox">
 
-                <!-- Add checked at the end of input id="collapsible" line 65 to expand all requests -->
+                <!-- We tried making the requests collapsible but only got the effect for the first request, therefore we have all of the requests expanded. -->
+                <!-- To see the collapsible design, remove checked from line 72 -->
 
                 <% myRequests.forEach(function(request) { %>
                 <div class="wrap-collapsible">
-                    <input id="collapsible" class="toggle" type="checkbox">
+                    <input id="collapsible" class="toggle" type="checkbox" checked>
                     <label for="collapsible" class="lbl-toggle">
                         <div class="avaname">
                             <img id="chatAvatar" src="<%= request.author_avatar %>" alt="profile avatar">
@@ -83,12 +84,6 @@
                                 <span style="background-color: rgb(76, 76, 76); color: white;">
                                     <p class="textinspan"><%= request.tags %></p>
                                 </span>
-                                <!--                             <span style="background-color: blue; color: white;">
-                                <p class="textinspan">Design</p>
-                            </span>
-                            <span style="background-color: lime; color: white;">
-                                <p class="textinspan">Code</p>
-                            </span> -->
                             </div>
                         </div>
                         <i class="fa-regular fa-bookmark"></i>
