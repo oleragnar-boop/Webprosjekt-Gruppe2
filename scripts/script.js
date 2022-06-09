@@ -1,3 +1,5 @@
+/* These don't work as of yet */
+
 function showForm() {
     if (formStatus = "hidden") {
         document.getElementById('newUserForm').style.display = "block";
