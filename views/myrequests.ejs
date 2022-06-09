@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="/scripts/script.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 </head>
+
 
 <body>
     <div id="headerindex">
@@ -107,11 +107,11 @@
                                             <h1>Link to profile:</h1>
                                             <div class="emaillinktoprofile">
                                                 <% request.suggestedTeachers.forEach(function(teacher) { %>
-                                                    <a href="teacherpage?email=<%= teacher%>"><%= teacher %></a>
+                                                <a href="teacherpage?email=<%= teacher%>"><%= teacher %></a>
                                                 <% }) %>
                                             </div>
                                         </div>
-                                        <input class="submitBtn" type="submit" value="Confirm" />
+                                        <input class="submitBtn" type="submit" value="Confirm">
                                     </form>
                                 </div>
                                 <div class="rightinner">
@@ -127,7 +127,6 @@
             </div>
         </div>
     </div>
-
 
     <footer>
         <p>This website was made as a part of the subject IDG2671 Webprosjekt.</p>
@@ -148,5 +147,7 @@
     </script>
 
 </body>
+
+
 
 </html>
